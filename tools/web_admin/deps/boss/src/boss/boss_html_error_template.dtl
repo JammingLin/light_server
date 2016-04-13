@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Oops!</title>
+        <link rel="stylesheet" type="text/css" href="{{ _base_url }}{{ _static }}/edoc/stylesheet.css" title="EDoc">
+    </head>
+    <body>
+    <div class="container">
+        <h1>We got a problem!</h1>
+        <div class="alert alert-warning">{{ extra_message }}</div>
+        <h2>Error:</h2>
+        <pre>{{ error }}</pre>
+        <h2>Request:</h2>
+        <pre class=".pre-scrollable">{{ request }}</pre>
+        <h2>Application info:</h2>
+        <pre class=".pre-scrollable">{{ appinfo }}</pre>
+        <p><em>{% now "D, j F Y g:i a" %}</em></p>
+    </div>
+    </body>
+</html>

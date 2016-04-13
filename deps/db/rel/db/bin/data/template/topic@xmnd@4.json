@@ -1,0 +1,2430 @@
+[
+  {
+    "id": 1,
+    "question": "最早的血压计用于测量谁的血压？",
+    "answer_1": "马",
+    "answer_2": "人",
+    "answer_3": "牛",
+    "answer_4": "羊",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 2,
+    "question": "每一个少数民族都有自己喜爱的颜色，生长在大草原的蒙古族喜爱",
+    "answer_1": "白色",
+    "answer_2": "绿色",
+    "answer_3": "红色",
+    "answer_4": "黄色",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 3,
+    "question": "涮羊肉起源于",
+    "answer_1": "元朝",
+    "answer_2": "唐朝",
+    "answer_3": "宋朝",
+    "answer_4": "西周",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 4,
+    "question": "黄酒名品\"加饭酒\"的产地在哪？",
+    "answer_1": "浙江",
+    "answer_2": "四川",
+    "answer_3": "山东",
+    "answer_4": "湖北",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 5,
+    "question": "一公斤铁和一公斤棉花哪一个轻？",
+    "answer_1": "铁",
+    "answer_2": "棉花",
+    "answer_3": "一样重",
+    "answer_4": "不知道",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 6,
+    "question": "人体最坚硬的部分是",
+    "answer_1": "牙齿",
+    "answer_2": "头盖骨",
+    "answer_3": "指甲",
+    "answer_4": "颧骨",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 7,
+    "question": "马是怎样睡觉的？",
+    "answer_1": "站着睡",
+    "answer_2": "躺着睡",
+    "answer_3": "倒着睡",
+    "answer_4": "坐着睡",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 8,
+    "question": "俗称“四不象”的动物是",
+    "answer_1": "麋鹿",
+    "answer_2": "大象",
+    "answer_3": "狐狸",
+    "answer_4": "猴子",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 9,
+    "question": "藏历新年，人们见面时都要说“扎西德勒”是什么意思？",
+    "answer_1": "吉祥如意",
+    "answer_2": "新年好",
+    "answer_3": "你好",
+    "answer_4": "恭喜发财",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 10,
+    "question": "“豆寇年华”是指几岁？",
+    "answer_1": "13岁",
+    "answer_2": "14岁",
+    "answer_3": "15岁",
+    "answer_4": "16岁",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 11,
+    "question": "哪个年龄的人话最多",
+    "answer_1": "6～12岁儿童",
+    "answer_2": "40~50的中年",
+    "answer_3": "70~80的老人",
+    "answer_4": "一直都很多话",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 12,
+    "question": "世博会的理念是",
+    "answer_1": "理解沟通欢聚合作 ",
+    "answer_2": "融合理解欢聚合作 ",
+    "answer_3": "理解沟通欢聚和谐",
+    "answer_4": "更快更好更强",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 13,
+    "question": "中国农业银行发行的信用卡是",
+    "answer_1": "金穗卡 ",
+    "answer_2": "龙卡",
+    "answer_3": "牡丹卡 ",
+    "answer_4": "小鱼卡",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 14,
+    "question": "“打蛇打七寸”的七寸是指",
+    "answer_1": "心脏",
+    "answer_2": "大肠",
+    "answer_3": "胆 ",
+    "answer_4": "脾脏",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 15,
+    "question": "不明飞行物的英文缩写是 ",
+    "answer_1": "UFO ",
+    "answer_2": "SOS",
+    "answer_3": "uk",
+    "answer_4": "USA",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 16,
+    "question": "俗称“长生果”是指 ",
+    "answer_1": "花生",
+    "answer_2": "腰果",
+    "answer_3": "核桃",
+    "answer_4": "瓜子",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 17,
+    "question": "鳄鱼很凶猛，但是鳄鱼却很忌讳什么颜色？",
+    "answer_1": "黄色",
+    "answer_2": "黑色",
+    "answer_3": "红色",
+    "answer_4": "绿色",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 18,
+    "question": "中国野生动物保护协会的会徽是 ",
+    "answer_1": "大熊猫",
+    "answer_2": "丹顶鹤",
+    "answer_3": "骆驼",
+    "answer_4": "骏马",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 19,
+    "question": "牛、马的年轮长在",
+    "answer_1": "牙齿上",
+    "answer_2": "蹄上 ",
+    "answer_3": "耳朵上 ",
+    "answer_4": "鼻子上 ",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 20,
+    "question": "你知道蚊子吸血是为了什么吗？",
+    "answer_1": "产卵 ",
+    "answer_2": "发育",
+    "answer_3": "补充能量",
+    "answer_4": "交配",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 21,
+    "question": "人类第一杀手是",
+    "answer_1": "高血压",
+    "answer_2": "高血脂",
+    "answer_3": "高血糖",
+    "answer_4": "高富美",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 22,
+    "question": "被称为“中国食品四大发明”的是",
+    "answer_1": "豆芽、豆腐、面酱、面筋",
+    "answer_2": "豆芽、豆腐、饺子、面筋",
+    "answer_3": "豆芽、豆腐、面条、面筋",
+    "answer_4": "豆芽、豆腐、包子、面筋",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 23,
+    "question": "你知道成年人有多少块骨头吗？",
+    "answer_1": "206块",
+    "answer_2": "207块",
+    "answer_3": "205块",
+    "answer_4": "208块",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 24,
+    "question": "马识别外界事物主要靠的是什么?",
+    "answer_1": "嗅觉",
+    "answer_2": "视觉",
+    "answer_3": "味觉",
+    "answer_4": "触觉",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 25,
+    "question": "在“一举两得”这个成语中的“两得”原意是指得到什么？",
+    "answer_1": "两只老虎",
+    "answer_2": "鱼和熊掌",
+    "answer_3": "螳螂和黄雀",
+    "answer_4": "猫和秋刀鱼",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 26,
+    "question": "最小的种子是什么？",
+    "answer_1": "斑叶兰",
+    "answer_2": "芝麻",
+    "answer_3": "绿豆",
+    "answer_4": "烟草",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 27,
+    "question": "用罂粟德国果汁制成的毒品被称为？",
+    "answer_1": "鸦片",
+    "answer_2": "海洛因",
+    "answer_3": "可卡因",
+    "answer_4": "白药",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 28,
+    "question": " 杜鹃鸟不做窝，她把蛋下到其他鸟的鸟巢里对吗？",
+    "answer_1": "对",
+    "answer_2": "错",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 29,
+    "question": "丝衣服能不能与樟脑丸放在一起？",
+    "answer_1": "对",
+    "answer_2": "错",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 30,
+    "question": "称\"榨菜\"为\"榨\"是否因腌制过程中榨去水分是一道重要工序？",
+    "answer_1": "对",
+    "answer_2": "错",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 31,
+    "question": "冰糖是用白砂糖做的，对不对？",
+    "answer_1": "错",
+    "answer_2": "对",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 32,
+    "question": "海马是马吗？",
+    "answer_1": "错",
+    "answer_2": "对",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 33,
+    "question": "鱼有心脏吗？",
+    "answer_1": "对",
+    "answer_2": "错",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 34,
+    "question": "蜗牛在农业生产上是害虫吗",
+    "answer_1": "对",
+    "answer_2": "错",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 35,
+    "question": "引起肥胖的主要原因是？",
+    "answer_1": "吃得太多，活动太少，致营养过剩",
+    "answer_2": "睡眠时间太少",
+    "answer_3": "肥肉吃太多",
+    "answer_4": "天生的",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 36,
+    "question": "震级相差一级，地震释放的地震波能量相差约多少倍？",
+    "answer_1": 30,
+    "answer_2": 10,
+    "answer_3": 100,
+    "answer_4": 20,
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 37,
+    "question": "感冒忌用下列哪一种食物？",
+    "answer_1": "海鱼",
+    "answer_2": "豆浆",
+    "answer_3": "青菜",
+    "answer_4": "生姜",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 38,
+    "question": "老年人一天吃几只鸡蛋才合适？",
+    "answer_1": "1-2只",
+    "answer_2": "2只",
+    "answer_3": "3只",
+    "answer_4": "5只",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 39,
+    "question": "柠檬汁含有哪些营养含量？",
+    "answer_1": "维生素A和维生素B",
+    "answer_2": "维生素B1和维生素C",
+    "answer_3": "维生素C",
+    "answer_4": "维生素B6",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 40,
+    "question": "酒中含有酒精，饮酒过多或经常饮酒，会造成酒精中毒，使身体受损，那么，酒精对人体的哪些器官最为有害？",
+    "answer_1": "心脏",
+    "answer_2": "皮肤",
+    "answer_3": "肺",
+    "answer_4": "眼睛",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 41,
+    "question": "苹果中含有增强记忆力的微量元素是？",
+    "answer_1": "锌",
+    "answer_2": "铁",
+    "answer_3": "碘",
+    "answer_4": "钙",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 42,
+    "question": "吃太多手摇爆米花会导致？",
+    "answer_1": "铅中毒",
+    "answer_2": "锡中毒",
+    "answer_3": "铬中毒",
+    "answer_4": "锡中毒",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 43,
+    "question": "方便面中必然有哪种食品添加剂？",
+    "answer_1": "合成抗氧化剂",
+    "answer_2": "防腐剂",
+    "answer_3": "食用色素",
+    "answer_4": "漂白剂",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 44,
+    "question": "关于合理饮食有利于健康的下列说法正确的是?",
+    "answer_1": "养成良好的饮食习惯，多吃蔬菜、水果等碱性食物",
+    "answer_2": "没有水就没有生命",
+    "answer_3": "饮用水越纯净就越好",
+    "answer_4": "调味剂和营养剂越好越好",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 45,
+    "question": "低盐饮食有利于预防什么疾病？",
+    "answer_1": "高血压",
+    "answer_2": "贫血",
+    "answer_3": "糖尿病",
+    "answer_4": "乙型肝炎",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 46,
+    "question": "碘缺乏会导致儿童、青少年什么疾病？",
+    "answer_1": "生长发育和智力受影响",
+    "answer_2": "无力",
+    "answer_3": "甲亢",
+    "answer_4": "心理疾病",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 47,
+    "question": "夏季在烈日下工作或运动量过大出汗多时，为预防中暑应多喝什么？",
+    "answer_1": "盐开水",
+    "answer_2": "糖水",
+    "answer_3": "糖醋水",
+    "answer_4": "白开水",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 48,
+    "question": "某人由于营养不良，身体浮肿，其食疗补救措施是什么？",
+    "answer_1": "多喝豆汁",
+    "answer_2": "多吃蔬菜",
+    "answer_3": "多喝水",
+    "answer_4": "多吃馒头",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 49,
+    "question": "下列不属于营养物质的是？",
+    "answer_1": "肝糖元分解形成的葡萄糖",
+    "answer_2": "食物中的葡萄糖",
+    "answer_3": "饮水中的碘",
+    "answer_4": "食物中的胡萝卜素",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 50,
+    "question": "下列关于营养物质的叙述中，正确的是？",
+    "answer_1": "在人体内可以利用必需氨基酸合成非必需氨基酸",
+    "answer_2": "营养物质摄入过多时，一定会使人发胖",
+    "answer_3": "营养物质摄入过多时，一定排成出",
+    "answer_4": "营养物质摄入过多时，氧化分解加强，释放能量多",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 51,
+    "question": "某小学组织体检时发现一学生头围较小，智商较低，情感淡漠。剧老师反映该学生书写困难，学习能力差。其原因是？",
+    "answer_1": "婴幼儿时期严重营养不良",
+    "answer_2": "严重缺钙",
+    "answer_3": "儿童时期营养不良",
+    "answer_4": "缺锌",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 52,
+    "question": "在人的一生中，脑发育的最关键时期是？",
+    "answer_1": "胎儿期和婴儿期",
+    "answer_2": "婴儿期和儿童期",
+    "answer_3": "儿童期和青春期",
+    "answer_4": "青春期和婴儿期",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 53,
+    "question": "有关维生素的叙述不正确的是？",
+    "answer_1": "是构建机体组织和调节机体生理功能必不可少的物质",
+    "answer_2": "是某些特殊生理功能所不可或缺的物质",
+    "answer_3": "是维持机体新陈代谢必不可少的物质",
+    "answer_4": "绝大多数维生素不能在人体内合成",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 54,
+    "question": "下列哪种食物可以食用？",
+    "answer_1": "变绿的豆芽",
+    "answer_2": "发霉的茶叶",
+    "answer_3": "发芽的土豆",
+    "answer_4": "变红的汤圆",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 55,
+    "question": "豆浆又叫“植物奶”，被国际营养协会评定为健康食品和世界六大营养饮料之一。但是喝豆浆也有注意事项，以下正确的食用方法是：",
+    "answer_1": "在喝豆浆时搭配其他食物",
+    "answer_2": "喝没有煮沸的豆浆",
+    "answer_3": "豆浆中冲入鸡蛋",
+    "answer_4": "用保温瓶长时间储存豆浆",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 56,
+    "question": "亚硝酸盐属于剧毒类化学物质，又叫工业用盐，如酸菜中就含有一定量的亚硝酸盐，吃酸菜时最好吃些什么，可减少亚硝酸盐的危害？",
+    "answer_1": "富含维生素c的水果",
+    "answer_2": "各种杂粮",
+    "answer_3": "新鲜蔬菜",
+    "answer_4": "绿色食物",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 57,
+    "question": "郊游时，看见野生蘑菇，应该怎么做？",
+    "answer_1": "野生的蘑菇不安全，不采摘也不食用",
+    "answer_2": "咨询他人后感觉安全再食用",
+    "answer_3": "采下来带回家食用",
+    "answer_4": "凭经验判断无毒的就可带回家食用",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 58,
+    "question": "铜器与什么不宜长期接触，否者会产生铜绿。用生有铜绿的铜器放食物或烹炒菜肴易中毒。",
+    "answer_1": "醋",
+    "answer_2": "味精",
+    "answer_3": "花椒面",
+    "answer_4": "酱油",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 59,
+    "question": "古代文言文中“走、趋、奔、行”表述速度最快的是？",
+    "answer_1": "奔",
+    "answer_2": "趋",
+    "answer_3": "走",
+    "answer_4": "行",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 60,
+    "question": "冰箱中的鸡蛋拿出来又放进去对鸡蛋有没有影响",
+    "answer_1": "有",
+    "answer_2": "没有",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 61,
+    "question": "炎炎夏季，穿衣服比打赤膊热吗？",
+    "answer_1": "不是",
+    "answer_2": "是",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 62,
+    "question": "走路比站着消耗体力吗？",
+    "answer_1": "不是",
+    "answer_2": "是",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 63,
+    "question": "夏天洗冷水浴好不好？",
+    "answer_1": "不好",
+    "answer_2": "好",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 64,
+    "question": "出现低血糖时，应该怎么做？",
+    "answer_1": "和糖水",
+    "answer_2": "上医院",
+    "answer_3": "躺下休息",
+    "answer_4": "吃饭",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 65,
+    "question": "世界上人口最多的城市",
+    "answer_1": "东京",
+    "answer_2": "墨西哥城",
+    "answer_3": "上海",
+    "answer_4": "印度孟买",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 66,
+    "question": "世界上IQ最高的国家或地区",
+    "answer_1": "香港",
+    "answer_2": "韩国",
+    "answer_3": "日本",
+    "answer_4": "台湾",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 67,
+    "question": "地球上最热的城市",
+    "answer_1": "伊朗卢特沙漠",
+    "answer_2": "中国新疆火焰山",
+    "answer_3": "新西兰煎锅湖",
+    "answer_4": "泰国曼谷",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 68,
+    "question": "世界上最冷的城市",
+    "answer_1": "南极沃斯托克",
+    "answer_2": "北极巴罗",
+    "answer_3": "西伯利亚的奥伊米亚康村",
+    "answer_4": "西伯利亚的维尔霍扬斯克港",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 69,
+    "question": "世界上最年轻的国家",
+    "answer_1": "南苏丹",
+    "answer_2": "科索沃",
+    "answer_3": "塞尔维亚",
+    "answer_4": " 东帝汶",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 70,
+    "question": "世界最能喝酒的国家",
+    "answer_1": "英国",
+    "answer_2": "美国",
+    "answer_3": "中国",
+    "answer_4": "法国",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 71,
+    "question": "世界最富有的城市",
+    "answer_1": "东京",
+    "answer_2": "纽约",
+    "answer_3": "英国首都伦敦",
+    "answer_4": "首尔",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 72,
+    "question": "世界上最喜欢猫的国家",
+    "answer_1": "美国",
+    "answer_2": "加拿大",
+    "answer_3": "法国",
+    "answer_4": "中国",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 73,
+    "question": "世界上最喜欢狗的国家",
+    "answer_1": "美国",
+    "answer_2": "加拿大",
+    "answer_3": "法国",
+    "answer_4": "中国",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 74,
+    "question": "最不情绪化的国家",
+    "answer_1": "新加坡",
+    "answer_2": "英国",
+    "answer_3": "法国",
+    "answer_4": "意大利",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 75,
+    "question": "世界上最性感的女人",
+    "answer_1": "巴西",
+    "answer_2": "俄罗斯",
+    "answer_3": "委内瑞拉",
+    "answer_4": "印度",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 76,
+    "question": "最大的动物",
+    "answer_1": "蓝鲸",
+    "answer_2": "鲶鱼",
+    "answer_3": "鲸鱼",
+    "answer_4": "鲨鱼",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 77,
+    "question": "最大的陆上动物",
+    "answer_1": "非洲象",
+    "answer_2": "猎豹",
+    "answer_3": "马",
+    "answer_4": "狮子",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 78,
+    "question": "最原始的哺乳动物",
+    "answer_1": "鸭嘴兽",
+    "answer_2": "爪蹄兽",
+    "answer_3": "美洲剑齿虎",
+    "answer_4": "始祖象",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 79,
+    "question": "皮毛最保暖的动物",
+    "answer_1": "北极熊",
+    "answer_2": "白犀",
+    "answer_3": "貂皮",
+    "answer_4": "虎皮",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 80,
+    "question": "世界上水温最高的海",
+    "answer_1": "红海",
+    "answer_2": "黑海",
+    "answer_3": "死海",
+    "answer_4": "地中海",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 81,
+    "question": "世界风力最大的地区",
+    "answer_1": "南极",
+    "answer_2": "北极",
+    "answer_3": "新疆",
+    "answer_4": "荷兰",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 82,
+    "question": "养牛最多而不吃牛的国家",
+    "answer_1": "印度",
+    "answer_2": "新西兰",
+    "answer_3": "印度",
+    "answer_4": "法国",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 83,
+    "question": "足最多的动物",
+    "answer_1": "千足虫",
+    "answer_2": "毛毛虫",
+    "answer_3": "蜈蚣",
+    "answer_4": "蜥蜴",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 84,
+    "question": "行能力最强的昆虫",
+    "answer_1": "蝗虫",
+    "answer_2": "蝴蝶",
+    "answer_3": "蜜蜂",
+    "answer_4": "苍蝇",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 85,
+    "question": "眼睛最多的昆虫",
+    "answer_1": "蜻蜓",
+    "answer_2": "蟑螂",
+    "answer_3": "知了",
+    "answer_4": "七星瓢虫",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 86,
+    "question": "力气最大的昆虫",
+    "answer_1": "蚂蚁",
+    "answer_2": "屎壳郎",
+    "answer_3": "蝉",
+    "answer_4": "蛐蛐",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 87,
+    "question": "外形最奇特的鱼",
+    "answer_1": "海马",
+    "answer_2": "章鱼",
+    "answer_3": "银龙",
+    "answer_4": "地图鱼",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 88,
+    "question": "牙齿最多的动物",
+    "answer_1": "蜗牛",
+    "answer_2": "鲨鱼",
+    "answer_3": "恐龙",
+    "answer_4": "湾鳄",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 89,
+    "question": "世界上最著名的啤酒节",
+    "answer_1": "德国慕尼黑啤酒节",
+    "answer_2": "哈尔滨啤酒节",
+    "answer_3": "英国伦敦啤酒节",
+    "answer_4": "美国丹佛啤酒节",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 90,
+    "question": "世界上最著名的寺院",
+    "answer_1": "少林寺",
+    "answer_2": "白马寺",
+    "answer_3": "善化寺",
+    "answer_4": "灵隐寺",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 91,
+    "question": "世界樟脑产量最高的地区",
+    "answer_1": "台湾",
+    "answer_2": "泰国",
+    "answer_3": "越南",
+    "answer_4": "韩国",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 92,
+    "question": "世界上生活在最高地区的哺乳动物",
+    "answer_1": "牦牛",
+    "answer_2": "羚",
+    "answer_3": "鼹鼠",
+    "answer_4": "豹",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 93,
+    "question": "世界上最老的树种",
+    "answer_1": "银杏树",
+    "answer_2": "牛奶树",
+    "answer_3": "造酒树",
+    "answer_4": "面包树",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 94,
+    "question": "世界上最普通的姓是",
+    "answer_1": "张",
+    "answer_2": "李",
+    "answer_3": "王",
+    "answer_4": "刘",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 95,
+    "question": "世界第一枚邮票出现在",
+    "answer_1": "英国",
+    "answer_2": "法国",
+    "answer_3": "德国",
+    "answer_4": "中国",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 96,
+    "question": "目前人类已知的最软的石头是",
+    "answer_1": "滑石",
+    "answer_2": "钟乳石",
+    "answer_3": "寿山石",
+    "answer_4": "软玉",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 97,
+    "question": "世界上海拔最高的山峰是哪一座?",
+    "answer_1": "珠穆朗玛峰",
+    "answer_2": "乔戈里峰",
+    "answer_3": "干城章嘉峰",
+    "answer_4": "乔峰",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 98,
+    "question": "下列海洋中哪一个是我国最大的海",
+    "answer_1": "南海",
+    "answer_2": "东海",
+    "answer_3": "黄海",
+    "answer_4": "渤海",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 99,
+    "question": "世界国土面积最小的国家是",
+    "answer_1": " 梵蒂冈",
+    "answer_2": "摩纳哥",
+    "answer_3": "瑙鲁",
+    "answer_4": "图瓦卢",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 100,
+    "question": "世界上唯一冻不死的动物",
+    "answer_1": "极地冰虫",
+    "answer_2": "毛毛虫",
+    "answer_3": "穿山甲",
+    "answer_4": "乌龟",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 101,
+    "question": "世界上惟一的独自占有一个大陆的国家",
+    "answer_1": "澳大利亚",
+    "answer_2": "法国",
+    "answer_3": "美国",
+    "answer_4": "中国",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 102,
+    "question": "世界最长的城墙",
+    "answer_1": "中国万里长城",
+    "answer_2": "铁墙",
+    "answer_3": "宫墙",
+    "answer_4": "心墙",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 103,
+    "question": "世界陆地表面的最低点",
+    "answer_1": "死海",
+    "answer_2": "红海",
+    "answer_3": "黑海",
+    "answer_4": "地中海",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 104,
+    "question": "中国最大的城市广场  ",
+    "answer_1": "天安门广场",
+    "answer_2": "恒隆广场 ",
+    "answer_3": "来福士广场",
+    "answer_4": "万达广场",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 105,
+    "question": "历史上第一次两个国家联合举办世界杯的是那两个国家？",
+    "answer_1": "日本和韩国",
+    "answer_2": "中国和日本",
+    "answer_3": "中国和韩国",
+    "answer_4": "德国和英国",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 106,
+    "question": "中国第一位登陆美国NBA的篮球运动员是",
+    "answer_1": "王治郅",
+    "answer_2": "刘玉栋",
+    "answer_3": "姚明",
+    "answer_4": "巴特尔",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 107,
+    "question": "中国最早设置的民族自治区     ",
+    "answer_1": "内蒙古自治区",
+    "answer_2": "新疆维吾尔自治区",
+    "answer_3": "宁夏回族自治区",
+    "answer_4": "香港自治区",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 108,
+    "question": "中国落差最大的瀑布",
+    "answer_1": "台湾蛟龙瀑布",
+    "answer_2": " 壶口瀑布 ",
+    "answer_3": "德天瀑布",
+    "answer_4": "黄果树瀑布",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 109,
+    "question": "中国人均寿命最长的城市",
+    "answer_1": "上海市",
+    "answer_2": "天津市",
+    "answer_3": "南京市",
+    "answer_4": "北京市",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 110,
+    "question": "目前世界上手机用户最多的国家是？",
+    "answer_1": "中国",
+    "answer_2": "美国",
+    "answer_3": "英国",
+    "answer_4": "法国",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 111,
+    "question": "《二十四史》中篇幅最大的是哪部？",
+    "answer_1": "宋史",
+    "answer_2": "明史",
+    "answer_3": "唐史",
+    "answer_4": "资治通鉴",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 112,
+    "question": "泰戈尔获得诺贝尔文学奖的作品是？",
+    "answer_1": "吉檀迦利",
+    "answer_2": "飞鸟集",
+    "answer_3": "草叶集",
+    "answer_4": "唐璜",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 113,
+    "question": "樱花的花期一般有几天？",
+    "answer_1": "7天",
+    "answer_2": "5天",
+    "answer_3": "20天",
+    "answer_4": "3天",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 114,
+    "question": "在俄罗斯象征有意的颜色是什么？",
+    "answer_1": "蓝色",
+    "answer_2": "红色",
+    "answer_3": "绿色",
+    "answer_4": "黄色",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 115,
+    "question": "我国可以发展边境贸易最多的省区是？",
+    "answer_1": "云南",
+    "answer_2": "内蒙古",
+    "answer_3": "新疆",
+    "answer_4": "西藏",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 116,
+    "question": "位于云冈石窟附近的大型煤矿是？",
+    "answer_1": "大同",
+    "answer_2": "平顶山",
+    "answer_3": "衮州",
+    "answer_4": "淮北",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 117,
+    "question": "有“沙漠之狐”之称的是？",
+    "answer_1": "隆美尔",
+    "answer_2": "戈林",
+    "answer_3": "保卢斯",
+    "answer_4": "朱可夫",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 118,
+    "question": "二战中有日本“太上皇”之称的美国将军是？",
+    "answer_1": "麦克阿瑟",
+    "answer_2": "隆美尔",
+    "answer_3": "朱可夫",
+    "answer_4": "克拉克",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 119,
+    "question": "历史上最大规模的海战是？",
+    "answer_1": "德兰海战",
+    "answer_2": "中途岛海战",
+    "answer_3": "硫磺岛海战",
+    "answer_4": "莱特岛海战",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 120,
+    "question": "奥巴马是美国第几任总统？",
+    "answer_1": 41,
+    "answer_2": 39,
+    "answer_3": 44,
+    "answer_4": 46,
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 121,
+    "question": "六朝古都是指？",
+    "answer_1": "南京",
+    "answer_2": "北京",
+    "answer_3": "西安",
+    "answer_4": "杭州",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 122,
+    "question": "最先破译日本偷袭珍珠港密码的国家是？",
+    "answer_1": "中国",
+    "answer_2": "苏联",
+    "answer_3": "美国",
+    "answer_4": "英国",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 123,
+    "question": "被誉为抗癌第一食物的是？",
+    "answer_1": "红薯",
+    "answer_2": "山药",
+    "answer_3": "红豆",
+    "answer_4": "大蒜",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 124,
+    "question": "发现食物中毒后，自己能采取最有效的一项应急措施是？",
+    "answer_1": "催吐",
+    "answer_2": "吃泻药",
+    "answer_3": "多喝开水",
+    "answer_4": "喝浓茶",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 125,
+    "question": "鱼与什么搭配更营养？",
+    "answer_1": "豆腐",
+    "answer_2": "山药",
+    "answer_3": "菠菜",
+    "answer_4": "肉类",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 126,
+    "question": "发射第一颗人造卫星的国家是？",
+    "answer_1": "前苏联",
+    "answer_2": "美国",
+    "answer_3": "男士拉夫",
+    "answer_4": "中国",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 127,
+    "question": "俗称“四不象”的动物是？",
+    "answer_1": "麋鹿",
+    "answer_2": "羚羊",
+    "answer_3": "骡子",
+    "answer_4": "驴",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 128,
+    "question": "白求恩是哪国人？",
+    "answer_1": "加拿大",
+    "answer_2": "法国",
+    "answer_3": "德国",
+    "answer_4": "俄罗斯",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 129,
+    "question": "豆蔻年华是指几岁？",
+    "answer_1": "13岁",
+    "answer_2": "14岁",
+    "answer_3": "15岁",
+    "answer_4": "16岁",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 130,
+    "question": "我国的哪一个城市素有“日光之城”的美称？",
+    "answer_1": "拉萨",
+    "answer_2": "青岛",
+    "answer_3": "三亚",
+    "answer_4": "厦门",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 131,
+    "question": "牛郎织女的故事中，牛郎星是属于什么星座呢？",
+    "answer_1": "天鹰座",
+    "answer_2": "金牛座 ",
+    "answer_3": "狮子座",
+    "answer_4": "天琴座",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 132,
+    "question": "道教首创之地在哪？",
+    "answer_1": "鹤鸣山",
+    "answer_2": "龙虎山",
+    "answer_3": "武当山",
+    "answer_4": "青城山",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 133,
+    "question": "世界上最大的鲸是什么鲸？",
+    "answer_1": "蓝鲸",
+    "answer_2": "虎鲸",
+    "answer_3": "角鲸",
+    "answer_4": "抹香鲸",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 134,
+    "question": "中国面积最大的省份是哪一个？",
+    "answer_1": "新疆",
+    "answer_2": "内蒙古",
+    "answer_3": "四川",
+    "answer_4": "西藏",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 135,
+    "question": "奥运会上的马拉松比赛的起源与什么有关？",
+    "answer_1": "战争",
+    "answer_2": "打赌",
+    "answer_3": "游戏",
+    "answer_4": "竞赛",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 136,
+    "question": "下列哪种名茶中哪一种是产于福建安溪？",
+    "answer_1": "铁观音",
+    "answer_2": "武夷岩茶",
+    "answer_3": "碧螺春",
+    "answer_4": "龙井",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 137,
+    "question": "“轻于鸿毛”中的鸿毛是哪动物的毛？",
+    "answer_1": "大雁",
+    "answer_2": "羊",
+    "answer_3": "鸡",
+    "answer_4": "鸭",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 138,
+    "question": "火车连续发出两声长鸣，这表示：",
+    "answer_1": "倒退",
+    "answer_2": "前进",
+    "answer_3": "故障",
+    "answer_4": "停留",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 139,
+    "question": "石头城是对我国哪座城市的美称？",
+    "answer_1": "南京",
+    "answer_2": "南昌",
+    "answer_3": "拉萨",
+    "answer_4": "西安",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 140,
+    "question": "下列海洋中哪一个是我过最大的海？",
+    "answer_1": "南海",
+    "answer_2": "东海",
+    "answer_3": "黄海",
+    "answer_4": "渤海",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 141,
+    "question": "“三十年河东，四十年河西”中的河最初指的是？  ",
+    "answer_1": "黄河",
+    "answer_2": "淮河",
+    "answer_3": "长江",
+    "answer_4": "汾河",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 142,
+    "question": "“三月不知肉味”一般用来形容？ ",
+    "answer_1": "音乐",
+    "answer_2": "小说",
+    "answer_3": "散文",
+    "answer_4": "诗歌",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 143,
+    "question": "企鹅会飞吗？",
+    "answer_1": "不会",
+    "answer_2": "会",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 144,
+    "question": "四大名茶之一的龙井茶产地是：",
+    "answer_1": "浙江杭州",
+    "answer_2": "河南信阳",
+    "answer_3": "云南普洱",
+    "answer_4": "福建安溪",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 145,
+    "question": "世界上迄今为止保存的最完整的最早的一部成文法典是？",
+    "answer_1": "汉莫拉比法典",
+    "answer_2": "摩奴法典",
+    "answer_3": "十二铜表法",
+    "answer_4": "国法大全",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 146,
+    "question": "日光灯的发光效率比白炽灯高，是一种节能光源。但车床照明不使用日光灯，主要的原因是：",
+    "answer_1": "日光灯发光是不连续的，所以在它照射下观看转动的物理会发生错觉",
+    "answer_2": "日光灯长度达，不便于工人操作",
+    "answer_3": "日光灯是管型的，因此用它照明看不清零件的细节",
+    "answer_4": "长期在日光灯照射下感到疲惫",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 147,
+    "question": "一艘宇宙飞船关闭发动机后在大气层外绕地球飞行，飞船内可能出现的现象是：",
+    "answer_1": "水滴呈球形漂浮在空气中",
+    "answer_2": "物体的质量消失",
+    "answer_3": "物体自有下落的速度变快",
+    "answer_4": "蜡烛正常燃烧",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 148,
+    "question": "占人体细胞干重50%以上的有机化合物是：",
+    "answer_1": "蛋白质",
+    "answer_2": "糖原",
+    "answer_3": "脂肪",
+    "answer_4": "核酸",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 149,
+    "question": "蚯蚓的血是什么颜色的？",
+    "answer_1": "红色",
+    "answer_2": "黑色",
+    "answer_3": "蓝色",
+    "answer_4": "白色",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 150,
+    "question": "康有为的维新思想吸收了西方资本主义政治学说的内容其中最主要的是：",
+    "answer_1": "君主立宪思想",
+    "answer_2": "人文主义思想",
+    "answer_3": "三权分立学说",
+    "answer_4": "民主共和思想",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 151,
+    "question": "“我爱吾师，我更爱真理”是哪位哲学家说的：",
+    "answer_1": "苏格拉底",
+    "answer_2": "亚里士多德",
+    "answer_3": "尼采",
+    "answer_4": "柏拉图",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 152,
+    "question": "大本钟是英国伦敦著名的建筑物，钟体重达13吨，大笨钟名字的来由是？",
+    "answer_1": "纪念钟塔负责人",
+    "answer_2": "纪念钟塔的建造地点",
+    "answer_3": "因为太大、太笨重了",
+    "answer_4": "纪念英国女皇",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 153,
+    "question": "琵琶曲《十面埋伏》描述的是什么战争的情景？",
+    "answer_1": "垓下之战",
+    "answer_2": "巨鹿之战",
+    "answer_3": "赤壁之战",
+    "answer_4": "淝水之战",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 154,
+    "question": "1869年3月。谁正式公布了元素周期律？",
+    "answer_1": "门捷列夫",
+    "answer_2": "巴斯特",
+    "answer_3": "康特尔",
+    "answer_4": "居里夫人",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 155,
+    "question": "中国人民政治协商会议室：",
+    "answer_1": "爱国统一战线组织",
+    "answer_2": "民间社团组织",
+    "answer_3": "政权组织形式",
+    "answer_4": "权利机构",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 156,
+    "question": "《孙子兵法》是中国对世界的一大贡献，请问这本兵书有多少篇？",
+    "answer_1": 13,
+    "answer_2": 16,
+    "answer_3": 18,
+    "answer_4": 10,
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 157,
+    "question": "阿里巴巴与四十大盗里的阿里巴巴是哪国人？",
+    "answer_1": "波斯人",
+    "answer_2": "中国人",
+    "answer_3": "印度人",
+    "answer_4": "阿拉伯人",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 158,
+    "question": "奠定了三国鼎立局面的战争的是：",
+    "answer_1": "赤壁之战",
+    "answer_2": "八王之乱",
+    "answer_3": "官渡之战",
+    "answer_4": "祖狄北伐",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 159,
+    "question": "黄河注入什么海？",
+    "answer_1": "渤海",
+    "answer_2": "黄海",
+    "answer_3": "东海",
+    "answer_4": "南海",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 160,
+    "question": "武汉长江第一大桥是跨武汉的那两个地区？",
+    "answer_1": "汉阳和武昌",
+    "answer_2": "武昌和江夏",
+    "answer_3": "武昌和汉口",
+    "answer_4": "汉口和汉阳",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 161,
+    "question": "我国旧时流行的《百家姓》始写于：",
+    "answer_1": "北宋",
+    "answer_2": "南宋",
+    "answer_3": "唐朝",
+    "answer_4": "春秋",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 162,
+    "question": "“卑鄙是卑鄙者的通行证，高尚是高尚者的墓志铭”，这句诗作者是谁？",
+    "answer_1": "北岛",
+    "answer_2": "顾城",
+    "answer_3": "海子",
+    "answer_4": "食指",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 163,
+    "question": "企鹅会飞吗？",
+    "answer_1": "不会",
+    "answer_2": "会",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 164,
+    "question": "四大名茶之一的龙井茶产地是：",
+    "answer_1": "浙江杭州",
+    "answer_2": "河南信阳",
+    "answer_3": "云南普洱",
+    "answer_4": "福建安溪",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 165,
+    "question": "世界上迄今为止保存的最完整的最早的一部成文法典是？",
+    "answer_1": "汉莫拉比法典",
+    "answer_2": "摩奴法典",
+    "answer_3": "十二铜表法",
+    "answer_4": "国法大全",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 166,
+    "question": "日光灯的发光效率比白炽灯高，是一种节能光源。但车床照明不使用日光灯，主要的原因是：",
+    "answer_1": "日光灯发光是不连续的，所以在它照射下观看转动的物理会发生错觉",
+    "answer_2": "日光灯长度达，不便于工人操作",
+    "answer_3": "日光灯是管型的，因此用它照明看不清零件的细节",
+    "answer_4": "长期在日光灯照射下感到疲惫",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 167,
+    "question": "一艘宇宙飞船关闭发动机后在大气层外绕地球飞行，飞船内可能出现的现象是：",
+    "answer_1": "水滴呈球形漂浮在空气中",
+    "answer_2": "物体的质量消失",
+    "answer_3": "物体自有下落的速度变快",
+    "answer_4": "蜡烛正常燃烧",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 168,
+    "question": "占人体细胞干重50%以上的有机化合物是：",
+    "answer_1": "蛋白质",
+    "answer_2": "糖原",
+    "answer_3": "脂肪",
+    "answer_4": "核酸",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 169,
+    "question": "蚯蚓的血是什么颜色的？",
+    "answer_1": "红色",
+    "answer_2": "黑色",
+    "answer_3": "蓝色",
+    "answer_4": "白色",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 170,
+    "question": "康有为的维新思想吸收了西方资本主义政治学说的内容其中最主要的是：",
+    "answer_1": "君主立宪思想",
+    "answer_2": "人文主义思想",
+    "answer_3": "三权分立学说",
+    "answer_4": "民主共和思想",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 171,
+    "question": "“我爱吾师，我更爱真理”是哪位哲学家说的：",
+    "answer_1": "苏格拉底",
+    "answer_2": "亚里士多德",
+    "answer_3": "尼采",
+    "answer_4": "柏拉图",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 172,
+    "question": "大本钟是英国伦敦著名的建筑物，钟体重达13吨，大笨钟名字的来由是？",
+    "answer_1": "纪念钟塔负责人",
+    "answer_2": "纪念钟塔的建造地点",
+    "answer_3": "因为太大、太笨重了",
+    "answer_4": "纪念英国女皇",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 173,
+    "question": "琵琶曲《十面埋伏》描述的是什么战争的情景？",
+    "answer_1": "垓下之战",
+    "answer_2": "巨鹿之战",
+    "answer_3": "赤壁之战",
+    "answer_4": "淝水之战",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 174,
+    "question": "1869年3月。谁正式公布了元素周期律？",
+    "answer_1": "门捷列夫",
+    "answer_2": "巴斯特",
+    "answer_3": "康特尔",
+    "answer_4": "居里夫人",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 175,
+    "question": "中国人民政治协商会议室：",
+    "answer_1": "爱国统一战线组织",
+    "answer_2": "民间社团组织",
+    "answer_3": "政权组织形式",
+    "answer_4": "权利机构",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 176,
+    "question": "《孙子兵法》是中国对世界的一大贡献，请问这本兵书有多少篇？",
+    "answer_1": 13,
+    "answer_2": 16,
+    "answer_3": 18,
+    "answer_4": 10,
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 177,
+    "question": "奠定了三国鼎立局面的战争的是：",
+    "answer_1": "赤壁之战",
+    "answer_2": "八王之乱",
+    "answer_3": "官渡之战",
+    "answer_4": "祖狄北伐",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 178,
+    "question": "黄河注入什么海？",
+    "answer_1": "渤海",
+    "answer_2": "黄海",
+    "answer_3": "东海",
+    "answer_4": "南海",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 179,
+    "question": "武汉长江第一大桥是跨武汉的那两个地区？",
+    "answer_1": "汉阳和武昌",
+    "answer_2": "武昌和江夏",
+    "answer_3": "武昌和汉口",
+    "answer_4": "汉口和汉阳",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 180,
+    "question": "我国旧时流行的《百家姓》始写于：",
+    "answer_1": "北宋",
+    "answer_2": "南宋",
+    "answer_3": "唐朝",
+    "answer_4": "春秋",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 181,
+    "question": "“卑鄙是卑鄙者的通行证，高尚是高尚者的墓志铭”，这句诗作者是谁？",
+    "answer_1": "北岛",
+    "answer_2": "顾城",
+    "answer_3": "海子",
+    "answer_4": "食指",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 182,
+    "question": "中国电影历史上第一部电影是",
+    "answer_1": "《定军山》",
+    "answer_2": "《歌女红牡丹》",
+    "answer_3": "《渔光曲》",
+    "answer_4": "《第一部电影》",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 183,
+    "question": "《忘情水》是谁唱的",
+    "answer_1": "刘德华",
+    "answer_2": "郭德纲",
+    "answer_3": "小沈阳",
+    "answer_4": "梁朝伟",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 184,
+    "question": "中国第一部的有声电影是",
+    "answer_1": "《歌女红牡丹》",
+    "answer_2": "《马路天使》",
+    "answer_3": "《新儿女英雄传》",
+    "answer_4": "《西游记》",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 185,
+    "question": "中国第一部获得国际奖的电影是",
+    "answer_1": "《渔光曲》",
+    "answer_2": "《歌女红牡丹》",
+    "answer_3": "《神女》",
+    "answer_4": "《霸王别姬》",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 186,
+    "question": "导演李安凭借下列哪部电影获得奥斯卡最佳导演奖",
+    "answer_1": "《断背山》",
+    "answer_2": "《卧虎藏龙》",
+    "answer_3": "《色戒》",
+    "answer_4": "《杜拉拉升职记》",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 187,
+    "question": "第三十届（2011）香港金像奖最佳电影是",
+    "answer_1": "《打擂台》",
+    "answer_2": "《志明与春娇》",
+    "answer_3": "《狄仁杰之通天帝国》",
+    "answer_4": "《红高粱》",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 188,
+    "question": "首位在戛纳电影节封后的华人女演员是",
+    "answer_1": "巩俐",
+    "answer_2": "张曼玉",
+    "answer_3": "杨紫琼",
+    "answer_4": "章子怡",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 189,
+    "question": "宫崎骏，是日本动画界的一个传奇，是第一位将动画上升到人文高度的思想者。\n他的作品《千与千寻》中，影片最后，在千寻的帮助下，白龙找回了自己的名字。他的名字是",
+    "answer_1": "琥珀川",
+    "answer_2": "荻野千寻",
+    "answer_3": "小白",
+    "answer_4": "白龙马",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 190,
+    "question": "系列电影《加勒比海盗》是哪间电影公司的作品",
+    "answer_1": "迪士尼",
+    "answer_2": "好莱坞",
+    "answer_3": "华纳",
+    "answer_4": "梦工厂",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 191,
+    "question": "下列不属于梁朝伟的电影作品是",
+    "answer_1": "《旺角卡门》",
+    "answer_2": "《重庆森林》",
+    "answer_3": "《花样年华》",
+    "answer_4": "《色戒》",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 192,
+    "question": "意大利著名电影《海上钢琴师》中，钢琴师的结局是？",
+    "answer_1": "与船一起沉落大海",
+    "answer_2": "在船上开了个人演奏会",
+    "answer_3": "离开了船，到岸上生活",
+    "answer_4": "在船上孤独老死",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 193,
+    "question": "《让子弹飞》中姜文扮演的麻匪的面具是几筒？",
+    "answer_1": "9筒",
+    "answer_2": "8筒",
+    "answer_3": "7筒",
+    "answer_4": "6筒",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 194,
+    "question": "在电影《肖申克的救赎》中，主人公安迪在入狱前是什么职业？",
+    "answer_1": "银行家",
+    "answer_2": "会计师",
+    "answer_3": "律师",
+    "answer_4": "厨师",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 195,
+    "question": "《失恋33天》中王小贱的真名叫什么？",
+    "answer_1": "王一扬",
+    "answer_2": "王小明",
+    "answer_3": "王大勇",
+    "answer_4": "王尼玛",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 196,
+    "question": "《喜羊羊与灰太狼》中，灰太狼的父亲叫什么名字？",
+    "answer_1": "黑太狼",
+    "answer_2": "夜太狼",
+    "answer_3": "武大狼",
+    "answer_4": "超灰狼",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 197,
+    "question": "喜剧电影《人在囧途》中王宝强扮演的讨薪农民工叫什么名字?",
+    "answer_1": "牛耿",
+    "answer_2": "牛虻",
+    "answer_3": "牛直",
+    "answer_4": "牛掰",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 198,
+    "question": "不二神探中，几个受害者被杀时的表情是",
+    "answer_1": "微笑",
+    "answer_2": "悲伤",
+    "answer_3": "愤怒",
+    "answer_4": "呆滞",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 199,
+    "question": "西游降魔篇中，文章降魔的法宝是",
+    "answer_1": "儿歌三百首",
+    "answer_2": "大悲咒",
+    "answer_3": "金刚经",
+    "answer_4": "三字经",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 200,
+    "question": "功夫中火云邪神被周星驰救出之前被困在那里",
+    "answer_1": "不正常人类研究中心",
+    "answer_2": "疯人院",
+    "answer_3": "精神病院",
+    "answer_4": "养老院",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 201,
+    "question": "泰窘中王宝强一直捧着到泰国的植物是",
+    "answer_1": "仙人球",
+    "answer_2": "水仙",
+    "answer_3": "兰花",
+    "answer_4": "康乃馨",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 202,
+    "question": "让子弹飞中黄四郎是怎么死的",
+    "answer_1": "被逼自杀",
+    "answer_2": "被老百姓杀死",
+    "answer_3": "被张麻子用刀砍死",
+    "answer_4": "喝水呛死",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 203,
+    "question": "请问 “分歧终端器”该道具出现于哪部国产电影中",
+    "answer_1": "非诚勿扰",
+    "answer_2": "甲方乙方",
+    "answer_3": "大腕",
+    "answer_4": "私人订制",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 204,
+    "question": "张兆辉也算是有点名气的配角了，哪一部电影没有张兆辉的身影呢",
+    "answer_1": "《恶胎》",
+    "answer_2": "《夺帅》",
+    "answer_3": "《灭门》",
+    "answer_4": "《黑拳》",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 205,
+    "question": "叶问老婆生了一个儿子，名字叫什么",
+    "answer_1": "叶正",
+    "answer_2": "叶王",
+    "answer_3": "叶甲",
+    "answer_4": "叶马",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 206,
+    "question": "《爱情公寓第一季》第一集陆展博的头被刹车撞了几次座椅？",
+    "answer_1": "两次",
+    "answer_2": "三次",
+    "answer_3": "四次",
+    "answer_4": "五次",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 207,
+    "question": "电影《枪王之王》影片的结尾出现了一段文字，说明借本片纪念张国荣的一部电影，这部电影是",
+    "answer_1": "《枪王》",
+    "answer_2": "《枪王之王》",
+    "answer_3": "《神枪手》",
+    "answer_4": "《枪王之战》",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 208,
+    "question": "哆啦A梦》中多啦A梦是从什么时代来的？",
+    "answer_1": "22世纪",
+    "answer_2": "23世纪",
+    "answer_3": "25世纪",
+    "answer_4": "21世纪",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 209,
+    "question": "香港娱乐圈是一个相当发达的行业集合，被称为",
+    "answer_1": "东方好莱坞",
+    "answer_2": "中国好莱坞",
+    "answer_3": "亚洲好莱坞",
+    "answer_4": "香港好莱坞",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 210,
+    "question": "二人转是北方的一种民间(  )艺术，边说边唱，且歌且舞",
+    "answer_1": "说唱",
+    "answer_2": "跳唱",
+    "answer_3": "表演",
+    "answer_4": "舞蹈",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 211,
+    "question": "陈奕迅毕业于哪一所大学 ？",
+    "answer_1": "英国金斯顿大学",
+    "answer_2": "香港科技大学",
+    "answer_3": "香港中文大学",
+    "answer_4": "香港大学",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 212,
+    "question": "与周星驰、周润发并称“双周一成”的演员是",
+    "answer_1": "成龙",
+    "answer_2": "成奎安",
+    "answer_3": "成奎安",
+    "answer_4": "成泰燊",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 213,
+    "question": "梁家辉很年轻就成了影帝，却很快因为之前拍摄的一部电影被台湾当局封杀，请问这部导致他几乎失业的电影是？",
+    "answer_1": "《火烧圆明园》",
+    "answer_2": "《垂帘听政》",
+    "answer_3": "《爱在别乡的季节》",
+    "answer_4": "《封神榜》",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 214,
+    "question": "香港明星黄秋生的成名电影是？",
+    "answer_1": "  《人肉叉烧包》 ",
+    "answer_2": "《天若有情》",
+    "answer_3": "《头文字D》",
+    "answer_4": "《无间道》",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 215,
+    "question": "一般的香港警察电影，讲述的都是中低层警察的故事。但是有一部香港电影，竟然主要围绕香港警务处最高层及警务处的上级——香港保安局展开故事，请问这部电影是？",
+    "answer_1": "《寒战》",
+    "answer_2": "《无间道》",
+    "answer_3": "《最佳拍档》",
+    "answer_4": "《警察故事》",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 216,
+    "question": "“打开心灵，拨开春的羞涩”是王菲和哪位内地女歌手演唱的《相约98》的歌词？",
+    "answer_1": "那英",
+    "answer_2": "孙悦",
+    "answer_3": "张惠妹",
+    "answer_4": "刘若英",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 217,
+    "question": "百度的创始人兼CEO是谁？",
+    "answer_1": "李彦宏",
+    "answer_2": "俞敏洪",
+    "answer_3": "夏骄阳",
+    "answer_4": "李晨",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 218,
+    "question": "周杰伦的MV《枫》和刘畊宏的哪首歌曲的mv共同组成了一个完整的故事？",
+    "answer_1": "《彩虹天堂》",
+    "answer_2": "《心灵交战》",
+    "answer_3": "《十一月的肖邦》",
+    "answer_4": "《心痛心动》",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 219,
+    "question": "著名国产游戏《仙剑奇侠传》中，主角“李逍遥”能偷取敌人身上的物品或金钱的仙术叫什么？",
+    "answer_1": "飞龙探云手",
+    "answer_2": "飞云探龙手",
+    "answer_3": "乾坤一掷",
+    "answer_4": "仙风云体",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 220,
+    "question": "电影《无间道》里梁朝伟和刘德华买音响时试放的是哪首歌曲？",
+    "answer_1": "被遗忘的时光",
+    "answer_2": "无间道",
+    "answer_3": "道别",
+    "answer_4": "最炫民族风",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 221,
+    "question": "新版《还珠格格》中饰演容嬷嬷的是？",
+    "answer_1": "方青卓",
+    "answer_2": "李晟",
+    "answer_3": "海陆",
+    "answer_4": "赵丽颖",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 222,
+    "question": "吴承恩小说《西游记》当中，唐僧在哪条河收了沙和尚做徒弟？",
+    "answer_1": "流沙河",
+    "answer_2": "黄河",
+    "answer_3": "长江",
+    "answer_4": "澜沧江",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 223,
+    "question": "刘伟强执导的系列电影《古惑仔》中，饰演“山鸡”的是哪位男演员？",
+    "answer_1": "陈小春",
+    "answer_2": "杜海涛",
+    "answer_3": "杜汶泽",
+    "answer_4": "黄宗泽",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 224,
+    "question": "经典台词“安红，我想你”出自张艺谋导演的哪部电影？",
+    "answer_1": "《有话好好说》",
+    "answer_2": "《红高粱》",
+    "answer_3": "《大红灯笼高高挂》",
+    "answer_4": "《断背山》",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 225,
+    "question": "李安的电影《少年派的奇幻漂流》中，少年派和什么动物共同在海上漂泊了227天？  ",
+    "answer_1": "老虎",
+    "answer_2": "蚂蚁",
+    "answer_3": "兔子",
+    "answer_4": "山羊",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 226,
+    "question": "著有《小时代》《悲伤逆流成河》等作品的“80后”作家是谁？",
+    "answer_1": " 郭敬明",
+    "answer_2": "韩寒",
+    "answer_3": "莫言",
+    "answer_4": "张悦然",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 227,
+    "question": "与刘德华，张学友，郭富城合称为香港“四大天王”的人是谁？",
+    "answer_1": "黎明",
+    "answer_2": "张国荣",
+    "answer_3": "周星驰",
+    "answer_4": "梁朝伟",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 228,
+    "question": "“当初是你要分开，分开就分开”这是哪首流行歌曲的歌词？",
+    "answer_1": "爱情买卖",
+    "answer_2": "两只蝴蝶",
+    "answer_3": "最炫民族风",
+    "answer_4": "荷塘月色",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 229,
+    "question": "童话故事中，一说谎话鼻子就会变长的木偶叫什么名字？",
+    "answer_1": "匹诺曹",
+    "answer_2": "乌索普",
+    "answer_3": "胡桃夹子",
+    "answer_4": "蔷薇少女",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 230,
+    "question": "被誉为“人间天使”的《罗马假日》女主角是谁？",
+    "answer_1": "奥黛丽 赫本",
+    "answer_2": "安妮海瑟薇",
+    "answer_3": "科洛莫瑞兹",
+    "answer_4": "海莉·斯坦菲尔德",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 231,
+    "question": "电影《盗梦空间》中，莱昂纳多饰演的主角用来分辨真实与梦境的道具是什么？",
+    "answer_1": "陀螺",
+    "answer_2": "骰子",
+    "answer_3": "国际象棋棋子",
+    "answer_4": "戒指",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 232,
+    "question": "电视剧《新白娘子传奇》中，白素贞被压在什么塔中？",
+    "answer_1": "雷峰塔",
+    "answer_2": "白马寺",
+    "answer_3": "双峰塔",
+    "answer_4": "六合塔",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 233,
+    "question": "何炅是湖南卫视著名主持人，也是北京外国语学院的阿拉伯语教师，请问他到以下哪个国家不用请翻译",
+    "answer_1": "埃及",
+    "answer_2": "澳大利亚",
+    "answer_3": "日本",
+    "answer_4": "印度",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 234,
+    "question": "请问以下SHE团体中的Selince 的中文名叫什么",
+    "answer_1": "任家萱",
+    "answer_2": "田馥甄",
+    "answer_3": "陈嘉桦",
+    "answer_4": "林静如",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 235,
+    "question": "请问凤凰传奇女歌手叫什么",
+    "answer_1": "杨魏玲花",
+    "answer_2": "梁静茹",
+    "answer_3": "孙燕姿",
+    "answer_4": "李宇春",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 236,
+    "question": "甄嬛传中甄嬛的扮演者孙俪的老公（邓超）的儿子（等等）的妹妹的小名叫什么？",
+    "answer_1": "小花",
+    "answer_2": "小草",
+    "answer_3": "小树",
+    "answer_4": "小喵",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 237,
+    "question": "如今《奔跑吧，兄弟》第三季正在热力开跑，请问第三季新加入的成员是谁？",
+    "answer_1": "鹿晗",
+    "answer_2": "韩庚",
+    "answer_3": "杜海涛",
+    "answer_4": "黄磊",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 238,
+    "question": "传闻快乐大本营里的杜海涛参加了什么真人秀后瘦成了型男？",
+    "answer_1": "真正男子汉",
+    "answer_2": "天天向上",
+    "answer_3": "非诚勿扰",
+    "answer_4": "非你莫属",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 239,
+    "question": "武侠小说《射雕英雄传》的作者原名",
+    "answer_1": "查良镛",
+    "answer_2": "曲波",
+    "answer_3": "古龙",
+    "answer_4": "金庸",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 240,
+    "question": "“写鬼写妖高人一筹，刺贪刺虐入木三分”这一对联写的作家是",
+    "answer_1": "蒲松龄",
+    "answer_2": "吴敬梓",
+    "answer_3": "曹雪芹",
+    "answer_4": "罗贯中",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 241,
+    "question": "校园歌曲《童年》的词曲作者是",
+    "answer_1": "罗大佑",
+    "answer_2": "李宗盛",
+    "answer_3": "周杰伦",
+    "answer_4": "张杰",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 242,
+    "question": "中国古典音乐根基源于五声音阶，即宫 商 角 徵 羽，下面哪首曲子不是完全用五声音阶创作的？",
+    "answer_1": "《梁祝》",
+    "answer_2": "《好一朵茉莉花》",
+    "answer_3": "《北京欢迎你》",
+    "answer_4": "《爱情买卖》",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 243,
+    "question": "\"红娘”是哪部作品中的人物？",
+    "answer_1": "西厢记",
+    "answer_2": "牡丹亭",
+    "answer_3": "桃花扇",
+    "answer_4": "红楼梦",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 244,
+    "question": "请问by2是双胞胎歌手吗",
+    "answer_1": "对",
+    "answer_2": "错",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 245,
+    "question": "成龙原来是姓成吗",
+    "answer_1": "错",
+    "answer_2": "对",
+    "weight": 1,
+    "hard": 0
+  },
+  {
+    "id": 246,
+    "question": "象棋是一种娱乐方式吗？",
+    "answer_1": "对",
+    "answer_2": "错",
+    "weight": 1,
+    "hard": 0
+  }
+]

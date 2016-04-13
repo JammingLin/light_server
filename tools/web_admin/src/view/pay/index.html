@@ -1,0 +1,73 @@
+{% extends "gamedata/index.html" %}
+
+{% block head %}
+<title>充值记录 - DGRY GM Tool</title>
+<link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+<style>
+    #pnlSearch{margin-bottom:10px;}
+    #pnl_player_data input.blank{
+    background:#ffffff;
+    border:none;
+    box-shadow:none;
+    }
+    #pnl_player_data input.editable{
+    font-weight:bold;
+    }
+    #pnl_player_data input.editable.on{
+    font-weight:bold;
+    border:1px dashed #999999;
+    }
+</style>
+
+{% endblock %}
+{%block sub_title %} 充值记录 {% endblock %}
+
+{% block inner %}
+
+
+<div class="panel panel-default" id="pnl_pay_data">
+    <div class="panel-heading">充值记录
+        <a href="add" class="btn btn-small" >添加公告</a>
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal" action="index" method="post" id="frm_email_data">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">玩家ID:</label>
+                <div class="col-sm-3">
+                    <input type="text" name="player_id" class="form-control" placeholder="请输入玩家账号" id="txtSearchKey"/>
+                </div>
+                <div class="col-sm-1">
+                    <button type="submit" class="btn btn-primary" id="btnSearch">查询</button>
+                </div>
+            </div>
+        </form>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>付费时间</th>
+                <th>玩家ID</th>
+                <th>玩家昵称</th>
+                <th>付款标识</th>
+                <th>付费产品</th>
+                <th>状态</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% if data %}
+            {% for pay in data %}
+            <tr>
+                <td>{{ pay.pay_time |datetime }}</td>
+                <td>{{ pay.player_id  }}</td>
+                <td>{{ pay.player_name }}</td>
+                <td>{{ pay.unique_id }}</td>
+                <td>{{ pay.product_id | buy_info_id }}</td>
+                <td>{{ pay.status }}</td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

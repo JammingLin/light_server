@@ -1,0 +1,1 @@
+alter table player_topic change column all_answer_time all_answer_time bigint(20);

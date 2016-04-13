@@ -1,0 +1,84 @@
+{% extends "shared/base.html" %}
+
+{% block head %}
+<title>互换账号 - DGRY GM Tool</title>
+
+<link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+{% endblock %}
+
+{% block content %}
+
+<div class="panel panel-default">
+    <div class="panel-heading">兩個渠道的角色互換</div>
+    <div class="panel-body">
+        <form class="form-horizontal" method="post" action="switch_players" id="frm_newbie_force_task">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">玩家一ID:</label>
+
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" name="player1_id"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">玩家一渠道:</label>
+
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" name="player1_channel"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">玩家二ID:</label>
+
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" name="player2_id"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">玩家二渠道:</label>
+
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" name="player2_channel"/>
+                </div>
+            </div>
+
+            <div class="col-sm-offset-2">
+                <button type="submit" class="btn btn-primary" id="btnSave1">提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<div class="panel panel-default">
+<div class="panel-heading">旧玩家的所有账号关联到新玩家ID，新玩家的原有账号保留</div>
+<div class="panel-body">
+    <form class="form-horizontal" method="post" action="/player/replace_player">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">旧玩家ID:</label>
+
+            <div class="col-sm-3">
+                <input type="text" class="form-control" name="old_player_id"/>
+            </div>
+            <span class="col-sm-6">此玩家将断片，没有账号、渠道与它关联</span>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">新玩家ID:</label>
+
+            <div class="col-sm-3">
+                <input type="text" class="form-control" name="new_player_id"/>
+            </div>
+        </div>
+
+        <div class="col-sm-offset-2">
+            <button type="submit" class="btn btn-primary" id="btnSave2">提交</button>
+        </div>
+    </form>
+</div>
+</div>
+
+{% endblock %}

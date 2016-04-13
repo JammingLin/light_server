@@ -1,0 +1,7 @@
+/*2016-01-22 15:26*/
+[
+  {"topic_id":1, "topic_name":"完美职人", "topic_desc":"商务礼仪和办公技能", "pic_url":"", "hot_tag":1},
+  {"topic_id":2, "topic_name":"据说这是加薪秘籍", "topic_desc":"职场综合能力", "pic_url":"", "hot_tag":1},
+  {"topic_id":3, "topic_name":"规则高手", "topic_desc":"交通竞技规则你都懂", "pic_url":"", "hot_tag":1},
+  {"topic_id":4, "topic_name":"百科大乱炖", "topic_desc":"趣味流行知识一锅煮", "pic_url":"", "hot_tag":2}
+]

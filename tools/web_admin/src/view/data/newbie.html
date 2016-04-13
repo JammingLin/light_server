@@ -1,0 +1,81 @@
+{% extends "shared/base.html" %}
+
+{% block head %}
+<title>修改新手引导步骤 - DGRY GM Tool</title>
+
+<link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+{% endblock %}
+
+{% block content %}
+
+<div class="panel panel-default">
+    <div class="panel-heading">修改新手引导主线步骤</div>
+    <div class="panel-body">
+        <form class="form-horizontal" method="post" action="modify_newbie_force" id="frm_newbie_force_task">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">玩家ID:</label>
+
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" name="player_id"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">任务号:</label>
+
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" name="main_step"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">步骤号:</label>
+
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" name="sub_step"/>
+                </div>
+            </div>
+
+            <div class="col-sm-offset-2">
+                <button type="submit" class="btn btn-primary" id="btnSave1">提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">修改新手引导触发式任务状态</div>
+    <div class="panel-body">
+        <form class="form-horizontal" method="post" action="modify_newbie_trigger" id="frm_newbie_trigger_task">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">玩家ID:</label>
+
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" name="player_id"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">任务号:</label>
+
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" name="trigger_task_id"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">状  态:</label>
+
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" name="status"/>
+                </div>
+            </div>
+
+            <div class="col-sm-offset-2">
+                <button type="submit" class="btn btn-primary" id="btnSave2">提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

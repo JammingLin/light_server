@@ -1,0 +1,95 @@
+2016-04-13 11:46:57.711 [error] <0.291.0>@web_admin_account_controller:ensure_server_enable:140 could_not_connect_server :['game@127.0.0.1']   , [pang]
+2016-04-13 11:46:57.711 [error] <0.291.0>@web_admin_account_controller:logon:39 c:throw, r:{could_not_connect_server}
+2016-04-13 11:47:57.039 [error] <0.309.0>@boss_web_controller:call_controller_action:308 Error in controller error:{badmatch,[]} Stacktrace: [{web_admin_serverinfo_controller,-get_online_players/1-lc$^0/1-0-,3,[{file,"/home/linzhiwei/vr/server/game_server/tools/web_admin/src/controller/web_admin_serverinfo_controller.erl"},{line,183}]},{web_admin_serverinfo_controller,online_players,3,[{file,"/home/linzhiwei/vr/server/game_server/tools/web_admin/src/controller/web_admin_serverinfo_controller.erl"},{line,30}]},{boss_web_controller,call_controller_action,3,[{file,"src/boss/boss_web_controller.erl"},{line,305}]},{boss_web_controller,apply_action,4,[{file,"src/boss/boss_web_controller.erl"},{line,297}]},{boss_web_controller,execute_action_inner,9,[{file,"src/boss/boss_web_controller.erl"},{line,276}]},{boss_web_controller_handle_request,process_dynamic_request,5,[{file,"src/boss/boss_web_controller_handle_request.erl"},{line,255}]},{boss_web_controller_handle_request,process_request,5,[{file,"src/boss/boss_web_controller_handle_request.erl"},{line,242}]},{timer,tc,3,[{file,"timer.erl"},{line,197}]}]
+2016-04-13 11:47:57.040 [error] <0.309.0>@boss_web_controller_handle_request:process_error:302 "Error in controller, see console.log for details\n"
+2016-04-13 11:47:57.210 [error] <0.309.0>@boss_web_controller_handle_request:log_status_code:183 GET /serverinfo/online_players [web_admin] 500 179ms
+2016-04-13 11:51:18.090 [error] <0.331.0>@boss_web_controller_render:render_with_template:284 Error in view web_admin_view_topic_ranking_index_html error:undef Stacktrace: [{EXIT,module_info,[exports],[]},{erlydtl_runtime,find_value,2,[{file,"src/erlydtl_runtime.erl"},{line,97}]},{erlydtl_runtime,fetch_value,4,[{file,"src/erlydtl_runtime.erl"},{line,143}]},{web_admin_view_topic_ranking_index_html,-render_internal/2-fun-8-,3,[{file,""},{line,1223}]},{lists,mapfoldl,3,[{file,"lists.erl"},{line,1353}]},{lists,mapfoldl,3,[{file,"lists.erl"},{line,1354}]},{erlydtl_runtime,forloop,4,[{file,"src/erlydtl_runtime.erl"},{line,408}]},{web_admin_view_topic_ranking_index_html,-render_internal/2-fun-9-,2,[{file,""},{line,1434}]}]
+2016-04-13 11:51:18.091 [error] <0.331.0>@boss_web_controller_handle_request:handle_request:39 Unhandled Error: error:function_clause Stacktrace: [{boss_web_controller_handle_request,process_result,[{boss_app_info,web_admin,
+                                                    [],"/static","/doc",all,
+                                                    [{web_admin_01_news,[]}],
+                                                    <0.274.0>,<0.275.0>,
+                                                    <0.277.0>,<0.278.0>,
+                                                    ["admin_user",
+                                                     "admin_user_role",
+                                                     "erlang_memory","module",
+                                                     "player_adm","role",
+                                                     "role_module"],
+                                                    [],
+                                                    ["md5_string",
+                                                     "web_admin_account_controller",
+                                                     "web_admin_base",
+                                                     "web_admin_data_controller",
+                                                     "web_admin_email_controller",
+                                                     "web_admin_feedback_controller",
+                                                     "web_admin_gamedata_controller",
+                                                     "web_admin_logview_controller",
+                                                     "web_admin_maintain_controller",
+                                                     "web_admin_pay_controller",
+                                                     "web_admin_player_controller",
+                                                     "web_admin_rabc_controller",
+                                                     "web_admin_serverinfo_controller",
+                                                     "web_admin_statistics_controller",
+                                                     "web_admin_system_news_controller",
+                                                     "web_admin_testconfig_controller",
+                                                     "web_admin_topic_ranking_controller",
+                                                     "web_admin_world_chat_controller"]},
+                                                   {sbw,cowboy_simple_bridge,
+                                                    {cowboy_bridge,
+                                                     #Ref<0.0.1.113805>},
+                                                    false,[],[],[],none,
+                                                    [{<<"host">>,
+                                                      <<"127.0.0.1:5820">>},
+                                                     {<<"connection">>,
+                                                      <<"keep-alive">>},
+                                                     {<<"accept">>,
+                                                      <<"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8">>},
+                                                     {<<"upgrade-insecure-requests">>,
+                                                      <<"1">>},
+                                                     {<<"user-agent">>,
+                                                      <<"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36">>},
+                                                     {<<"referer">>,
+                                                      <<"http://127.0.0.1:5820/feedback/list?feedback_type=2&page_no=1&page_size=20">>},
+                                                     {<<"accept-encoding">>,
+                                                      <<"gzip, deflate, sdch">>},
+                                                     {<<"accept-language">>,
+                                                      <<"zh-CN,zh;q=0.8">>},
+                    ...
+2016-04-13 11:51:23.907 [error] <0.342.0>@web_admin_base:rpc_call:72 Node:'game@127.0.0.1', M:db, F:query, A:["Select player_id from player where name like '%%' order by bean desc limit 0,15"], T:3000
+2016-04-13 11:51:23.907 [error] <0.342.0>@web_admin_base:rpc_call:73 badrpc:{badrpc,{'EXIT',{{badmatch,{error,{mysql_result,[],[],0,0,"Unknown column 'bean' in 'order clause'",1054,"42S22"}}},[{db_mysql_common,query,1,[{file,"/home/linzhiwei/vr/server/game_server/deps/db/src/db_mysql_common.erl"},{line,62}]},{rpc,'-handle_call_call/6-fun-0-',5,[{file,"rpc.erl"},{line,206}]}]}}}
+2016-04-13 11:51:23.908 [error] <0.342.0>@boss_web_controller:call_controller_action:308 Error in controller error:function_clause Stacktrace: [{web_admin_player_controller,-handle_get_player/3-lc$^0/1-0-,[error],[{file,"/home/linzhiwei/vr/server/game_server/tools/web_admin/src/controller/web_admin_player_controller.erl"},{line,178}]},{web_admin_player_controller,handle_get_player,3,[{file,"/home/linzhiwei/vr/server/game_server/tools/web_admin/src/controller/web_admin_player_controller.erl"},{line,178}]},{web_admin_player_controller,get_player,3,[{file,"/home/linzhiwei/vr/server/game_server/tools/web_admin/src/controller/web_admin_player_controller.erl"},{line,33}]},{boss_web_controller,call_controller_action,3,[{file,"src/boss/boss_web_controller.erl"},{line,305}]},{boss_web_controller,apply_action,4,[{file,"src/boss/boss_web_controller.erl"},{line,297}]},{boss_web_controller,execute_action_inner,9,[{file,"src/boss/boss_web_controller.erl"},{line,276}]},{boss_web_controller_handle_request,process_dynamic_request,5,[{file,"src/boss/boss_web_controller_handle_request.erl"},{line,255}]},{boss_web_controller_handle_request,process_request,5,[{file,"src/boss/boss_web_controller_handle_request.erl"},{line,242}]}]
+2016-04-13 11:51:23.908 [error] <0.342.0>@boss_web_controller_handle_request:process_error:302 "Error in controller, see console.log for details\n"
+2016-04-13 11:51:23.909 [error] <0.342.0>@boss_web_controller_handle_request:log_status_code:183 POST /player/get_player [web_admin] 500 15ms
+2016-04-13 11:55:22.447 [error] <0.367.0>@web_admin_base:rpc_call:72 Node:'game@127.0.0.1', M:db_cache, F:get, A:[player_company,"281474976710657"], T:3000
+2016-04-13 11:55:22.447 [error] <0.367.0>@web_admin_base:rpc_call:73 badrpc:{badrpc,{'EXIT',{{badmatch,[]},[{db,get_primary_name,1,[{file,"/home/linzhiwei/vr/server/game_server/deps/server_lib/src/db.erl"},{line,31}]},{cache_redis,no_trans_get,2,[{file,"/home/linzhiwei/vr/server/game_server/deps/server_lib/src/cache_redis.erl"},{line,40}]},{db_cache,get,2,[{file,"/home/linzhiwei/vr/server/game_server/deps/server_lib/src/db_cache.erl"},{line,21}]},{rpc,'-handle_call_call/6-fun-0-',5,[{file,"rpc.erl"},{line,206}]}]}}}
+2016-04-13 11:55:22.448 [error] <0.367.0>@boss_web_controller:call_controller_action:308 Error in controller error:{badkey,all_games} Stacktrace: [{maps,get,[all_games,
+          #{area => <<"CN">>,
+            experience => 0,
+            level => 1,
+            name => <<"test1">>,
+            player_id => 281474976710657}],[]},{web_admin_player_controller,handle_get_player,3,[{file,"/home/linzhiwei/vr/server/game_server/tools/web_admin/src/controller/web_admin_player_controller.erl"},{line,108}]},{web_admin_player_controller,get_player,3,[{file,"/home/linzhiwei/vr/server/game_server/tools/web_admin/src/controller/web_admin_player_controller.erl"},{line,33}]},{boss_web_controller,call_controller_action,3,[{file,"src/boss/boss_web_controller.erl"},{line,305}]},{boss_web_controller,apply_action,4,[{file,"src/boss/boss_web_controller.erl"},{line,297}]},{boss_web_controller,execute_action_inner,9,[{file,"src/boss/boss_web_controller.erl"},{line,276}]},{boss_web_controller_handle_request,process_dynamic_request,5,[{file,"src/boss/boss_web_controller_handle_request.erl"},{line,255}]},{boss_web_controller_handle_request,process_request,5,[{file,"src/boss/boss_web_controller_handle_request.erl"},{line,242}]}]
+2016-04-13 11:55:22.449 [error] <0.367.0>@boss_web_controller_handle_request:process_error:302 "Error in controller, see console.log for details\n"
+2016-04-13 11:55:22.449 [error] <0.367.0>@boss_web_controller_handle_request:log_status_code:183 POST /player/get_player [web_admin] 500 8ms
+2016-04-13 11:55:24.195 [error] <0.367.0>@web_admin_base:rpc_call:72 Node:'game@127.0.0.1', M:db_cache, F:get, A:[player_company,"281474976710657"], T:3000
+2016-04-13 11:55:24.195 [error] <0.367.0>@web_admin_base:rpc_call:73 badrpc:{badrpc,{'EXIT',{{badmatch,[]},[{db,get_primary_name,1,[{file,"/home/linzhiwei/vr/server/game_server/deps/server_lib/src/db.erl"},{line,31}]},{cache_redis,no_trans_get,2,[{file,"/home/linzhiwei/vr/server/game_server/deps/server_lib/src/cache_redis.erl"},{line,40}]},{db_cache,get,2,[{file,"/home/linzhiwei/vr/server/game_server/deps/server_lib/src/db_cache.erl"},{line,21}]},{rpc,'-handle_call_call/6-fun-0-',5,[{file,"rpc.erl"},{line,206}]}]}}}
+2016-04-13 11:55:24.195 [error] <0.367.0>@boss_web_controller:call_controller_action:308 Error in controller error:{badkey,all_games} Stacktrace: [{maps,get,[all_games,
+          #{area => <<"CN">>,
+            experience => 0,
+            level => 1,
+            name => <<"test1">>,
+            player_id => 281474976710657}],[]},{web_admin_player_controller,handle_get_player,3,[{file,"/home/linzhiwei/vr/server/game_server/tools/web_admin/src/controller/web_admin_player_controller.erl"},{line,108}]},{web_admin_player_controller,get_player,3,[{file,"/home/linzhiwei/vr/server/game_server/tools/web_admin/src/controller/web_admin_player_controller.erl"},{line,33}]},{boss_web_controller,call_controller_action,3,[{file,"src/boss/boss_web_controller.erl"},{line,305}]},{boss_web_controller,apply_action,4,[{file,"src/boss/boss_web_controller.erl"},{line,297}]},{boss_web_controller,execute_action_inner,9,[{file,"src/boss/boss_web_controller.erl"},{line,276}]},{boss_web_controller_handle_request,process_dynamic_request,5,[{file,"src/boss/boss_web_controller_handle_request.erl"},{line,255}]},{boss_web_controller_handle_request,process_request,5,[{file,"src/boss/boss_web_controller_handle_request.erl"},{line,242}]}]
+2016-04-13 11:55:24.196 [error] <0.367.0>@boss_web_controller_handle_request:process_error:302 "Error in controller, see console.log for details\n"
+2016-04-13 11:55:24.197 [error] <0.367.0>@boss_web_controller_handle_request:log_status_code:183 POST /player/get_player [web_admin] 500 7ms
+2016-04-13 11:57:49.159 [error] <0.410.0>@web_admin_base:rpc_call:72 Node:'game@127.0.0.1', M:db_cache, F:get, A:[player_company,"281474976710657"], T:3000
+2016-04-13 11:57:49.159 [error] <0.410.0>@web_admin_base:rpc_call:73 badrpc:{badrpc,{'EXIT',{{badmatch,[]},[{db,get_primary_name,1,[{file,"/home/linzhiwei/vr/server/game_server/deps/server_lib/src/db.erl"},{line,31}]},{cache_redis,no_trans_get,2,[{file,"/home/linzhiwei/vr/server/game_server/deps/server_lib/src/cache_redis.erl"},{line,40}]},{db_cache,get,2,[{file,"/home/linzhiwei/vr/server/game_server/deps/server_lib/src/db_cache.erl"},{line,21}]},{rpc,'-handle_call_call/6-fun-0-',5,[{file,"rpc.erl"},{line,206}]}]}}}
+2016-04-13 12:00:11.496 [error] <0.426.0>@web_admin_base:rpc_call:72 Node:'game@127.0.0.1', M:db_cache, F:get, A:[player_company,"281474976710657"], T:3000
+2016-04-13 12:00:11.496 [error] <0.426.0>@web_admin_base:rpc_call:73 badrpc:{badrpc,{'EXIT',{{badmatch,[]},[{db,get_primary_name,1,[{file,"/home/linzhiwei/vr/server/game_server/deps/server_lib/src/db.erl"},{line,31}]},{cache_redis,no_trans_get,2,[{file,"/home/linzhiwei/vr/server/game_server/deps/server_lib/src/cache_redis.erl"},{line,40}]},{db_cache,get,2,[{file,"/home/linzhiwei/vr/server/game_server/deps/server_lib/src/db_cache.erl"},{line,21}]},{rpc,'-handle_call_call/6-fun-0-',5,[{file,"rpc.erl"},{line,206}]}]}}}
+2016-04-13 12:00:24.612 [error] <0.448.0>@web_admin_base:rpc_call:72 Node:'game@127.0.0.1', M:db, F:query, A:["Select player_id from player where name like '%%' order by bean desc limit 0,15"], T:3000
+2016-04-13 12:00:24.612 [error] <0.448.0>@web_admin_base:rpc_call:73 badrpc:{badrpc,{'EXIT',{{badmatch,{error,{mysql_result,[],[],0,0,"Unknown column 'bean' in 'order clause'",1054,"42S22"}}},[{db_mysql_common,query,1,[{file,"/home/linzhiwei/vr/server/game_server/deps/db/src/db_mysql_common.erl"},{line,62}]},{rpc,'-handle_call_call/6-fun-0-',5,[{file,"rpc.erl"},{line,206}]}]}}}
+2016-04-13 12:00:24.612 [error] <0.448.0>@boss_web_controller:call_controller_action:308 Error in controller error:function_clause Stacktrace: [{web_admin_player_controller,-handle_get_player/3-lc$^0/1-0-,[error],[{file,"/home/linzhiwei/vr/server/game_server/tools/web_admin/src/controller/web_admin_player_controller.erl"},{line,143}]},{web_admin_player_controller,handle_get_player,3,[{file,"/home/linzhiwei/vr/server/game_server/tools/web_admin/src/controller/web_admin_player_controller.erl"},{line,143}]},{web_admin_player_controller,get_player,3,[{file,"/home/linzhiwei/vr/server/game_server/tools/web_admin/src/controller/web_admin_player_controller.erl"},{line,33}]},{boss_web_controller,call_controller_action,3,[{file,"src/boss/boss_web_controller.erl"},{line,305}]},{boss_web_controller,apply_action,4,[{file,"src/boss/boss_web_controller.erl"},{line,297}]},{boss_web_controller,execute_action_inner,9,[{file,"src/boss/boss_web_controller.erl"},{line,276}]},{boss_web_controller_handle_request,process_dynamic_request,5,[{file,"src/boss/boss_web_controller_handle_request.erl"},{line,255}]},{boss_web_controller_handle_request,process_request,5,[{file,"src/boss/boss_web_controller_handle_request.erl"},{line,242}]}]
+2016-04-13 12:00:24.613 [error] <0.448.0>@boss_web_controller_handle_request:process_error:302 "Error in controller, see console.log for details\n"
+2016-04-13 12:00:24.614 [error] <0.448.0>@boss_web_controller_handle_request:log_status_code:183 POST /player/get_player [web_admin] 500 11ms
+2016-04-13 12:00:26.667 [error] <0.448.0>@web_admin_base:rpc_call:72 Node:'game@127.0.0.1', M:db, F:query, A:["Select player_id from player where name like '%%' order by bean desc limit 0,15"], T:3000
+2016-04-13 12:00:26.667 [error] <0.448.0>@web_admin_base:rpc_call:73 badrpc:{badrpc,{'EXIT',{{badmatch,{error,{mysql_result,[],[],0,0,"Unknown column 'bean' in 'order clause'",1054,"42S22"}}},[{db_mysql_common,query,1,[{file,"/home/linzhiwei/vr/server/game_server/deps/db/src/db_mysql_common.erl"},{line,62}]},{rpc,'-handle_call_call/6-fun-0-',5,[{file,"rpc.erl"},{line,206}]}]}}}
+2016-04-13 12:00:26.668 [error] <0.448.0>@boss_web_controller:call_controller_action:308 Error in controller error:function_clause Stacktrace: [{web_admin_player_controller,-handle_get_player/3-lc$^0/1-0-,[error],[{file,"/home/linzhiwei/vr/server/game_server/tools/web_admin/src/controller/web_admin_player_controller.erl"},{line,143}]},{web_admin_player_controller,handle_get_player,3,[{file,"/home/linzhiwei/vr/server/game_server/tools/web_admin/src/controller/web_admin_player_controller.erl"},{line,143}]},{web_admin_player_controller,get_player,3,[{file,"/home/linzhiwei/vr/server/game_server/tools/web_admin/src/controller/web_admin_player_controller.erl"},{line,33}]},{boss_web_controller,call_controller_action,3,[{file,"src/boss/boss_web_controller.erl"},{line,305}]},{boss_web_controller,apply_action,4,[{file,"src/boss/boss_web_controller.erl"},{line,297}]},{boss_web_controller,execute_action_inner,9,[{file,"src/boss/boss_web_controller.erl"},{line,276}]},{boss_web_controller_handle_request,process_dynamic_request,5,[{file,"src/boss/boss_web_controller_handle_request.erl"},{line,255}]},{boss_web_controller_handle_request,process_request,5,[{file,"src/boss/boss_web_controller_handle_request.erl"},{line,242}]}]
+2016-04-13 12:00:26.669 [error] <0.448.0>@boss_web_controller_handle_request:process_error:302 "Error in controller, see console.log for details\n"
+2016-04-13 12:00:26.670 [error] <0.448.0>@boss_web_controller_handle_request:log_status_code:183 POST /player/get_player [web_admin] 500 9ms

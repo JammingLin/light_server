@@ -1,0 +1,166 @@
+{% extends "shared/base.html" %}
+
+{% block head %}
+<title>玩家数据管理 - DGRY GM Tool</title>
+<script src="/static/scripts/dgry_admin_player.js"></script>
+
+<style>
+    #pnlSearch{margin-bottom:10px;}
+    #pnl_player_data input.blank{
+    background:#ffffff;
+    border:none;
+    box-shadow:none;
+    }
+    #pnl_player_data input.editable{
+    font-weight:bold;
+    }
+    #pnl_player_data input.editable.on{
+    font-weight:bold;
+    border:1px dashed #999999;
+    }
+    #tc_player_list{
+    overflow:auto;
+    max-height:622px;
+    }
+
+    #tc_player_list tr.selected{
+    background:#31b0d5;
+    color:#ffffff;
+    }
+
+    .dropdown-menu > li > a.danger{
+    color:red;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div>
+    {% if data.player_id %}
+    <input type="hidden" id="init_player_id" value="{{ data.player_id }}"/>
+    {% endif %}
+</div>
+<div class="input-group" id="pnlSearch">
+    <span class="input-group-addon">
+        <label class="checkbox-inline"><input type="radio" name="rdoSearchMode" value="player_id" aria-label="...">玩家ID</label>
+        <label class="checkbox-inline"><input type="radio" name="rdoSearchMode" value="player_account" aria-label="...">账号</label>
+        <label class="checkbox-inline"><input type="radio" name="rdoSearchMode" value="player_name" checked="checked"
+                                              aria-label="...">昵称</label>
+    </span>
+    <input type="text" class="form-control" placeholder="请输入玩家昵称, 留空则查找全部玩家" id="txtSearchKey"/>
+    <span class="input-group-btn">
+        <button class="btn btn-default" type="button" id="btnSearchPlayer"><i
+                class="icon glyphicon glyphicon-search"></i></button>
+    </span>
+</div>
+
+<div class="alert alert-dismissible alert-info" role="alert" id="pnlInfo">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+    </button>
+    <em></em>
+</div>
+
+<div class="row">
+    <div class="col-md-5">
+        <div class="panel panel-default" id="pnl_player_data">
+            <div class="panel-heading">玩家数据</div>
+            <div class="panel-body">
+                <form class="form-horizontal" id="frm_player_data">
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label">账号:</label>
+
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" data-field="account"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label">标识:</label>
+
+                        <div class="col-sm-10">
+                            <input type="hidden" value="" data-field="player_id"/>
+                            <input type="text" class="form-control" data-field="player_id"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label">昵称:</label>
+
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" data-field="name"/>
+                        </div>
+
+                        <label class="col-sm-2 control-label">区域:</label>
+
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" data-field="area"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label">经验:</label>
+
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" data-field="experience"/>
+                        </div>
+
+                        <label class="col-sm-2 control-label">等级:</label>
+
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control"
+                                   data-field="level"/>
+                        </div>
+                    </div>
+
+                </form>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <button type="button" class="btn btn-sm btn-default" id="btnModify">修改</button>
+                        <button type="button" class="btn btn-sm btn-default" id="btnCancel">取消</button>
+                        <button type="button" class="btn btn-sm btn-primary" id="btnSave">保存</button>
+                    </div>
+
+                    <!--<div class="col-sm-4">-->
+                        <!--<div class="btn-group">-->
+                            <!--<button type="button" class="btn btn-default btn-sm ">更多操作</button>-->
+                            <!--<button type="button" class="btn btn-default btn-sm dropdown-toggle"-->
+                                    <!--data-toggle="dropdown"-->
+                                    <!--aria-haspopup="true" aria-expanded="false">-->
+                                <!--<span class="caret"></span>-->
+                                <!--<span class="sr-only">Toggle Dropdown</span>-->
+                            <!--</button>-->
+                            <!--<ul class="dropdown-menu">-->
+                                <!--<li><a href="javascript:;" id="lbtnViewCityData">主城数据</a></li>-->
+                                <!--<li><a href="javascript:;" id="lbtnViewWorldData">世界数据</a></li>-->
+                                <!--<li><a href="javascript:;" id="lbtnViewStatusData">状态信息</a></li>-->
+                                <!--&lt;!&ndash;<li><a class="btn btn-xs btn-default" href="#" id="lbtnViewAttackData" >攻击数据</a></li>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<li><a class="btn btn-xs btn-default" href="#" id="lbtnViewCampData" >兵营数据</a></li>&ndash;&gt;-->
+                                <!--<li role="separator" class="divider"></li>-->
+                                <!--<li><a href="javascript:;" id="btnClearPassport" class="danger">(!)重置角色</a></li>-->
+                                <!--<li><a href="javascript:;" id="btnMakeZombie">作为僵尸模板</a></li>-->
+                                <!--<li role="separator" class="divider"></li>-->
+                                <!--<li><a href="javascript:;" id="btnSendMail">给TA发邮件</a></li>-->
+                                <!--<li><a href="javascript:;" id="btnGoMail">查看TA发的邮件</a></li>-->
+                                <!--<li><a href="javascript:;" id="btnGoFeedback">查看TA的反馈</a></li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+        <div>
+        </div>
+    </div>
+
+    <div class="col-md-7">
+        <div class="panel panel-default" id="pnl_player_list">
+            <div class="panel-heading">玩家列表</div>
+            <div class="panel-body">
+                <div id="tc_player_list">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

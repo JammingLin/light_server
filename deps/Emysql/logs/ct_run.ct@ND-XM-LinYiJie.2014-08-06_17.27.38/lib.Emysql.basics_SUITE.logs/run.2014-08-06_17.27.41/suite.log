@@ -1,0 +1,191 @@
+=== Suite started at 2014-08-06 17:27:41
+=== Starting test, 24 test cases
+=cases         24
+=user          Administrator
+=host          ND-XM-LinYiJie
+=hosts         ND-XM-LinYiJie 
+=emulator_vsn  6.1
+=emulator      beam
+=otp_release   17
+=started       2014-08-06 17:27:41
+=case          basics_SUITE:init_per_suite
+=logfile       basics_suite.init_per_suite.html
+=started       2014-08-06 17:27:41
+=ended         2014-08-06 17:27:41
+=result        failed: {undef,
+                           [{emysql,add_pool,
+                                [test_pool,
+                                 [{size,1},
+                                  {user,"hello_username"},
+                                  {password,"hello_password"},
+                                  {host,"localhost"},
+                                  {port,3306},
+                                  {database,"hello_database"},
+                                  {encoding,utf8},
+                                  {warnings,true}]],
+                                []},
+                            {basics_SUITE,init_per_suite,1,
+                                [{file,"e:/lib/Emysql/test/basics_SUITE.erl"},
+                                 {line,88}]},
+                            {test_server,ts_tc,3,
+                                [{file,"test_server.erl"},{line,1415}]},
+                            {test_server,run_test_case_eval1,6,
+                                [{file,"test_server.erl"},{line,1092}]},
+                            {test_server,run_test_case_eval,9,
+                                [{file,"test_server.erl"},{line,976}]}]}, [{emysql,
+                                                                            add_pool},
+                                                                           {basics_SUITE,
+                                                                            init_per_suite,
+                                                                            88},
+                                                                           {test_server,
+                                                                            ts_tc,
+                                                                            1415},
+                                                                           {test_server,
+                                                                            run_test_case_eval1,
+                                                                            1092},
+                                                                           {test_server,
+                                                                            run_test_case_eval,
+                                                                            976}]
+=== *** FAILED {basics_SUITE,init_per_suite} ***
+=== 
+=case          basics_SUITE:delete_all
+=started       2014-08-06 17:27:41
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #1 {basics_SUITE,delete_all} ***
+=== 
+=case          basics_SUITE:encode_atoms
+=started       2014-08-06 17:27:41
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #2 {basics_SUITE,encode_atoms} ***
+=== 
+=case          basics_SUITE:insert_only
+=started       2014-08-06 17:27:41
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #3 {basics_SUITE,insert_only} ***
+=== 
+=case          basics_SUITE:insert_a_record
+=started       2014-08-06 17:27:41
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #4 {basics_SUITE,insert_a_record} ***
+=== 
+=case          basics_SUITE:select_a_record
+=started       2014-08-06 17:27:41
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #5 {basics_SUITE,select_a_record} ***
+=== 
+=case          basics_SUITE:insert_and_read_back
+=started       2014-08-06 17:27:41
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #6 {basics_SUITE,insert_and_read_back} ***
+=== 
+=case          basics_SUITE:insert_and_read_back_as_recs
+=started       2014-08-06 17:27:41
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #7 {basics_SUITE,insert_and_read_back_as_recs} ***
+=== 
+=case          basics_SUITE:insert_and_read_back_as_json
+=started       2014-08-06 17:27:41
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #8 {basics_SUITE,insert_and_read_back_as_json} ***
+=== 
+=case          basics_SUITE:select_by_prepared_statement
+=started       2014-08-06 17:27:41
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #9 {basics_SUITE,select_by_prepared_statement} ***
+=== 
+=case          basics_SUITE:delete_non_existant_procedure
+=started       2014-08-06 17:27:41
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #10 {basics_SUITE,delete_non_existant_procedure} ***
+=== 
+=case          basics_SUITE:select_by_stored_procedure
+=started       2014-08-06 17:27:41
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #11 {basics_SUITE,select_by_stored_procedure} ***
+=== 
+=case          basics_SUITE:multiple_select
+=started       2014-08-06 17:27:41
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #12 {basics_SUITE,multiple_select} ***
+=== 
+=case          basics_SUITE:encode_floating_point_data
+=started       2014-08-06 17:27:41
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #13 {basics_SUITE,encode_floating_point_data} ***
+=== 
+=case          basics_SUITE:emit_warnings
+=started       2014-08-06 17:27:41
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #14 {basics_SUITE,emit_warnings} ***
+=== 
+=case          basics_SUITE:dict_empty_test
+=group_props   [{name,"conversion"}]
+=started       2014-08-06 17:27:41
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #15 {basics_SUITE,dict_empty_test} ***
+=== 
+=case          basics_SUITE:dict_single_test
+=group_props   [{name,"conversion"}]
+=started       2014-08-06 17:27:41
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #16 {basics_SUITE,dict_single_test} ***
+=== 
+=case          basics_SUITE:dict_multi_test
+=group_props   [{name,"conversion"}]
+=started       2014-08-06 17:27:41
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #17 {basics_SUITE,dict_multi_test} ***
+=== 
+=case          basics_SUITE:proplist_empty_test
+=group_props   [{name,"conversion"}]
+=started       2014-08-06 17:27:41
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #18 {basics_SUITE,proplist_empty_test} ***
+=== 
+=case          basics_SUITE:proplist_single_test
+=group_props   [{name,"conversion"}]
+=started       2014-08-06 17:27:41
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #19 {basics_SUITE,proplist_single_test} ***
+=== 
+=case          basics_SUITE:proplist_multi_test
+=group_props   [{name,"conversion"}]
+=started       2014-08-06 17:27:41
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #20 {basics_SUITE,proplist_multi_test} ***
+=== 
+=case          basics_SUITE:json_empty_test
+=group_props   [{name,"conversion"}]
+=started       2014-08-06 17:27:41
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #21 {basics_SUITE,json_empty_test} ***
+=== 
+=case          basics_SUITE:json_single_test
+=group_props   [{name,"conversion"}]
+=started       2014-08-06 17:27:41
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #22 {basics_SUITE,json_single_test} ***
+=== 
+=case          basics_SUITE:json_multi_test
+=group_props   [{name,"conversion"}]
+=started       2014-08-06 17:27:41
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #23 {basics_SUITE,json_multi_test} ***
+=== 
+=case          basics_SUITE:record_test
+=group_props   [{name,"conversion"}]
+=started       2014-08-06 17:27:41
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #24 {basics_SUITE,record_test} ***
+=== 
+=case          basics_SUITE:end_per_suite
+=started       2014-08-06 17:27:41
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping {basics_SUITE,end_per_suite} ***
+=== TEST COMPLETE, 0 ok, 0 failed, 24 skipped of 24 test cases
+
+=finished      2014-08-06 17:27:41
+=failed        0
+=successful    0
+=user_skipped  0
+=auto_skipped  24

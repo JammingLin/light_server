@@ -1,0 +1,166 @@
+{% extends "gamedata/index.html" %}
+
+{% block head %}
+<title>用户反馈 - DGRY GM Tool</title>
+<link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+<script src="/static/scripts/dgry_admin_feedback.js"></script>
+<style>
+    #pnlSearch{margin-bottom:10px;}
+    .list-group{border:none;}
+    .list-group-item{margin-bottom:5px; }
+    .list-group-item-heading{ border-bottom:1px solid #dddddd; padding-bottom:10px; }
+    .list-group-item-text{ color:#666666; padding:5px 20px; border:1px solid #ffffff; }
+
+    .item-operation{display:none;}
+    .pnl-remarks{min-height:40px;}
+    .pnl-remarks.hover{border:1px dashed #bbbbbb;}
+    .txt-remarks,.save-remarks,.cancle-remarks,.edit-remarks{display:none;}
+</style>
+{% endblock %}
+{%block sub_title %} 用户反馈 {% endblock %}
+
+{% block inner %}
+
+
+<div class="panel panel-default" id="pnl_feedback_data">
+    <div class="panel-heading">用户反馈
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal" action="" method="post" id="frm_feedback_data">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">玩家ID:</label>
+
+                <div class="col-sm-3">
+                    <input type="text" name="player_id" class="form-control" placeholder="请输入玩家账号" id="txtSearchKey"/>
+                </div>
+                <div class="col-sm-1">
+                    <button type="submit" class="btn btn-primary" id="btnSearch">查询</button>
+                </div>
+            </div>
+        </form>
+        <div style="color:red">注意：编辑操作会有最多5分钟的延迟 <br/></div>
+        <ul class="list-group">
+            {% if data %}
+            {% for feedback in data.rows %}
+            <li class="list-group-item">
+                <div class="row list-group-item-heading">
+                    <span class="col-sm-3">{{ feedback.send_time }}</span>
+                    <span class="col-sm-3">{{ feedback.name }}</span>
+                    <span class="col-sm-5 item-operation">
+                        玩家ID: [{{ feedback.player_id }}] &nbsp;
+                        {% if feedback.image_name %}
+                            <a class="show_detail" href="javascript:;" title="{{ feedback.image_name }}"
+                               data-target="/static/feedback_images/{{ feedback.image_name }}">
+                                <span class="glyphicon glyphicon-picture"></span></a>
+                        {% else %}
+                            <span class="glyphicon glyphicon-picture" style="opacity:0.3;"></span>
+                        {% endif %}
+
+                        &nbsp;&nbsp;
+
+                        {% if feedback.log_file_name %}
+                            <a id="btn_export" href="export?log_file_name={{feedback.log_file_name }}" target="_blank"
+                               data-target="/static/feedback_images/{{ feedback.image_name }}">
+                                <span class="glyphicon glyphicon-file"></span>
+                            </a>
+                        {% else %}
+                            <span class="glyphicon glyphicon-file" style="opacity:0.3;"></span>
+                        {% endif %}
+                        {% if feedback.is_read == 1%}
+                        <input type="button" disabled name="btnSetRead" class="btn btn-xs btn-default"
+                               data-player_id="{{ feedback.player_id }}" data-feedback_id="{{ feedback.feedback_id }}"
+                               value="已奖励"/>
+                        {%else%}
+                        <a href="/email/add?player_id={{feedback.player_id}}" class="btn btn-xs btn-success" target="_blank">奖励</a>
+                        {%endif%}
+                        <input type="button" name="btnDelete" class="btnDelete btn btn-xs btn-danger"
+                               data-player_id="{{ feedback.player_id }}" data-feedback_id="{{ feedback.feedback_id }}"
+                               value="删除"/>
+                    </span>
+                </div>
+                <p class="list-group-item-text">
+                    <span class="badge">原</span>  {{feedback.content }}
+                </p>
+                <p class="list-group-item-text pnl-remarks" data-player_id="{{ feedback.player_id }}" data-feedback_id="{{ feedback.feedback_id }}">
+                    <span class="badge">注</span>
+                    <span class="txt-old-remarks"><span class="content">{{feedback.remarks }}</span>
+                    <button class="edit-remarks btn btn-xs btn-default"  ><span class="glyphicon glyphicon-pencil"></span></button></span>
+                    <textarea class="txt-remarks" rows="3" cols="60">{{feedback.remarks }}</textarea>
+                    <button class="save-remarks"  ><span class="glyphicon glyphicon-ok"></span></button>
+                    <button class="cancle-remarks" ><span class="glyphicon glyphicon-remove"></span></button>
+                </p>
+            </li>
+            {% endfor %}
+            {% endif %}
+        </ul>
+        <div id="pager" class="pager">
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function(){
+        $('.show_detail').click(function(){
+            var info = '<img width="100%" src="' + $(this).attr('data-target') + '" />';
+            _modal('详情', info);
+        });
+
+        DGRY.render_pager($('#pager'),
+            "/feedback/list?feedback_type={{data.viewdata.feedback_type}}&",
+            {{data.pager.total}},
+            {{data.pager.page_no}},
+            {{data.pager.page_size}},
+            {{data.pager.page_count}});
+
+        $('.pnl-remarks').hover(function(){
+            $(this).addClass('hover');
+            $('.edit-remarks', this).show();
+        }, function(){
+            $(this).removeClass('hover');
+            $('.edit-remarks', this).hide();
+        });
+
+        $('.list-group-item').hover(function(){
+            $('.item-operation', this).show();
+        }, function(){
+            $('.item-operation', this).hide();
+        });
+
+        $('.edit-remarks').click(function(){
+            var $this = $(this).parents('.pnl-remarks');
+            $('.txt-old-remarks,.txt-remarks,.save-remarks,.cancle-remarks', $this).toggle();
+            var player_id = $this.attr('data-player_id');
+            var feedback_id = $this.attr('data-feedback_id');
+        })
+
+        $('.cancle-remarks').click(function(){
+            $('.txt-old-remarks,.txt-remarks,.save-remarks,.cancle-remarks', $(this).parent()).toggle();
+        });
+
+        $('.save-remarks').click(function(){
+            var p = $(this).parent();
+            var pid = p.attr('data-player_id');
+            var fid = p.attr('data-feedback_id');
+            var rem = $('.txt-remarks', p).val();
+            var data = {"feedback_id":fid, "player_id":pid, "remarks":rem};
+            DGRY.post('feedback','save_remarks', data, function(rsp){
+                if(rsp.code == 1){
+                    $('.txt-old-remarks span.content', p).text(rem);
+                    $('.txt-old-remarks,.txt-remarks,.save-remarks,.cancle-remarks', p).toggle();
+                }
+            });
+        });
+
+    });
+
+   function _modal(title, body, options){
+        var m = $('#global_modal');
+        $('.modal-title', m).html(title);
+        $('.modal-body', m).html(body);
+        m.modal(options || {show:false});
+        m.modal('show');
+    };
+
+</script>
+
+{% endblock %}

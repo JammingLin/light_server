@@ -1,0 +1,5 @@
+#erl  -pa out/production/dgry +K true  -pa out/production/lager -eval "robot:run(\"192.168.70.27\", 1, 15000, 60)."
+#erl -setcookie robot -name robot1@192.168.70.123 -pa out/production/dgry +K true -pa out/production/lager -eval "robot:run(\"192.168.70.123\", 52, 52, 1, cluster)."
+#erl  -pa out/production/dgry +K true -pa out/production/lager -eval "robot:run(\"192.168.70.123\", 1, 1000, 100)."
+erl -pa out/production/server -pa out/production/lager -eval "robot:run(\"192.168.70.123\", 11, 11, 100)."
+

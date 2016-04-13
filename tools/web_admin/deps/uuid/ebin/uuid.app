@@ -1,0 +1,7 @@
+{application,uuid,
+             [{description,"Erlang UUID"},
+              {vsn,"0.5.0"},
+              {modules,[uuid]},
+              {registered,[]},
+              {applications,[stdlib,crypto]},
+              {env,[]}]}.

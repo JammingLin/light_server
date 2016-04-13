@@ -1,0 +1,13 @@
+{application,redo,
+             [{description,"Pipelined Redis Erlang Driver"},
+              {vsn,"2.0.0"},
+              {registered,[]},
+              {applications,[kernel,stdlib]},
+              {env,[]},
+              {contributors,["Jacob Vorreuter","Geoff Cant","Fred Hebert",
+                             "Omar Yasin","Kevin McDermott","Krzysztof Rutka",
+                             "Andras Boroska","Michal Ptaszek"]},
+              {licenses,["MIT"]},
+              {links,[{"Github","https://github.com/heroku/redo"}]},
+              {modules,[bench,redo,redo_block,redo_concurrency_test,
+                        redo_redis_proto,redo_stats,redo_uri]}]}.

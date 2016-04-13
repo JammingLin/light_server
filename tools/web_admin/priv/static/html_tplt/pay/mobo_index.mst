@@ -1,0 +1,31 @@
+<table class="table table-hover">
+            <thead>
+            <tr>
+                <th>付费时间</th>
+                <th>玩家ID</th>
+                <th>玩家昵称</th>
+                <th>付款标识</th>
+                <th>付费产品</th>
+                <th>状态</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#items}}
+            <tr>
+                <td>{{ pay_time_str }}</td>
+                <td>{{ player_id }}</td>
+                <td>{{ player_name }}</td>
+                <td><a href="/pay/query_mobo_pay_status?CPOrderID={{unique_id }}" target="_blank">{{ unique_id }}</a></td>
+                <td>{{ product_id_str }}</td>
+                <td>{{ status_str }}</td>
+            </tr>
+            {{/items}}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="6">
+                        <div class="dgry_pager"></div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>

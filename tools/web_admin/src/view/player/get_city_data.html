@@ -1,0 +1,35 @@
+{% extends "shared/base.html" %}
+
+{% block head %}
+<title>主城数据</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="panel panel-default">
+    <div class="panel-heading">主城数据</div>
+    <div class="panel-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>实例ID</th><th>building_id</th><th>time_type</th><th>finish_time</th><th>settle_time</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% if data %}
+            {% for building in data %}
+                <tr>
+                    <td>{{ building.hole_id }}</td>
+                    <td>{{ building.building_id }}</td>
+                    <td>{{ building.time_type }}</td>
+                    <td>{{ building.finish_time }}</td>
+                    <td>{{ building.settle_time }}</td>
+                </tr>
+            {% endfor %}
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

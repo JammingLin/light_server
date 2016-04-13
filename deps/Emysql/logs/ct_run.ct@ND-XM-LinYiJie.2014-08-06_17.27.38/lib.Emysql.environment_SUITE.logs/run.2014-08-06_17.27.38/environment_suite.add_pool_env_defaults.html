@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Test environment_SUITE:add_pool_env_defaults result</title>
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="../../ct_default.css" type="text/css">
+<script type="text/javascript" src="../../jquery-latest.js"></script>
+<script type="text/javascript" src="../../jquery.tablesorter.min.js"></script>
+</head>
+<body>
+
+=== <a href="environment_suite.src.html#add_pool_env_defaults-1">source code for environment_SUITE:add_pool_env_defaults/1</a>
+
+<pre>
+<a name="top"></a>
+=== Test case started with:
+environment_SUITE:add_pool_env_defaults([{watchdog,<0.78.0>},
+                                         {tc_logfile,
+                                          "e:/lib/Emysql/logs/ct_run.ct@ND-XM-LinYiJie.2014-08-06_17.27.38/lib.Emysql.environment_SUITE.logs/run.2014-08-06_17.27.38/environment_suite.add_pool_env_defaults.html"},
+                                         {tc_group_properties,[]},
+                                         {tc_group_path,[]},
+                                         {data_dir,
+                                          "e:/lib/Emysql/test/environment_SUITE_data/"},
+                                         {priv_dir,
+                                          "e:/lib/Emysql/logs/ct_run.ct@ND-XM-LinYiJie.2014-08-06_17.27.38/lib.Emysql.environment_SUITE.logs/run.2014-08-06_17.27.38/log_private/"}])
+
+=== Current directory is "e:/lib/Emysql/logs/ct_run.ct@ND-XM-LinYiJie.2014-08-06_17.27.38"
+
+=== Started at 2014-08-06 17:27:39
+
+<br />
+=== ERROR! init_per_testcase crashed!
+	Location: [{environment_SUITE,init_per_testcase,<a href="environment_suite.src.html#90">90</a>},
+              {test_server,do_init_per_testcase,1219},
+              {test_server,run_test_case_eval1,1002},
+              {test_server,run_test_case_eval,976}]
+	Reason: {{badmatch,{error,{not_started,emysql}}},
+                 [{environment_SUITE,init_per_testcase,2,
+                      [{file,"e:/lib/Emysql/test/environment_SUITE.erl"},
+                       {line,90}]},
+                  {test_server,do_init_per_testcase,2,
+                      [{file,"test_server.erl"},{line,1219}]},
+                  {test_server,run_test_case_eval1,6,
+                      [{file,"test_server.erl"},{line,1002}]},
+                  {test_server,run_test_case_eval,9,
+                      [{file,"test_server.erl"},{line,976}]}]}
+
+<a name="end"></a>
+
+
+=== Ended at 2014-08-06 17:27:39
+=== location [{environment_SUITE,init_per_testcase,<a href="environment_suite.src.html#90">90</a>},
+              {test_server,do_init_per_testcase,1219},
+              {test_server,run_test_case_eval1,1002},
+              {test_server,run_test_case_eval,976}]
+=== reason = init_per_testcase failed
+</pre>
+<center>
+<br /><hr /><p>
+<a href="../../../all_runs.html">Test run history
+</a>  |  <a href="../../../index.html">Top level test index
+</a>
+</p>
+<div class="copyright">Copyright &copy; 2014 <a href="http://www.erlang.org">Open Telecom Platform</a><br />
+Updated: <!date>Wed Aug 06 2014 17:27:39<!/date><br />
+</div>
+</center>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>据点ID</th>
+            <th>目标类别</th>
+            <th>关卡数据</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#items}}
+        <tr>
+            <td>{{ island_id }}</td>
+            <td>{{ enemy_type_str }}</td>
+            <td>{{ level_player_id }}</td>
+        </tr>
+        {{/items}}
+    </tbody>
+</table>

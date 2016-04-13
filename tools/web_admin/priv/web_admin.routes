@@ -1,0 +1,26 @@
+% Routes file.
+
+% Formats: 
+%   {"/some/route", [{controller, "Controller"}, {action, "Action"}]}.
+%   {"/some/route", [{controller, "Controller"}, {action, "Action"}, {id, "42"}]}.
+%   {"/(some|any)/route/(\\d+)", [{controller, '$1'}, {action, "Action"}, {id, '$2'}]}.
+%   {"/some/route/(?<route_id>\\d+)", [{controller, "Controller"}, {action, "Action"}, {id, '$route_id'}]}.
+%   {"/some/route", [{application, some_app}, {controller, "Controller"}, {action, "Action"}, {id, "42"}]}.
+%
+%   {404, [{controller, "Controller"}, {action, "Action"}]}.
+%   {404, [{controller, "Controller"}, {action, "Action"}, {id, "42"}]}.
+%   {404, [{application, some_app}, {controller, "Controller"}, {action, "Action"}, {id, "42"}]}.
+%
+% Note that routing across applications results in a 302 redirect.
+
+% Front page
+{"/", [{controller, "serverinfo"}, {action, "summary"}]}.
+{"/player/get_city_data?player_id=(\\d+)", [{controller, "player"}, {action, "get_city_data"}, {id, 1}]}.
+{"/statistics/get_newbie_guide_lost?n=(\\d+)", [{controller, "statistics"}, {action, "get_newbie_guide_lost"}, {id, 0}]}.
+
+
+% 404 File Not Found handler
+% {404, [{controller, "world"}, {action, "lost"}]}.
+
+% 500 Internal Error handler (only invoked in production)
+% {500, [{controller, "world"}, {action, "calamity"}]}.

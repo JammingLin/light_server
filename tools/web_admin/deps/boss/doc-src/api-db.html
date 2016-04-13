@@ -1,0 +1,187 @@
+{% extends "api.html" %}
+{% block api_content %}
+<p>BossDB is a database abstraction layer used for querying and updating the database. Currently Tokyo Tyrant, Mnesia, MySQL, and PostgreSQL are supported.</p>
+
+
+<h2>Functions</h2>
+
+<p>Functions in the <code>boss_db</code> module include:</p>
+
+{% for function in functions %}
+    {% if function.description_long %}
+        <div class="example {% cycle 'row1' 'row2' %}">
+          <div class="code">
+                {{ function.function }}{% if function.typespec %}{{ function.typespec }}{% endif %}
+            </div>
+            <p>{{ function.description_long }}</p>
+        </div>
+    {% endif %}
+{% endfor %}
+
+<h2>Creating a Model from a JSON record</h2>
+<p>
+If your project is anything like mine then you will probably have a
+case where you get a JSON in from the user or an api and you want to
+convert it to a model. we have a new
+function <b>boss_record:new_from_json/2</b> which lets you do that
+automaticly. To run this call new_from_json/2 with your model (atom)
+and your json record. Note that if you have a field called 'id' you
+will have to rename or remove it
+</p>
+
+<h2>Conditions and Comparison Operators</h2>
+
+<p>The "find" and "count" functions each take a set of <code>Conditions</code>, which specify search criteria. Similar to Microsoft's <a href="http://msdn.microsoft.com/en-us/library/bb308959.aspx">LINQ</a>, the <code>Conditions</code> can use a special non-Erlang syntax for conciseness. This special syntax can't be compiled with Erlang's default compiler, so you'll have to let Boss compile your controllers which use it.</p>
+
+<p><code>Conditions</code> looks like a list, but each element in the list uses a notation very similar to abstract mathematical notation with a left-hand side (an atom corresponding to a record attribute), a single-character operator, and a right-hand side (values to match to the attribute). <strong>The mathematical operators are not all ASCII!</strong> You may want to copy-paste the UTF-8 operators below. As an alternative, you can also specify each condition with a 3-tuple with easier-to-type operator names.</p>
+
+<p>As a quick example, to count the number of people younger than 25 with occupation listed as "student" or "unemployed", you would use:</p>
+<pre class="code">
+boss_db:count(person,
+    [age &lt; 25, occupation ∈ ["student", "unemployed"]]).
+</pre>
+<p>This could also be written:</p>
+<pre class="code">
+boss_db:count(person,
+    [{age, 'lt', 25},
+    {occupation, 'in', ["student", "unemployed"]}]).
+</pre>
+
+<h2>Valid <code>Conditions</code></h2>
+
+<div class="example row1">
+    <div class=" code">
+        <code>key = Value</code><br>
+        <code>{key, 'equals', Value}</code>
+    </div>
+    <p>
+        The "<code>key</code>" attribute is exactly equal to <code>Value</code>.
+    </p>
+</div>
+
+<div class="example row2">
+    <div class=" code">
+        <code>key ≠ Value</code><br>
+        <code>{key, 'not_equals', Value}</code>
+    </div>
+    <p>
+      The "<code>key</code>" attribute is not exactly equal to <code>Value</code>.  This is also used to attain a query like <code>foo IS NOT NULL</code>: <code>{foo, 'not_equals', undefined}</code>.
+    </p>
+</div>
+<div class="example row1">
+    <div class="code">
+        <code>key ∈ [Value1, Value2, ...]</code><br>
+        <code>{key, 'in', [Value1, Value2, ...]}</code>
+    </div>
+    <p>The "<code>key</code>" attribute is equal to at least one element on the right-hand side.
+</p>
+</div>
+<div class="example row2">
+    <div class="code">
+        <code>key ∉ [Value1, Value2, ...]</code><br>
+        <code>{key, 'not_in', [Value1, Value2, ...]}</code>
+    </div>
+    <p>The "<code>key</code>" attribute is not equal to any element on the right-hand side.</p>
+</div>
+<div class="example row1">
+    <div class="code">
+        <code>key ∈ {Min, Max}</code><br>
+        <code>{key, 'in', {Min, Max}}</code>
+    </div>
+    <p>The "<code>key</code>" attribute is numerically between <code>Min</code> and <code>Max</code>.
+</p>
+</div>
+<div class="example row2">
+    <div class="code">
+        <code>key ∉ {Min, Max}</code><br>
+        <code>{key, 'not_in', {Min, Max}}</code>
+    </div>
+    <p>The "<code>key</code>" attribute is not between <code>Min</code> and <code>Max</code>.</p>
+</div>
+<div class="example row1">
+    <div class="code">
+        <code>key ∼ RegularExpression</code><br>
+        <code>{key, 'matches', RegularExpression}</code>
+    </div>
+    <p>The "<code>key</code>" attribute matches the <code>RegularExpression</code>. To perform a case-insensitive match, the expression should start with an asterisk (e.g. <code>*erlang</code>).</p>
+</div>
+<div class="example row2">
+    <div class="code">
+        <code>key ≁ RegularExpression</code><br>
+        <code>{key, 'not_matches', RegularExpression}</code>
+    </div>
+    <p>The "key" attribute does not match the <code>RegularExpression.</code>.</p>
+</div>
+<div class="example row1">
+    <div class="code">
+        <code>key ∋ Token</code><br>
+        <code>{key, 'contains', Token}</code>
+    </div>
+    <p>The "key" attribute contains <code>Token</code>.</p>
+</div>
+<div class="example row2">
+    <div class="code">
+        <code>key ∌ Token</code><br>
+        <code>{key, 'not_contains', Token}</code>
+    </div>
+    <p>The "<code>key</code>" attribute does not contain <code>Token</code>.</p>
+</div>
+<div class="example row1">
+    <div class="code">
+        <code>key ⊇ [Token1, Token2, ...]</code><br>
+        <code>{key, 'contains_all', [Token1, Token2, ...]}</code>
+    </div>
+    <p>The "<code>key</code>" attribute contains all tokens on the right-hand side.</p>
+</div>
+<div class="example row2">
+    <div class="code">
+        <code>key ⊉ [Token1, Token2, ...]</code><br>
+        <code>{key, 'not_contains_all', [Token1, Token2, ...]}</code>
+    </div>
+    <p>The "<code>key</code>" attribute does not contain all tokens on the right-hand side.</p>
+</div>
+<div class="example row1">
+    <div class="code">
+        <code>key ∩ [Token1, Token2, ...]</code><br>
+        <code>{key, 'contains_any', [Token1, Token2, ...]}</code>
+    </div>
+    <p>The "<code>key</code>" attribute contains at least one of the tokens on the right-hand side.</p>
+</div>
+<div class="example row2">
+    <div class="code">
+        <code>key ⊥ [Token1, Token2, ...]</code><br>
+        <code>{key, 'contains_none', [Token1, Token2, ...]}</code>
+    </div>
+    <p>The "<code>key</code>" attribute contains none of the tokens on the right-hand side.</p>
+</div>
+<div class="example row1">
+    <div class="code">
+        <code>key &gt; Value</code><br>
+        <code>{key, 'gt', Value}</code>
+    </div>
+    <p>The "<code>key</code>" attribute is greater than <code>Value</code>.</p>
+</div>
+<div class="example row2">
+    <div class="code">
+        <code>key &lt; Value</code><br>
+        <code>{key, 'lt', Value}</code>
+    </div>
+    <p>The "key" attribute is less than <code>Value</code>.</p>
+</div>
+<div class="example row1">
+    <div class="code">
+        <code>key ≥ Value</code><br>
+        <code>{key, 'ge', Value}</code>
+    </div>
+    <p>The "key" attribute is greater than or equal to <code>Value</code>.</p>
+</div>
+<div class="example row2">
+    <div class="code">
+        <code>key ≤ Value</code><br>
+        <code>{key, 'le', Value}</code>
+    </div>
+    <p>The "key" attribute is less than or equal to <code>Value</code>.</p>
+</div>
+
+
+{% endblock %}

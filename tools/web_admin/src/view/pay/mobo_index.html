@@ -1,0 +1,127 @@
+{% extends "gamedata/index.html" %}
+
+{% block head %}
+<title>充值记录 - DGRY GM Tool</title>
+<link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+<style>
+    #pnlSearch{margin-bottom:10px;}
+    #pnl_player_data input.blank{
+    background:#ffffff;
+    border:none;
+    box-shadow:none;
+    }
+    #pnl_player_data input.editable{
+    font-weight:bold;
+    }
+    #pnl_player_data input.editable.on{
+    font-weight:bold;
+    border:1px dashed #999999;
+    }
+</style>
+
+{% endblock %}
+{%block sub_title %} 充值记录(MoboPay) {% endblock %}
+
+{% block inner %}
+
+
+<div class="panel panel-default" id="pnl_pay_data">
+    <div class="panel-heading">充值记录(MoboPay)
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal" action="mobo_index" method="post" id="frm_email_data">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">玩家ID:</label>
+
+                <div class="col-sm-3">
+                    <input type="text" name="player_id" class="form-control" placeholder="请输入玩家账号" id="txtSearchKey"/>
+                </div>
+                <label class="col-sm-2 control-label">订单状态:</label>
+
+                <div class="col-sm-3">
+                    <select name="status" class="form-control">
+                        <option value=""> --全部--</option>
+                        <option value="0">初始</option>
+                        <option value="1">成功</option>
+                        <option value="-3002">未登录</option>
+                        <option value="-3001">取消支付</option>
+                    </select>
+                </div>
+                <div class="col-sm-1">
+                    <a href="javascript:;" class="btn btn-primary" id="btnSearch">查询</a>
+                </div>
+            </div>
+        </form>
+        <div id="pay_list_container">
+
+        </div>
+    </div>
+</div>
+
+<script>
+    var _pager = {};
+    $(function(){
+        load_data();
+        $('#btnSearch').click(load_data);
+    });
+
+    function load_data(){
+        var params = {'page_no':_pager.page_no || 1,
+                      'page_size':_pager.page_size || 20,
+                      'player_id':$('input[name=player_id]').val(),
+                      'status':$('select[name=status]').val()};
+        DGRY.post('pay', 'mobo_index',
+            params,
+            function(rtn){
+                if(rtn.code == 1){
+                    bind_data(rtn.data);
+                }
+            });
+    };
+
+    function bind_data(data) {
+        $.get('/static/html_tplt/pay/mobo_index.mst?_v' + 1, function(template) {
+            Mustache.parse(template);   // optional, speeds up future uses
+            var rendered = Mustache.render(template, {"items": data.rows,
+                                "pay_time_str": function(){
+                                    var time = DGRY.dgry_time_to_local_time(this.pay_time);
+                                    return DGRY.format_time(time);
+                                },
+                                "product_id_str": function(){
+                                    switch(this.product_id){
+                                        case "1": return "90";
+                                        case "2": return "500";
+                                        case "3": return "1200";
+                                        case "4": return "2500";
+                                        case "5": return "6500";
+                                        case "6": return "14000";
+                                        default: this.product_id; break;
+                                    }
+                                },
+                                "status_str": function(){
+                                    switch(this.status){
+                                        case "1": return "成功";
+                                        case "0": return "初始";
+                                        case "-3001": return "取消支付";
+                                        case "-3002": return "未登录";
+                                        default: this.status; break;
+                                    }
+                                }});
+            $('#pay_list_container').html(rendered);
+            _pager = data.pager;
+            DGRY.render_pager($('.dgry_pager'),
+                "/pay/mobo_index",
+                data.pager.total,
+                data.pager.page_no,
+                data.pager.page_size,
+                data.pager.page_count,
+                function(url, new_pager){
+                    _pager = new_pager;
+                    load_data();
+                });
+        });
+    };
+
+
+</script>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "shared/base.html" %}
+
+{% block head %}
+<title>{%block title%} {% endblock %} - DGRY GM Tool</title>
+<link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+<style>
+    #pnlSearch{margin-bottom:10px;}
+    #pnl_player_data input.blank{
+    background:#ffffff;
+    border:none;
+    box-shadow:none;
+    }
+    #pnl_player_data input.editable{
+    font-weight:bold;
+    }
+    #pnl_player_data input.editable.on{
+    font-weight:bold;
+    border:1px dashed #999999;
+    }
+</style>
+{% endblock %}
+{% block content %}
+
+<div class="col-sm-2">
+    <ul class="nav nav-pills nav-stacked">
+        <li role="presentation"><a href="users">用户管理</a></li>
+        <li role="presentation"><a href="modules">模块管理</a></li>
+        <li role="presentation"><a href="menus">菜单管理</a></li>
+        <li role="presentation"><a href="roles">角色管理</a></li>
+    </ul>
+</div>
+
+<div class="col-sm-10">
+
+    <ol class="breadcrumb">
+        <li><a href="/">首页</a></li>
+        <li><a href="/rabc/">权限管理</a></li>
+        <li class="active">{%block sub_title %}{% endblock %}</li>
+    </ol>
+
+    {% block inner %}
+    权限管理理理理
+    {% endblock %}
+</div>
+{% endblock %}

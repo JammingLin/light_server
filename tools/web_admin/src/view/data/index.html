@@ -1,0 +1,45 @@
+{% extends "shared/base.html" %}
+
+{% block head %}
+<title>外围数据管理 - DGRY GM Tool</title>
+
+<link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+{% endblock %}
+
+{% block content %}
+
+<a class="btn btn-primary" href="/data/newbie">修改玩家新手引导步骤</a>
+<a class="btn btn-primary" href="/data/pvp_pvr">PVP, PVR数据管理</a>
+<a class="btn btn-default" href="#/data/##">修复废弃关卡数据</a>
+<a class="btn btn-primary" href="/data/rand_pvp">给玩家刷PVP</a>
+<a class="btn btn-primary" href="/data/rand_pve">给玩家刷PVE</a>
+<a class="btn btn-primary" href="/data/switch_players">互换账号</a>
+<a class="btn btn-default" href="javascript:add_account();">添加账号</a>
+
+<div style="display:none;">
+
+    <div id="tplt_add_account">
+    <form action="/serverinfo/add_passport" method="post">
+        <input type="text" id="account" name="account"/>
+        <input type="text" id="password" name="password"/>
+        <button type="submit" id="btn_save">保存</button>
+    </form>
+    </div>
+</div>
+
+<script>
+    function add_account() {
+        var html = $("#tplt_add_account").html();
+        _modal('添加账号', html);
+    }
+
+    function _modal(title, body, options){
+        var m = $('#global_modal');
+        $('.modal-title', m).html(title);
+        $('.modal-body', m).html(body);
+        m.modal(options || {show:false});
+        m.modal('show');
+    };
+</script>
+
+{% endblock %}

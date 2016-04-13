@@ -1,0 +1,25 @@
+language: erlang
+sudo: false
+otp_release:
+# Test on all supported releases
+   - 18.1
+   - 18.0
+   - 17.5
+   - 17.4
+   - 17.1
+   - 17.0
+
+script:
+  - make
+  - rm -rf .rebar/
+  - rebar eunit -v skip_deps=true
+  - make plt
+  - make dialyze
+# some real world action
+  - make app PROJECT=whakamutunga
+  - cd ../whakamutunga/
+  - rm -rf deps/*/.rebar
+  - make
+
+notifications:
+  email: false

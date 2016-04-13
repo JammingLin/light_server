@@ -1,0 +1,7 @@
+{application,dh_date,
+             [{description,"Basic date formatting and parsing app"},
+              {vsn,"1"},
+              {registered,[]},
+              {applications,[kernel,stdlib]},
+              {env,[]},
+              {modules,[dh_date]}]}.

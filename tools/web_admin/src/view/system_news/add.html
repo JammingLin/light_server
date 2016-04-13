@@ -1,0 +1,199 @@
+{% extends "shared/base.html" %}
+
+{% block head %}
+<title>添加/编辑系统公告</title>
+<style>
+    .icon-list{overflow:auto; height:180px; }
+    .icon-list li {margin:5px;padding:5px; display:inline-block; width:100px;
+    border:1px solid #999999;
+    text-align:center;}
+    .icon-list li.select {background:yellow;}
+    .icon-list li img {width:80px; height:80px}
+    .icon-list li {}
+</style>
+{% endblock %}
+
+{% block content %}
+<script>
+    $(function(){
+        var cfg = {
+            language: 'zh-CN',
+            format: 'yyyy-mm-dd hh:ii:ss',
+            autoclose: true
+        };
+        var changeDateFun = function(ev){
+            var d = ev.date;// 时间选择器把选择的时间当成 UTC时间,这里的 date 是加上了时区的本地时间
+            var d2 = new Date(d.toUTCString());
+            console.log(d2.getTimezoneOffset());
+            d2.setMinutes(d2.getMinutes() + 2 * d2.getTimezoneOffset());
+            d2.setSeconds(d2.getSeconds() - d2.getSeconds()); // 秒抹零
+
+            var input_id = $(this).attr('data-field');
+            $('#' + input_id).val(DGRY.format_time(d2));
+        };
+        $('#txt_sendtime,#txt_deadline').datetimepicker(cfg)
+        .on('changeDate', changeDateFun);
+    });
+</script>
+{% if code %}
+    <script>
+        var result = {"code":{{code}}, "data":{{data}}, "msg":"{{msg}}"};
+        if(result.code == 1){
+            alert("操作成功");
+        }
+        else{
+            alert("操作失败");
+        }
+    </script>
+
+
+{% endif %}
+
+<script>
+    $(function(){
+        $areas_0 = $('#areas_0');
+        $areas_s = $('#areas_s');
+
+        $('#btn_slt_area').click(function(){
+            $('option:selected', $areas_0).each(function(i, n){
+                $this = $(n);
+                $('<option value="' + $this.val() + '">' + $this.text() + '</option>').appendTo($areas_s);
+                $this.remove();
+            });
+            fill_areas();
+        });
+        $('#btn_rmv_area').click(function(){
+            $('option:selected', $areas_s).each(function(i, n){
+                $this = $(n);
+                $('<option value="' + $this.val() + '">' + $this.text() + '</option>').appendTo($areas_0);
+                $this.remove();
+            });
+            fill_areas();
+        });
+
+
+        $('.icon-list li').click(function(){
+            var iconpath = $(this).attr('data-iconpath');
+            $('input[name=icon]').val(iconpath);
+            $('.icon-list li').removeClass('select');
+            $(this).addClass('select');
+        });
+    });
+
+    function fill_areas(){
+        var as = [];
+        $('option', $areas_s).each(function(i,n){
+            as.push($(n).val());
+        });
+        $('#area').val(as.join(','));
+    };
+</script>
+
+<div class="panel panel-default">
+    <div class="panel-heading">添加/编辑系统公告<a href="index" class="btn btn-small" >返回列表</a></div>
+    <div class="panel-body">
+        <form class="form-horizontal" action="add" method="post" id="frm_player_data">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">投放区域:</label>
+
+                <div class="col-sm-3">
+                    <select multiple="multiple" id="areas_0" name="area_0" class="form-control" data-field="area">
+                    {% for area in areas %}
+                    <option value="{{area.area}}">{{area.area}} - {{area.text}}</option>
+                    {% endfor %}
+                    </select>
+                </div>
+                <div class="col-sm-1">
+                    <button type="button" id="btn_slt_area">&gt;&gt;</button>
+                    <br/>
+                    <button type="button" id="btn_rmv_area">&lt;&lt;</button>
+                    <input type="hidden" id="area" name="area"/>
+                </div>
+                <div class="col-sm-3">
+                    <select multiple="multiple" id="areas_s"  name="area_s" class="form-control" data-field="area">
+
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">公告类型:</label>
+
+                <div class="col-sm-3">
+                    <select name="type" class="form-control" data-field="type">
+                        <option value="1">一般通知</option>
+                        <option value="2">维护通知</option>
+                        <option value="3">营销通知</option>
+                        <option value="4">新功能通知</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">公告标题:</label>
+
+                <div class="col-sm-3">
+                    <input type="text" name="title" class="form-control" data-field="title" maxlength="30"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">公告图标:</label>
+
+                <!--<div class="col-sm-3">-->
+                    <!--<input type="text" name="news_icon" class="form-control" data-field="news_icon" maxlength="30"/>-->
+                <!--</div>-->
+                <div class="col-sm-7">
+                    <ul class="icon-list">
+                        {% for img in icons %}
+                        <li data-iconpath="{{img.icon_dir}}">
+                            <img src="/static/icons-v1/{{img.icon_dir}}.{{img.subffix}}"/>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <input name="icon" value="" type="hidden"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">公告正文:</label>
+
+                <div class="col-sm-3">
+                    <textarea name="content" class="form-control" data-field="content" maxlength="500"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">添加跳转链接:</label>
+                <div class="col-sm-3">
+                    <textarea name="url" placeholder="请务必加上http://或者https://" class="form-control" data-field="url" maxlength="256"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">投放时间:</label>
+
+                <div class="col-sm-3">
+                    <input type="text" id="txt_sendtime" name="txt_sendtime" class="form-control" data-field="sendtime"/>
+                    <input type="hidden" id="sendtime" name="sendtime" class="form-control" data-field="sendtime"/>
+                </div>
+                <div class="col-sm-2">
+                    <label class="label label-warning">注意:此时间为浏览器本地时间</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">有效期至:</label>
+
+                <div class="col-sm-3">
+                    <input type="text" id="txt_deadline" name="txt_deadline" class="form-control" data-field="deadline"/>
+                    <input type="hidden" id="deadline" name="deadline" class="form-control" data-field="deadline"/>
+                </div>
+                <div class="col-sm-2">
+                    <label class="label label-warning">注意:此时间为浏览器本地时间</label>
+                </div>
+            </div>
+
+
+            <div class="col-sm-offset-2">
+                <button type="submit" class="btn btn-primary" id="btnSave">保存</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

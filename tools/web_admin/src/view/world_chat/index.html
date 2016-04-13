@@ -1,0 +1,86 @@
+{% extends "gamedata/index.html" %}
+
+{% block head %}
+<title>世界聊天 - DGRY GM Tool</title>
+<link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+
+<script src="/static/scripts/dgry_admin_world_chat.js"></script>
+
+<style>
+    #pnlSearch{margin-bottom:10px;}
+    #pnl_player_data input.blank{
+    background:#ffffff;
+    border:none;
+    box-shadow:none;
+    }
+    #pnl_player_data input.editable{
+    font-weight:bold;
+    }
+    #pnl_player_data input.editable.on{
+    font-weight:bold;
+    border:1px dashed #999999;
+    }
+</style>
+{% endblock %}
+
+{% block inner %}
+
+
+<div class="panel panel-default" id="pnl_feedback_data">
+    <div class="panel-heading">世界聊天
+        <a id="btn_export" href="javascript:;" class="btn btn-small">导出最新1000条</a>
+        <a href="config" class="btn btn-small">聊天及反馈配置</a>
+    </div>
+</div>
+
+
+<div class="panel panel-default" >
+    <div class="panel-heading">实时聊天详情
+    </div>
+    <div class="panel-body">
+        <table class="table table-hover table-responsive">
+            <thead>
+                <tr>
+                    <th>发送时间</th>
+                    <th>发送ID</th>
+                    <th>玩家名字</th>
+                    <th>发送内容</th>
+                    <th>战报ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if data %}
+                {% for chatdata in data %}
+                <tr>
+                    <td>{{ chatdata.send_time | datetime}}</td>
+                    <td>{{ chatdata.message_id }}</td>
+                    <td>{{ chatdata.player_name }}</td>
+                    <td style="word-break:break-all;">{{ chatdata.message }}</td>
+                    <td>{{ chatdata.report_id}}</td>
+                   </tr>
+                {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<script>
+    $(function(){
+        $('.show_detail').click(function(){
+            var info = $(this).parent().next().html();
+            _modal('详细', info);
+        });
+    });
+
+   function _modal(title, body, options){
+        var m = $('#global_modal');
+        $('.modal-title', m).html(title);
+        $('.modal-body', m).html(body);
+        m.modal(options || {show:false});
+        m.modal('show');
+    };
+</script>
+
+{% endblock %}

@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Test conn_mgr_SUITE:init_per_suite result</title>
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="../../ct_default.css" type="text/css">
+<script type="text/javascript" src="../../jquery-latest.js"></script>
+<script type="text/javascript" src="../../jquery.tablesorter.min.js"></script>
+</head>
+<body>
+
+=== <a href="conn_mgr_suite.src.html#init_per_suite-1">source code for conn_mgr_SUITE:init_per_suite/1</a>
+
+<pre>
+<a name="top"></a>
+=== Test case started with:
+conn_mgr_SUITE:init_per_suite([{tc_logfile,
+                                   "e:/lib/Emysql/logs/ct_run.ct@ND-XM-LinYiJie.2014-08-06_17.27.38/lib.Emysql.conn_mgr_SUITE.logs/run.2014-08-06_17.27.42/conn_mgr_suite.init_per_suite.html"},
+                               {tc_group_properties,[]},
+                               {tc_group_path,[]},
+                               {data_dir,
+                                   "e:/lib/Emysql/test/conn_mgr_SUITE_data/"},
+                               {priv_dir,
+                                   "e:/lib/Emysql/logs/ct_run.ct@ND-XM-LinYiJie.2014-08-06_17.27.38/lib.Emysql.conn_mgr_SUITE.logs/run.2014-08-06_17.27.42/log_private/"}])
+
+=== Current directory is "e:/lib/Emysql/logs/ct_run.ct@ND-XM-LinYiJie.2014-08-06_17.27.38"
+
+=== Started at 2014-08-06 17:27:42
+
+<br />
+
+<div class="ct_error_notify"><b>*** CT Error Notification 2014-08-06 17:27:42.486 ***</b>
+conn_mgr_SUITE:init_per_suite failed
+Reason: undef
+
+<a href="#end">Full error description and stacktrace</a>
+</div>
+<a name="end"></a>
+
+
+=== Ended at 2014-08-06 17:27:42
+=== location [{emysql,add_pool},
+ {conn_mgr_SUITE,init_per_suite,46},
+ {test_server,ts_tc,1415},
+ {test_server,run_test_case_eval1,1092},
+ {test_server,run_test_case_eval,976}]
+=== reason = undefined function emysql:add_pool/8
+  in function  conn_mgr_SUITE:init_per_suite/1 (e:/lib/Emysql/test/conn_mgr_SUITE.erl, line 46)
+  in call from test_server:ts_tc/3 (test_server.erl, line 1415)
+  in call from test_server:run_test_case_eval1/6 (test_server.erl, line 1092)
+  in call from test_server:run_test_case_eval/9 (test_server.erl, line 976)
+=== 
+*** init_per_suite failed.
+    Skipping all cases.
+</pre>
+<center>
+<br /><hr /><p>
+<a href="../../../all_runs.html">Test run history
+</a>  |  <a href="../../../index.html">Top level test index
+</a>
+</p>
+<div class="copyright">Copyright &copy; 2014 <a href="http://www.erlang.org">Open Telecom Platform</a><br />
+Updated: <!date>Wed Aug 06 2014 17:27:42<!/date><br />
+</div>
+</center>
+</body>
+</html>

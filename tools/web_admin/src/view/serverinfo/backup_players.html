@@ -1,0 +1,41 @@
+{% extends "shared/base.html" %}
+
+{% block head %}
+<title>服务器概况-PVP備用池详情</title>
+<script>
+</script>
+{% endblock %}
+
+{% block content %}
+    {% if msg %}
+        {% if msg != "ok" %}
+            <stong>{{ msg }}</stong>
+        {% endif %}
+    {% endif %}
+
+    <div class="panel panel-default">
+        <div class="panel-heading">PVP備用池详情</div>
+        <div class="panel-body">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>玩家ID</th>
+                    <th>账号</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% if data %}
+                {% for item in data %}
+                <tr>
+                    <td>{{ item.id}}</td>
+                    <td>{{ item.player_id}}</td>
+                    <td>{{ item.account}}</td>
+                </tr>
+                {% endfor %}
+                {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "shared/base.html" %}
+
+{% block head %}
+    <title>测试配置</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="panel panel-default">
+    <div class="panel-heading">MoboPay测试配置</div>
+    <div class="panel-body">
+        <form class="form-horizontal" method="post" action="mobo_pay_test_config">
+            <div class="form-group"></div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">转发地址:</label>
+
+                <div class="col-sm-6">
+                    <input class="form-control" type="text" name="redirect" value="{{data.redirect}}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">测试账号:</label>
+
+                <div class="col-sm-6">
+                    <textarea class="form-control" name="test_uids" placeholder="QA测试支付的玩家的百度ID,以半角逗号(,)隔开">{{data.test_uids}}</textarea>
+                </div>
+            </div>
+            <div class="col-sm-offset-2">
+                <button type="submit" class="btn btn-primary" >提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

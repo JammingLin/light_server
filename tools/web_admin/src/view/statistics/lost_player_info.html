@@ -1,0 +1,33 @@
+{% extends "statistics/index.html" %}
+{%block title%} 流失玩家名单 {% endblock %}
+{%block sub_title %} 流失玩家名单 {% endblock %}
+
+{% block inner %}
+<div>
+    玩家人数：{{ data.count }} <br/>
+    流失比例：{{ data.rate|m100 }}%
+</div>
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>账号名</th>
+        <th>玩家id</th>
+        <th>最后一次pve</th>
+        <th>最后一次pvp战斗id</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% if data %}
+    {% for item in data.lost_list %}
+    <tr>
+        <td>{{ item.account }}</td>
+        <td>{{ item.player_id }}</td>
+        <td>{{ item.pve_id }}</td>
+        <td>{{ item.pvp_battle_id }}</td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+    </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,127 @@
+{% extends "statistics/index.html" %}
+{%block title%} 新手关卡流失 {% endblock %}
+{%block sub_title %} 新手关卡流失 {% endblock %}
+
+{% block inner %}
+<!--<div class="btn-group">-->
+    <!--<a class="btn btn-default" href="/statistics/get_newbie_guide_lost?n=0">当天流失</a>-->
+    <!--<a class="btn btn-default" href="/statistics/get_newbie_guide_lost?n=7">7天流失</a>-->
+    <!--<a class="btn btn-default" href="/statistics/get_newbie_guide_lost?n=14">14天流失</a>-->
+    <!--<a class="btn btn-default" href="/statistics/get_newbie_guide_lost?n=30">30天流失</a>-->
+    <!--<a class="btn btn-default" href="/statistics/get_newbie_guide_lost?n=60">60天流失</a>-->
+<!--</div>-->
+
+<!--<div class="btn-group">-->
+    <!--<a class="btn btn-default" href="/statistics/get_newbie_guide_lost?n=0">IOS</a>-->
+    <!--<a class="btn btn-default" href="/statistics/get_newbie_guide_lost?n=7">GOOGLE</a>-->
+    <!--<a class="btn btn-default" href="/statistics/get_newbie_guide_lost?n=14">MOBO</a>-->
+<!--</div>-->
+<script>
+    $(function(){
+        $('#txtStartDate').datetimepicker({
+            format: 'yyyy-mm-dd',
+            language: 'zh-CN',
+            minView:2,
+            autoclose: true
+        });
+
+        $('td').each(function(i,n){
+            var r = $(n).attr('data-rate');
+            if(!r){
+                return true;
+            }
+
+            if(r >= 0.3){
+                $(n).addClass('u30');
+            }
+            else if(r >= 0.2){
+                $(n).addClass('u20');
+            }
+            else if(r >= 0.1){
+                $(n).addClass('b20');
+            }
+            else {
+                $(n).addClass('b10');
+            }
+        });
+
+        $('#btn_refresh_today').click(function(){
+            var now = $('#txtEndDate').val();
+            if(!confirm('重新分析' + now + '的数据?')){
+                return;
+            }
+
+            var use_newbie = $('input[name=use_newbie]:checked').val();
+            DGRY.get('statistics', 'analyse_retention', {'start_day': now, 'end_day':now, 'use_newbie':use_newbie}, function(rtn){
+                if(rtn.code == 1){
+                    alert('完成');
+                }
+                else{
+                    alert('出错了');
+                }
+            });
+        });
+    });
+</script>
+<div class="panel">
+    <form class="form-horizontal" action="/statistics/get_newbie_guide_lost" method="post">
+        <div class="form-group form-group-sm">
+            <div class=" col-sm-2">
+                <input id="txtStartDate" class="form-control" name="passport_create_date" data-date-format="yyyy-mm-dd" placeholder="注册日期" value="{{data.viewdata.passport_create_date|undefined_empty}}"/>
+            </div>
+            <div class=" col-sm-2">
+                <select name="day" class="form-control">
+                    <option value="0" {{ data.viewdata.day|selected :"0" }}>当天流失</option>
+                    <option value="7" {{ data.viewdata.day|selected :"7" }}>7天流失</option>
+                    <option value="14" {{ data.viewdata.day|selected :"14" }}>14天流失</option>
+                    <option value="30" {{ data.viewdata.day|selected :"30" }}>30天流失</option>
+                    <option value="60" {{ data.viewdata.day|selected :"60" }}>60天流失</option>
+                </select>
+            </div>
+            <div class=" col-sm-2">
+                <select name="channel" class="form-control">
+                    <option value="">--全部渠道--</option>
+                    <option value="IOS" {{ data.viewdata.channel|selected :"IOS" }}>IOS</option>
+                    <option value="MOBO" {{ data.viewdata.channel|selected :"MOBO" }}>MOBO</option>
+                    <option value="GOOGLE" {{ data.viewdata.channel|selected :"GOOGLE" }}>GOOGLE</option>
+                </select>
+            </div>
+            <div class=" col-sm-2">
+                <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i> 查询</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<table class="table table-hover">
+    <caption>
+        {% if data %}
+        新手总人数:{{ data.newbie_count }}</br>
+        注册总人数:{{ data.player_count }}
+
+        {% endif %}
+    </caption>
+    <thead>
+    <tr>
+        <th>新手引导节点ID</th><th>流失人数</th><th>占比</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% if data %}
+    {% for newbielost in data.rows %}
+    <tr>
+        <td>{{ newbielost.sub_step }}</td>
+        <td>{{ newbielost.num      }}</td>
+        <td>{{ newbielost.rate     }}</td>
+    </tr>
+    {% endfor %}
+    {% else %}
+    <tr>
+        <td colspan="3">
+        没有数据
+        </td>
+    </tr>
+    {% endif %}
+    </tbody>
+</table>
+{% endblock %}

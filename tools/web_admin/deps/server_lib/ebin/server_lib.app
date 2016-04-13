@@ -1,0 +1,9 @@
+{application,server_lib,
+             [{description,[]},
+              {vsn,"1"},
+              {registered,[]},
+              {applications,[kernel,stdlib]},
+              {mod,{server_lib_app,[]}},
+              {env,[]},
+              {modules,[datetime,datetime_mock,datetime_real,json,
+                        server_lib_app,server_lib_sup,utils]}]}.

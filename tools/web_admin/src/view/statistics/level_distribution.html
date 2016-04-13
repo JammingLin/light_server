@@ -1,0 +1,47 @@
+{% extends "statistics/index.html" %}
+{%block title%} 玩家分布情况 {% endblock %}
+{%block sub_title %} 玩家分布情况 {% endblock %}
+
+{% block inner %}
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>日期</th>
+        <th>1档</th>
+        <th>2档</th>
+        <th>3档</th>
+        <th>4档</th>
+        <th>5档</th>
+        <th>6档</th>
+        <th>7档</th>
+        <th>8档</th>
+        <th>9档</th>
+        <th>10档</th>
+        <th>11档</th>
+        <th>12档</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% if data %}
+    {% for item in data %}
+    <tr>
+        <td>{{ item.day }}</td>
+        <td>{{ item.d1 }}</td>
+        <td>{{ item.d2 }}</td>
+        <td>{{ item.d3 }}</td>
+        <td>{{ item.d4 }}</td>
+        <td>{{ item.d5 }}</td>
+        <td>{{ item.d6 }}</td>
+        <td>{{ item.d7 }}</td>
+        <td>{{ item.d8 }}</td>
+        <td>{{ item.d9 }}</td>
+        <td>{{ item.d10 }}</td>
+        <td>{{ item.d11 }}</td>
+        <td>{{ item.d12 }}</td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+    </tbody>
+</table>
+
+{% endblock %}

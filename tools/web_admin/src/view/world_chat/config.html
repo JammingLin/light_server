@@ -1,0 +1,54 @@
+{% extends "shared/base.html" %}
+
+{% block head %}
+<title>添加/编辑聊天配置</title>
+{% endblock %}
+
+{% block content %}
+
+{% if code %}
+<script>
+        var result = {"code":{{code}}, "data":{{data}}, "msg":"{{msg}}"};
+        if(result.code == 1){
+            alert("操作成功");
+        }
+        else{
+            alert("操作失败");
+        }
+    </script>
+{% endif %}
+
+<div class="panel panel-default">
+    <div class="panel-heading">添加/编辑聊天配置<a href="index" class="btn btn-small" >返回列表</a></div>
+    <div class="panel-body">
+        <form class="form-horizontal" action="config" method="post" id="frm_player_data">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">普通聊天间隔(秒)</label>
+                <div class="col-sm-3">
+                    <input type="text" name="chat" data-field="chat" class="form-control" value="{{data.chat_interval}}" maxlength="30"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">战报分享间隔(秒)</label>
+
+                <div class="col-sm-3">
+                    <input type="text" name="share" class="form-control" data-field="share" value="{{data.share_interval}}" maxlength="30"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">反馈间隔(秒)</label>
+
+                <div class="col-sm-3">
+                    <input type="text" name="feedback" class="form-control" data-field="feedback" maxlength="30" value="{{data.feedback_interval}}"/>
+                </div>
+            </div>
+
+            <div class="col-sm-offset-2">
+                <button type="submit" class="btn btn-primary" id="btnSave">保存</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}

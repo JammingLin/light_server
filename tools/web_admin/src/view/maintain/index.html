@@ -1,0 +1,105 @@
+{% extends "shared/base.html" %}
+
+{% block head %}
+<title>{%block title%} {% endblock %} - DGRY GM Tool</title>
+<link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+<style>
+    #pnlSearch{margin-bottom:10px;}
+    #pnl_player_data input.blank{
+    background:#ffffff;
+    border:none;
+    box-shadow:none;
+    }
+    #pnl_player_data input.editable{
+    font-weight:bold;
+    }
+    #pnl_player_data input.editable.on{
+    font-weight:bold;
+    border:1px dashed #999999;
+    }
+</style>
+{% endblock %}
+{% block content %}
+
+<div class="col-sm-2">
+    <ul class="nav nav-pills nav-stacked">
+        <li role="presentation">
+            <a href="/maintain/">服务维护</a>
+        </li>
+        <li role="presentation">
+            <a href="/maintain/show_db_table">数据库数据</a>
+        </li>
+        <li role="presentation">
+            <a href="/maintain/show_json_table">模板表数据</a>
+        </li>
+    </ul>
+</div>
+
+<div class="col-sm-10">
+
+    <ol class="breadcrumb">
+        <li><a href="/">首页</a></li>
+        <li><a href="/maintain">服务器维护</a></li>
+        <li class="active">{%block sub_title %}{% endblock %}</li>
+    </ol>
+
+    {% block inner %}
+    <div class="panel panel-default">
+        <a id="btn_clear_cache" class="btn btn-default" href="javascript:;">清除缓存</a>
+        <div class="panel-heading">
+            重启服务
+        </div>
+        <div class="panel-body">
+            <a href="javascript:;" class="btn btn-default btn-restart" id="btnRestartDB" data-action="restart_db">restart db</a><br/>
+            <a href="javascript:;" class="btn btn-default btn-restart" id="btnRestartGame" data-action="restart_game">restart game</a><br/>
+            <a href="javascript:;" class="btn btn-default btn-restart" id="btnRestartGate" data-action="restart_gate">restart gate</a><br/>
+            <a href="javascript:;" class="btn btn-default btn-restart" id="btnRestartGmTool" data-action="restart_gm">restart gmtool</a><br/>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            重新载入模块
+        </div>
+        <div class="panel-body">
+            <select id="app" name="app">
+                <option value="gs">gs</option>
+                <option value="gw">gw</option>
+                <option value="db">db</option>
+            </select>
+            <textarea id="txt_modules"></textarea>
+            <a href="javascript:;" class="btn btn-default" id="btnReloadModules">reload modules</a><br/>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            $('.btn-restart').click(function(){
+                var action = $(this).attr('data-action');
+                if(!confirm('sure ' + action + '?')){
+                    return;
+                }
+                DGRY.get('maintain', action, function(rsp){
+                    alert(rsp.code);
+                });
+            });
+
+            $('#btnReloadModules').click(function(){
+                var data = {"app": $('#app').val(), "modules": $('#txt_modules').val()};
+                DGRY.post('maintain', 'reload_modules', data, function(rsp){
+                    alert(rsp.code);
+                });
+            });
+
+            $('#btn_clear_cache').click(function(){
+                if(!confirm('确定清除缓存吗？ 请保证无玩家在线时再清除！！！')){
+                    return false;
+                }
+                $.get('/serverinfo/clear_cache', function(rtn){
+                    location.href = location.href;
+                });
+            });
+        });
+    </script>
+    {% endblock %}
+</div>
+{% endblock %}

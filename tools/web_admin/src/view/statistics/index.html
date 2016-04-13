@@ -1,0 +1,52 @@
+{% extends "shared/base.html" %}
+
+{% block head %}
+<title>{%block title%} {% endblock %} - DGRY GM Tool</title>
+<link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+<style>
+    #pnlSearch{margin-bottom:10px;}
+    #pnl_player_data input.blank{
+    background:#ffffff;
+    border:none;
+    box-shadow:none;
+    }
+    #pnl_player_data input.editable{
+    font-weight:bold;
+    }
+    #pnl_player_data input.editable.on{
+    font-weight:bold;
+    border:1px dashed #999999;
+    }
+</style>
+{% endblock %}
+{% block content %}
+
+<div class="col-sm-2">
+    <ul class="nav nav-pills nav-stacked">
+        <!--<li role="presentation"><a href="retention">留存分析</a></li>-->
+        <!--<li role="presentation"><a href="lost_player_info?days=3">流失玩家名单</a></li>-->
+        <!--<li role="presentation"><a href="get_newbie_guide_lost">新手关卡流失</a></li>-->
+        <!--<li role="presentation"><a href="pve_detail">关卡详细数据</a></li>-->
+        <!--<li role="presentation"><a href="pve_refresh_info">关卡匹配情况</a></li>-->
+        <!--<li role="presentation"><a href="player_level_up_battle_info">玩家升级分析</a></li>-->
+        <!--<li role="presentation"><a href="pvp_battle_info">建筑摧毁情况</a></li>-->
+        <!--<li role="presentation"><a href="battle_function?start_day=2015-9-9&end_day=2015-9-9">战斗功能使用</a></li>-->
+        <!--<li role="presentation"><a href="activity_building_detail_info">活跃玩家防御建筑使用情况</a></li>-->
+        <li role="presentation"><a href="question_error_rate">错误率分析</a></li>
+        <li role="presentation"><a href="question_error_report">错题举报</a></li>
+    </ul>
+</div>
+
+<div class="col-sm-10">
+
+    <ol class="breadcrumb">
+        <li><a href="/">首页</a></li>
+        <li><a href="/statistics">统计分析</a></li>
+        <li class="active">{%block sub_title %}{% endblock %}</li>
+    </ol>
+
+    {% block inner %}
+    请选择统计项
+    {% endblock %}
+</div>
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends "gamedata/index.html" %}
+
+{% block head %}
+<title>玩家邮件管理 - DGRY GM Tool</title>
+<link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+<style>
+    #pnlSearch{margin-bottom:10px;}
+    #pnl_player_data input.blank{
+    background:#ffffff;
+    border:none;
+    box-shadow:none;
+    }
+    #pnl_player_data input.editable{
+    font-weight:bold;
+    }
+    #pnl_player_data input.editable.on{
+    font-weight:bold;
+    border:1px dashed #999999;
+    }
+</style>
+
+<script>
+    $(function(){
+        $('.btn_del').click(function(){
+            var id = $(this).attr('data-email_id');
+            return confirm('是否要删除邮件ID：' + id + '的邮件?');
+        });
+
+        $(".parse_to_localtime").each(function(i,n){
+            console.log($(n).text());
+            var date = $.fn.datetimepicker.DPGlobal.parseDate($(n).text(), 'yyyy-mm-dd hh:ii:ss', 'zh-CN', 'standard');
+            $(n).text(DGRY.format_time(date));
+        });
+    });
+</script>
+{% endblock %}
+{%block sub_title %} 邮件管理 {% endblock %}
+
+{% block inner %}
+
+
+<div class="panel panel-default" id="pnl_email_data">
+    <div class="panel-heading">玩家邮件
+        <a href="add" class="btn btn-small">添加邮件</a>
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal" action="index" method="post" id="frm_email_data">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">玩家ID:</label>
+                <div class="col-sm-3">
+                    <input type="text" name="player_id" class="form-control" placeholder="请输入玩家账号" id="txtSearchKey"/>
+                </div>
+                <div class="col-sm-1">
+                    <button type="submit" class="btn btn-primary" id="btnSearch">查询</button>
+                </div>
+            </div>
+        </form>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>玩家ID</th>
+                <th>邮件ID</th>
+                <th>类型</th>
+                <th>状态</th>
+                <th>标题</th>
+                <th>发送时间</th>
+                <th>失效时间</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% if data %}
+            {% for email in data %}
+            <tr>
+                <td>{{ email.player_id  }}</td>
+                <td>{{ email.email_id  }}</td>
+                <td>{{ email.type|email_type_name}}</td>
+                <td>{{ email.status }}</td>
+                <td>{{ email.title }}</td>
+                <td class="parse_to_localtime">{{ email.send_time |datetime }}</td>
+                <td class="parse_to_localtime">{{ email.dead_line |datetime }}</td>
+                <td>
+                    <a href="detail?player_id={{email.player_id}}&email_id={{email.email_id}}" >详情</a> |
+                    <a class="btn_del" data-email_id="{{ email.email_id }}" href="delete?player_id={{email.player_id}}&email_id={{email.email_id}}" >删除</a>
+                </td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+erl_crash.dump
+*~
+.*.sw?
+*.beam
+.eunit/
+/deps/*
+test/logs/*
+logs
+crypto_compat.hrl
+log/
+test/app.config
+logs/
+rebar.test.*.config
+.deps_plt

@@ -1,0 +1,26 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>实例ID</th>
+            <th>建筑类别</th>
+            <th>建筑ID</th>
+            <th>状态</th>
+            <th>建筑/升级完成时间</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#items}}
+        <tr>
+            <td>{{ hole_id }}</td>
+            <td>{{ building_type }}</td>
+            <td>{{ building_id }}</td>
+            <td>{{ time_type_str }}</td>
+            <td>{{ finish_time_str }}</td>
+            <td>
+                <button class="btn btn-sm btn-primary"><i class="icon glyphicon glyphicon-arrow-up"></i></button>
+            </td>
+        </tr>
+        {{/items}}
+    </tbody>
+</table>

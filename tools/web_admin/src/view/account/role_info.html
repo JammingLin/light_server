@@ -1,0 +1,42 @@
+{% extends "shared/base.html" %}
+
+{% block head %}
+<title>角色权限信息 - DGRY GM Tool</title>
+{% endblock %}
+
+{% block content %}
+
+{% if msg%}
+<script>
+    $(function() {
+        var m = '{{msg}}';
+        if(m != 'ok'){
+            alert(m);
+        }
+    });
+</script>
+{% endif%}
+
+<div class="panel panel-default">
+    <div class="panel-heading">您当前的角色</div>
+    <div class="panel-body">
+        <ol>
+            {% for role in data.roles %}
+                <li>{{ role.name }}</li>
+            {% endfor %}
+        </ol>
+    </div>
+</div>
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">您可以访问的模块</div>
+    <div class="panel-body">
+        <ol>
+            {% for module in data.modules %}
+            <li><a href="/{{module.controller}}/{{module.action}}">{{ module.name }}</a></li>
+            {% endfor %}
+        </ol>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+#! /bin/sh
+#./thrift --gen csharp -out ../../client/Assets/Scripts/Transport/protocol game.thrift
+./thrift --gen erl -out deps/server_lib/src/ game.thrift
+mv deps/server_lib/src/game_constants.hrl deps/server_lib/include/
+mv deps/server_lib/src/game_types.hrl deps/server_lib/include/
+
+
+./thrift --gen csharp -out ../battle_server/src/VRServer.Core/protocol battle.thrift
+./thrift --gen erl -out deps/server_lib/src/ battle.thrift
+mv deps/server_lib/src/battle_types.hrl deps/server_lib/include/
+mv deps/server_lib/src/battle_constants.hrl deps/server_lib/include/

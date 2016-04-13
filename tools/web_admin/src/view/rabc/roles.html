@@ -1,0 +1,36 @@
+{% extends "rabc/index.html" %}
+{%block title%} 角色管理 {% endblock %}
+{%block sub_title %} 角色管理 {% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block inner %}
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>角色名称</th>
+        <th>描述</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% if data %}
+    {% for item in data %}
+        <tr data-key="{{ item.id }}">
+            <td>{{ item.name }}</td>
+            <td>{{ item.desc }}</td>
+            <td>
+                <a href="javascript:;" class="btn btn-xs btn-default">用户</a>
+                <a href="javascript:;" class="btn btn-xs btn-default">模块</a>
+                <a href="javascript:;" class="btn btn-xs btn-default">编辑</a>
+                <a href="javascript:;" class="btn btn-xs btn-danger">删除</a>
+            </td>
+        </tr>
+    {% endfor %}
+    {% endif %}
+    </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "shared/base.html" %}
+
+{% block head %}
+<title>添加用戶 - DGRY GM Tool</title>
+{% endblock %}
+
+{% block content %}
+
+{% if msg%}
+<script>
+    $(function() {
+        var m = '{{msg}}';
+        if(m != 'ok'){
+            alert(m);
+        }
+
+        $('button[type="submit"]').click(function(){
+            $(this).html("正在...").attr('disabled', 'disabled');
+            $('form').submit();
+        });
+    });
+
+</script>
+{% endif%}
+
+<div class=" col-sm-offset-3 col-sm-6">
+    <div class="panel panel-default" id="pnl_player_data">
+        <div class="panel-heading">添加用戶</div>
+        <div class="panel-body">
+
+            <form class="form-horizontal" action="" method="post">
+                <div class="form-group">
+                    <label for="account" class="col-sm-3 control-label">账　号</label>
+
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="account" name="account" placeholder="管理员账号">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">密　码</label>
+
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="密码">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">密码2</label>
+
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control" id="password2" name="password2" placeholder="密码">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-6">
+                        <label>
+                            <!--<input type="checkbox" name="rememberme"> Remember me-->
+                        </label>
+                        <button type="submit" class="btn btn-default">添加</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

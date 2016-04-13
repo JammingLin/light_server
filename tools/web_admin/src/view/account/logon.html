@@ -1,0 +1,69 @@
+{% extends "shared/base.html" %}
+
+{% block head %}
+<title>管理员登陆 - DGRY GM Tool</title>
+{% endblock %}
+
+{% block content %}
+
+{% if msg%}
+<script>
+    $(function() {
+        var m = '{{msg}}';
+        if(m != 'ok'){
+            alert(m);
+        }
+
+        $('button[type="submit"]').click(function(){
+            $(this).html("正在登录...").attr('disabled', 'disabled');
+            $('form').submit();
+        });
+    });
+
+</script>
+{% endif%}
+
+<div class=" col-sm-offset-3 col-sm-6">
+    <div class="panel panel-default" id="pnl_player_data">
+        <div class="panel-heading">登录</div>
+        <div class="panel-body">
+
+            <form class="form-horizontal" action="" method="post">
+                <div class="form-group">
+                    <label for="server" class="col-sm-3 control-label">服务器</label>
+
+                    <div class="col-sm-6">
+                        <select class="form-control" id="server" name="server">
+                            {% for gm_server in data.gm_servers %}
+                            <option value="{{ gm_server.name }}">{{ gm_server.desc }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="account" class="col-sm-3 control-label">账　号</label>
+
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="account" name="account" placeholder="管理员账号">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">密　码</label>
+
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="密码">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-6">
+                        <label>
+                            <!--<input type="checkbox" name="rememberme"> Remember me-->
+                        </label>
+                        <button type="submit" class="btn btn-default">登录</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

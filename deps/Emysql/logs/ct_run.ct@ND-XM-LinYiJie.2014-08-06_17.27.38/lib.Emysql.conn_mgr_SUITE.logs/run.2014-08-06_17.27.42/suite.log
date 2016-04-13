@@ -1,0 +1,76 @@
+=== Suite started at 2014-08-06 17:27:42
+=== Starting test, 4 test cases
+=cases         4
+=user          Administrator
+=host          ND-XM-LinYiJie
+=hosts         ND-XM-LinYiJie 
+=emulator_vsn  6.1
+=emulator      beam
+=otp_release   17
+=started       2014-08-06 17:27:42
+=case          conn_mgr_SUITE:init_per_suite
+=logfile       conn_mgr_suite.init_per_suite.html
+=started       2014-08-06 17:27:42
+=ended         2014-08-06 17:27:42
+=result        failed: {undef,
+                           [{emysql,add_pool,
+                                [test_pool,1,"hello_username",
+                                 "hello_password","localhost",3306,
+                                 "hello_database",utf8],
+                                []},
+                            {conn_mgr_SUITE,init_per_suite,1,
+                                [{file,
+                                     "e:/lib/Emysql/test/conn_mgr_SUITE.erl"},
+                                 {line,46}]},
+                            {test_server,ts_tc,3,
+                                [{file,"test_server.erl"},{line,1415}]},
+                            {test_server,run_test_case_eval1,6,
+                                [{file,"test_server.erl"},{line,1092}]},
+                            {test_server,run_test_case_eval,9,
+                                [{file,"test_server.erl"},{line,976}]}]}, [{emysql,
+                                                                            add_pool},
+                                                                           {conn_mgr_SUITE,
+                                                                            init_per_suite,
+                                                                            46},
+                                                                           {test_server,
+                                                                            ts_tc,
+                                                                            1415},
+                                                                           {test_server,
+                                                                            run_test_case_eval1,
+                                                                            1092},
+                                                                           {test_server,
+                                                                            run_test_case_eval,
+                                                                            976}]
+=== *** FAILED {conn_mgr_SUITE,init_per_suite} ***
+=== 
+=case          conn_mgr_SUITE:stuck_waiting_1
+=started       2014-08-06 17:27:42
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #1 {conn_mgr_SUITE,stuck_waiting_1} ***
+=== 
+=case          conn_mgr_SUITE:stuck_waiting_2
+=started       2014-08-06 17:27:42
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #2 {conn_mgr_SUITE,stuck_waiting_2} ***
+=== 
+=case          conn_mgr_SUITE:pool_leak_2
+=started       2014-08-06 17:27:42
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #3 {conn_mgr_SUITE,pool_leak_2} ***
+=== 
+=case          conn_mgr_SUITE:dying_client_does_not_lock_the_connection_out
+=started       2014-08-06 17:27:42
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping test case #4 {conn_mgr_SUITE,dying_client_does_not_lock_the_connection_out} ***
+=== 
+=case          conn_mgr_SUITE:end_per_suite
+=started       2014-08-06 17:27:42
+=result        auto_skipped: init_per_suite failed
+=== *** Skipping {conn_mgr_SUITE,end_per_suite} ***
+=== TEST COMPLETE, 0 ok, 0 failed, 4 skipped of 4 test cases
+
+=finished      2014-08-06 17:27:42
+=failed        0
+=successful    0
+=user_skipped  0
+=auto_skipped  4

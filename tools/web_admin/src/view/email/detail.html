@@ -1,0 +1,93 @@
+{% extends "shared/base.html" %}
+
+{% block head %}
+<title>玩家邮件详情</title>
+{% endblock %}
+
+{% block content %}
+{% if msg %}
+{% if msg != "ok" %}
+<stong>{{ msg }}</stong>
+{% endif %}
+{% endif %}
+
+<div class="panel panel-default">
+    <div class="panel-heading">邮件详情<a href="index?player_id={{data.player_id}}" class="btn btn-small" >返回列表</a></div>
+    <div class="panel-body">
+        <form class="form-horizontal" action="modify" method="post" id="frm_player_data">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">玩家ID:</label>
+                <div class="col-sm-3">
+                    <input  readonly type="text" value="{{data.player_id}}" name="player_id" data-field="player_id" class="form-control" maxlength="30"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">邮件ID:</label>
+                <div class="col-sm-3">
+                    <input readonly type="text" value="{{data.email_id}}" name="mail_id" data-field="player_id" class="form-control" maxlength="30"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">类型:</label>
+                <div class="col-sm-3">
+                    <input type="text" value="{{data.type|email_type_name}}" name="type" data-field="player_id" class="form-control" maxlength="30"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">状态:</label>
+                <div class="col-sm-3">
+                    <input type="text" value="{{data.status}}" name="status" data-field="player_id" class="form-control" maxlength="30"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">标题:</label>
+                <div class="col-sm-3">
+                    <input type="text" value="{{data.title}}" name="title" data-field="player_id" class="form-control" maxlength="30"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">内容:</label>
+                <div class="col-sm-3">
+                    <textarea name="content" class="form-control" data-field="content" maxlength="500">{{data.content}}</textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">钻石:</label>
+                <div class="col-sm-3">
+                    <input type="text" value="{{data.diamond}}" name="diamond" data-field="player_id" class="form-control" maxlength="30"/>
+                </div>
+            </div>
+            <!--<div class="form-group">-->
+                <!--<label class="col-sm-2 control-label">金币:</label>-->
+                <!--<div class="col-sm-3">-->
+                    <!--<input type="text" value="{{data.gold}}" name="gold" data-field="player_id" class="form-control" maxlength="30"/>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label class="col-sm-2 control-label">木材:</label>-->
+                <!--<div class="col-sm-3">-->
+                    <!--<input type="text" value="{{data.wood}}" name="wood" data-field="player_id" class="form-control" maxlength="30"/>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label class="col-sm-2 control-label">石头:</label>-->
+                <!--<div class="col-sm-3">-->
+                    <!--<input type="text" value="{{data.stone}}" name="stone" data-field="player_id" class="form-control" maxlength="30"/>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="form-group">
+                <label class="col-sm-2 control-label">发送时间:</label>
+                <div class="col-sm-3">
+                    <input type="text" value="{{data.send_time|datetime}}" name="send_time" data-field="player_id" class="form-control" maxlength="30"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">失效时间:</label>
+                <div class="col-sm-3">
+                    <input type="text" value="{{data.dead_line|datetime}}" name="dead_line" data-field="player_id" class="form-control" maxlength="30"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

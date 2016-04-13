@@ -1,0 +1,151 @@
+{% extends "statistics/index.html" %}
+{%block title%} 留存分析 {% endblock %}
+{%block sub_title %} 留存分析  {% endblock %}
+
+{% block inner %}
+<style>
+    .u30 {background:#5AC1C6;}
+    .u20 {background:#8EE6EA;}
+    .b20 {background:#B6F2F3;}
+    .b10 {background:#D3FAFA;}
+    .null {color:#bbbbbb;}
+</style>
+<script>
+    $(function(){
+        $('#txtStartDate,#txtEndDate').datetimepicker({
+            format: 'yyyy-mm-dd',
+            language: 'zh-CN',
+            minView:2,
+            autoclose: true
+        });
+
+        $('td').each(function(i,n){
+            var r = $(n).attr('data-rate');
+            if(!r){
+                return true;
+            }
+
+            if(r >= 0.3){
+                $(n).addClass('u30');
+            }
+            else if(r >= 0.2){
+                $(n).addClass('u20');
+            }
+            else if(r >= 0.1){
+                $(n).addClass('b20');
+            }
+            else {
+                $(n).addClass('b10');
+            }
+        });
+
+        $('#btn_refresh_today').click(function(){
+            var now = $('#txtEndDate').val();
+            if(!confirm('重新分析' + now + '的数据?')){
+                return;
+            }
+
+            var use_newbie = $('input[name=use_newbie]:checked').val();
+            DGRY.get('statistics', 'analyse_retention', {'start_day': now, 'end_day':now, 'use_newbie':use_newbie}, function(rtn){
+                if(rtn.code == 1){
+                    alert('完成');
+                }
+                else{
+                    alert('出错了');
+                }
+            });
+        });
+    });
+</script>
+
+<div class="panel">
+    <form class="form-horizontal" action="/statistics/retention" method="post">
+        <div class="form-group form-group-sm">
+            <div class=" col-sm-2">
+                <input id="txtStartDate" class="form-control" name="start_day" data-date-format="yyyy-mm-dd" placeholder="起始日期" value="{{data.viewdata.start_day|undefined_empty}}"/>
+            </div>
+            <div class=" col-sm-2">
+                <input id="txtEndDate" class="form-control" name="end_day" data-date-format="yyyy-mm-dd" placeholder="结束日期" value="{{data.viewdata.end_day|undefined_empty}}"/>
+            </div>
+
+            <div class=" col-sm-2">
+                <label><input type="checkbox" name="use_newbie" value="1" {{ data.viewdata.use_newbie|checked :"1" }}/>仅统计完成新手的</label>
+            </div>
+
+            <div class=" col-sm-2">
+                <a id="btn_refresh_today" href="javascript:;" class="btn btn-default" title="重新分析结束日期的数据"><i class="glyphicon glyphicon-eye-open"></i> 分析</a>
+            </div>
+        </div>
+        <div class="form-group form-group-sm">
+            <div class=" col-sm-2">
+                <select name="mode" class="form-control">
+                    <option value="1" {{ data.viewdata.mode|selected :"1" }}>按设备区域</option>
+                    <option value="2" {{ data.viewdata.mode|selected :"2" }}>按IP区域</option>
+                </select>
+            </div>
+            <div class=" col-sm-2">
+                <select name="area" class="form-control">
+                    <option value="">--全部区域--</option>
+                    <option value="US" {{ data.viewdata.area|selected :"US" }}>US - 美国</option>
+                    <option value="CA" {{ data.viewdata.area|selected :"CA" }}>CA - 加拿大</option>
+                    <option value="NZ" {{ data.viewdata.area|selected :"NZ" }}>NZ - 新西兰</option>
+                    <option value="AU" {{ data.viewdata.area|selected :"AU" }}>AU - 澳大利亚</option>
+                    <option value="Other" {{ data.viewdata.area|selected :"Other" }}>* 其它区域</option>
+                </select>
+            </div>
+            <div class=" col-sm-2">
+                <select name="channel" class="form-control">
+                    <option value="">--全部渠道--</option>
+                    <option value="IOS" {{ data.viewdata.channel|selected :"IOS" }}>IOS</option>
+                    <option value="MOBO" {{ data.viewdata.channel|selected :"MOBO" }}>MOBO</option>
+                    <option value="GOOGLE" {{ data.viewdata.channel|selected :"GOOGLE" }}>GOOGLE</option>
+                </select>
+            </div>
+            <div class=" col-sm-2">
+                <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i> 查询</button>
+            </div>
+        </div>
+        <div class="form-group form-group-sm">
+            <div class=" col-sm-2">
+            </div>
+        </div>
+    </form>
+</div>
+<table class="table">
+    <thead>
+    <tr>
+        <th>首次使用时间</th>
+        <th>新增用户</th>
+        <th colspan="7">留存率</th>
+    </tr>
+    <tr>
+        <th colspan="2">&nbsp;</th>
+        <th>1天后</th>
+        <th>2天后</th>
+        <th>3天后</th>
+        <th>4天后</th>
+        <th>5天后</th>
+        <th>6天后</th>
+        <th>7天后</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% if data %}
+    {% for item in data.rows %}
+    <tr>
+        <td>{{ item.day }}</td>
+        <td>{{ item.new_count }}</td>
+        <td data-rate="{{ item.d1r }}" data-count="{{ item.d1 }}">{{ item.d1r|m100 }}%</td>
+        <td data-rate="{{ item.d2r }}" data-count="{{ item.d2 }}">{{ item.d2r|m100 }}%</td>
+        <td data-rate="{{ item.d3r }}" data-count="{{ item.d3 }}">{{ item.d3r|m100 }}%</td>
+        <td data-rate="{{ item.d4r }}" data-count="{{ item.d4 }}">{{ item.d4r|m100 }}%</td>
+        <td data-rate="{{ item.d5r }}" data-count="{{ item.d5 }}">{{ item.d5r|m100 }}%</td>
+        <td data-rate="{{ item.d6r }}" data-count="{{ item.d6 }}">{{ item.d6r|m100 }}%</td>
+        <td data-rate="{{ item.d7r }}" data-count="{{ item.d7 }}">{{ item.d7r|m100 }}%</td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+    </tbody>
+</table>
+
+{% endblock %}

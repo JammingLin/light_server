@@ -1,0 +1,9 @@
+ebin/
+deps/
+*.plt
+*.beam
+app.config
+.eunit
+log*
+/.project
+/.settings/

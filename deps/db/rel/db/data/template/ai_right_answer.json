@@ -1,0 +1,7 @@
+[
+  {"id":1, "answer_rate_min":8000, "answer_rate_max":10000},
+  {"id":2, "answer_rate_min":7000, "answer_rate_max":9000},
+  {"id":3, "answer_rate_min":6000, "answer_rate_max":8000},
+  {"id":4, "answer_rate_min":5000, "answer_rate_max":7000},
+  {"id":5, "answer_rate_min":4000, "answer_rate_max":6000}
+]

@@ -1,0 +1,159 @@
+{% extends "shared/base.html" %}
+
+{% block head %}
+<title>编辑系统公告</title>
+{% endblock %}
+
+{% block content %}
+<script>
+    $(function(){
+        var cfg = {
+            language: 'zh-CN',
+            format: 'yyyy-mm-dd hh:ii:ss',
+            autoclose: true
+        };
+        var changeDateFun = function(ev){
+            var d = ev.date;// 时间选择器把选择的时间当成 UTC时间,这里的 date 是加上了时区的本地时间
+            var d2 = new Date(d.toUTCString());
+            console.log(d2.getTimezoneOffset());
+            d2.setMinutes(d2.getMinutes() + 2 * d2.getTimezoneOffset());
+            d2.setSeconds(d2.getSeconds() - d2.getSeconds()); // 秒抹零
+
+            var input_id = $(this).attr('data-field');
+            $('#' + input_id).val(DGRY.format_time(d2));
+        };
+        $('#txt_sendtime,#txt_deadline').datetimepicker(cfg)
+        .on('changeDate', changeDateFun);
+    });
+</script>
+{% if code %}
+<script>
+        var result = {"code":{{code}}, "data":{{data}}, "msg":"{{msg}}"};
+        if(result.code == 1){
+            alert("操作成功");
+        }
+        else{
+            alert("操作失败");
+        }
+    </script>
+
+
+{% endif %}
+
+<div class="panel panel-default">
+    <div class="panel-heading">编辑系统公告<a href="index?area_code={{data.area}}" class="btn btn-small" >返回列表</a></div>
+    <div class="panel-body">
+        <form class="form-horizontal" action="detail" method="post" id="frm_player_data">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">投放区域:</label>
+
+                <div class="col-sm-3">
+                    <select readonly name="area" class="form-control" data-field="area" >
+                        {% for area in data.areas %}
+                        {% if area.area==data.news_info.area %}
+                        <option value="{{area.area}}" selected>{{area.text}}</option>
+                        {% else %}
+                        <option value="{{area.area}}">{{area.text}}</option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">新闻ID:</label>
+
+                <div class="col-sm-3">
+                    <input readonly type="text" name="news_id" class="form-control" value="{{data.news_info.system_news_id}}" data-field="title" maxlength="30"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">公告类型:</label>
+
+                <div class="col-sm-3">
+                    <select name="type" class="form-control" data-field="type">
+                        {% if data.news_info.type == 1%}
+                        <option value="1" selected>一般通知</option>
+                        {% else %}
+                        <option value="1">一般通知</option>
+                        {% endif %}
+                        {% if data.news_info.type == 2%}
+                        <option value="2" selected>维护通知</option>
+                        {% else %}
+                        <option value="2">维护通知</option>
+                        {% endif %}
+                        {% if data.news_info.type == 3%}
+                        <option value="3" selected>营销通知</option>
+                        {% else %}
+                        <option value="3">营销通知</option>
+                        {% endif %}
+                        {% if data.news_info.type == 4%}
+                        <option value="4" selected>新功能通知</option>
+                        {% else %}
+                        <option value="4">新功能通知</option>
+                        {% endif %}
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">公告标题:</label>
+
+                <div class="col-sm-3">
+                    <input type="text" name="title" class="form-control" value="{{data.news_info.title}}" data-field="title" maxlength="30"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">公告图标:</label>
+
+                <div class="col-sm-3">
+                    <input type="text" name="news_icon" class="form-control" value="{{data.news_info.news_icon}}" data-field="news_icon" maxlength="30"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">公告正文:</label>
+
+                <div class="col-sm-3">
+                    <textarea name="content" class="form-control" data-field="content" maxlength="500">{{data.news_info.content}}</textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">跳转链接:</label>
+
+                <div class="col-sm-3">
+                    <textarea name="url" class="form-control" data-field="url" maxlength="500">{{data.news_info.url}}</textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">投放时间:</label>
+
+                <div class="col-sm-3">
+                    <input type="text" value="{{data.news_info.send_time|datetime}}" id="txt_sendtime" name="txt_sendtime" class="form-control" data-field="sendtime"/>
+                    <input type="hidden" id="sendtime" name="sendtime" class="form-control" data-field="sendtime"/>
+                </div>
+                <div class="col-sm-2">
+                    <label class="label label-warning">注意:此时间为浏览器本地时间</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">有效期至:</label>
+
+                <div class="col-sm-3">
+                    <input type="text" value="{{data.news_info.dead_line|datetime}}" id="txt_deadline" name="txt_deadline" class="form-control" data-field="deadline"/>
+                    <input type="hidden" id="deadline" name="deadline" class="form-control" data-field="deadline"/>
+                </div>
+                <div class="col-sm-2">
+                    <label class="label label-warning">注意:此时间为浏览器本地时间</label>
+                </div>
+            </div>
+
+
+            <div class="col-sm-offset-2">
+                <button type="submit" class="btn btn-primary" id="btnSave">保存</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

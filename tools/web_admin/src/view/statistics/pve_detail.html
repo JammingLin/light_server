@@ -1,0 +1,101 @@
+{% extends "statistics/index.html" %}
+{%block title%} 关卡详细数据 {% endblock %}
+{%block sub_title %} 关卡详细数据 {% endblock %}
+
+{% block inner %}
+<style>
+    thead,tfoot{font-weight:bold; background-color:#dddddd;}
+</style>
+<script>
+    $(function(){
+        $('#txtStartDate,#txtEndDate').datetimepicker({
+            format: 'yyyy-mm-dd',
+            language: 'zh-CN',
+            minView:2,
+            autoclose: true
+        });
+
+        $('#sltLevel').change(function(){
+            $('form').submit();
+        });
+    });
+</script>
+<div class="panel panel-default">
+    <div class="panel-body">
+    <form class="form-inline" method="post" action="pve_detail">
+        <div class="form-group">
+            <label for="sltLevel">关卡：</label>
+            <select class="form-control" id="sltLevel" name="sltLevel">
+                <option value=""> -- 全部关卡 -- </option>
+                {% for item in data.levels %}
+                {% if item.id == data.view_data.sltLevel %}
+                <option value="{{item.id}}" selected>{{item.id}} - {{item.cn_name}}</option>
+                {% else %}
+                <option value="{{item.id}}">{{item.id}} - {{item.cn_name}}</option>
+                {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+    </form>
+    </div>
+</div>
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>日期</th>
+        <th>关卡ID</th>
+        <th>关卡名称</th>
+        <th>战斗次数</th>
+        <th>胜</th>
+        <th>败</th>
+        <th>通过率(%)</th>
+        <th>平均完成时间(s)</th>
+        <th>胜</th>
+        <th>败</th>
+        <th>平均回合数</th>
+        <th>胜</th>
+        <th>败</th>
+        <th>查看推荐</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% if data %}
+    {% for item in data.items %}
+    <tr>
+        <td>{{ item.battle_time.year }}-{{ item.battle_time.month }}-{{ item.battle_time.day }}</td>
+        <td>{{ item.pve_id }}</td>
+        <td>{{ item.pve_name }}</td>
+        <td>{{ item.times }}</td>
+        <td>{{ item.win }}</td>
+        <td>{{ item.lose }}</td>
+        <td>{{ item.win_rate }}</td>
+        <td>{{ item.cost_time_avg }}</td>
+        <td>{{ item.win_cost_time_avg }}</td>
+        <td>{{ item.lose_cost_time_avg }}</td>
+        <td>{{ item.all_rounds }}</td>
+        <td>{{ item.win_all_rounds }}</td>
+        <td>{{ item.lose_all_rounds }}</td>
+        <td>{{ item.open_recommend_times}}</td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+    </tbody>
+    <tfoot>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>总计：</td>
+        <td>{{ data.total.times }}</td>
+        <td>{{ data.total.win }}</td>
+        <td>{{ data.total.lose }}</td>
+        <td>{{ data.total.win_rate }}</td>
+        <td>{{ data.total.cost_time_avg }}</td>
+        <td>{{ data.total.win_cost_time_avg }}</td>
+        <td>{{ data.total.lose_cost_time_avg }}</td>
+        <td>{{ data.total.all_rounds }}</td>
+        <td>{{ data.total.win_all_rounds }}</td>
+        <td>{{ data.total.lose_all_rounds }}</td>
+    </tfoot>
+</table>
+
+{% endblock %}

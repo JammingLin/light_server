@@ -1,0 +1,136 @@
+{% extends "gamedata/index.html" %}
+
+{% block head %}
+<title>用户反馈 - DGRY GM Tool</title>
+<link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+<script src="/static/scripts/dgry_admin_feedback.js"></script>
+<style>
+    #pnlSearch{margin-bottom:10px;}
+    #pnl_player_data input.blank{
+    background:#ffffff;
+    border:none;
+    box-shadow:none;
+    }
+    #pnl_player_data input.editable{
+    font-weight:bold;
+    }
+    #pnl_player_data input.editable.on{
+    font-weight:bold;
+    border:1px dashed #999999;
+    }
+</style>
+{% endblock %}
+{%block sub_title %} 用户反馈 {% endblock %}
+
+{% block inner %}
+
+
+<div class="panel panel-default" id="pnl_feedback_data">
+    <div class="panel-heading">用户反馈
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal" action="index" method="post" id="frm_feedback_data">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">玩家ID:</label>
+                <div class="col-sm-3">
+                    <input type="text" name="player_id" class="form-control" placeholder="请输入玩家账号" id="txtSearchKey"/>
+                </div>
+                <div class="col-sm-1">
+                    <button type="submit" class="btn btn-primary" id="btnSearch">查询</button>
+                </div>
+            </div>
+        </form>
+        <div style="color:red">* 删除的反馈会有一段时间的延迟 <br/></div>
+        <table class="table table-hover table-responsive">
+            <thead>
+            <tr>
+                <th>反馈时间</th>
+                <th>玩家ID</th>
+                <th>玩家名字</th>
+                <th>反馈内容</th>
+                <th>截图</th>
+                <th>日志文件</th>
+                <th>备注</th>
+                <th>奖励是否发放</th>
+                <th>删除</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% if data %}
+            {% for feedback in data %}
+            <tr>
+                <td>{{ feedback.send_time }}</td>
+                <td>{{ feedback.player_id }}</td>
+                <td>{{ feedback.name }}</td>
+                <td>
+                    <div>
+                        <a class="show_detail" href="javascript:;">{{feedback.content|limit_len:9 }}</a>
+                    </div>
+                    <div class="col-sm-6" style="word-break:break-all; display:none;">
+                        {{ feedback.content }}
+                    </div>
+                </td>
+                <td>
+                {% if feedback.image_name %}
+                    <div>
+                        <a class="show_detail" href="javascript:;">{{feedback.image_name|limit_len:5 }}</a>
+                    </div>
+                    <div class="col-sm-6" style="word-break:break-all; display:none;">
+                        <img width="100%" src="/static/feedback_images/{{ feedback.image_name }}"/>
+                    </div>
+                    {% else %}
+                    <div>
+                        未上传截图
+                    </div>
+                {% endif %}
+                </td>
+                <td>
+                    {% if feedback.log_file_name %}
+                    <div>
+                        <a id="btn_export" href="export?log_file_name={{feedback.log_file_name }}" class="btn btn-small">{{feedback.log_file_name|limit_len:5}}</a>
+                    </div>
+                    {% else %}
+                    <div>
+                        未上传日志
+                    </div>
+                    {% endif %}
+                </td>
+                <td>
+                    <input type="button" name="btnRemark" class=" btn btn-xs btn-danger" data-player_id="{{ feedback.player_id }}" data-feedback_id="{{ feedback.feedback_id }}" value="查看"/></td>
+                    <!--{{feedback.remarks}}-->
+                </td>
+                <td>
+                    {% if feedback.is_read == 1%}
+                        <input type="button" disabled name="btnSetRead" class=" btn btn-xs btn-danger" data-player_id="{{ feedback.player_id }}" data-feedback_id="{{ feedback.feedback_id }}" value="已奖励"/></td>
+                    {%else%}
+                        <input type="button"  name="btnSetRead" class=" btn btn-xs btn-danger" data-player_id="{{ feedback.player_id }}" data-feedback_id="{{ feedback.feedback_id }}" value="奖励"/></td>
+                    {%endif%}
+                </td>
+                <td><input type="button" name="btnDelete" class="btnDelete btn btn-xs btn-danger" data-player_id="{{ feedback.player_id }}" data-feedback_id="{{ feedback.feedback_id }}" value="删除"/></td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    $(function(){
+        $('.show_detail').click(function(){
+            var info = $(this).parent().next().html();
+            _modal('详情', info);
+        });
+
+    });
+
+   function _modal(title, body, options){
+        var m = $('#global_modal');
+        $('.modal-title', m).html(title);
+        $('.modal-body', m).html(body);
+        m.modal(options || {show:false});
+        m.modal('show');
+    };
+</script>
+
+{% endblock %}

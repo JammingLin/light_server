@@ -1,0 +1,13 @@
+{application, tinymq,
+    [
+    {description, "TinyMQ: a diminutive message queue"},
+    {vsn, "0.8.15"},
+    {registered, [tinymq]},
+    {modules, []},
+    {applications, [
+        kernel,
+        stdlib
+            ]},
+    {env, [{max_age, 60}]},
+    {mod, {tinymq_app, []}}
+    ]}.

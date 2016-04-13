@@ -1,0 +1,20 @@
+<ul>
+    <li>
+        <label>首次登录: </label><span>{{ create_on_str }}</span>
+    </li>
+    <li>
+        <label>最后登录: </label><span>{{ last_logon_time_str }}</span>
+    </li>
+    <li>
+        <label>最后离开: </label><span>{{ last_leave_time_str }}</span>
+    </li>
+    <li>
+        <label>最后攻击: </label><span>{{ last_attack_time_str }}</span>
+    </li>
+    <li>
+        <label>刷新世界: </label><span>{{ last_world_refresh_time_str }}</span>
+    </li>
+    <li>
+        <label>活 跃 度: </label><span>{{ data.activeness }}</span>
+    </li>
+</ul>

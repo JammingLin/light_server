@@ -1,0 +1,53 @@
+{% extends "shared/base.html" %}
+
+{% block head %}
+<title>修改PVP,PVR池 - DGRY GM Tool</title>
+
+<link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+{% endblock %}
+
+{% block content %}
+
+{% if msg %}
+<div>{{ msg }}</div>
+{% endif %}
+
+<div class="panel panel-default">
+    <div class="panel-heading">加入PVP池</div>
+    <div class="panel-body">
+        <form class="form-horizontal" method="post" action="?action=pvp" id="frm_add_pvp">
+            <div class="form-group">将玩家加入PVP池</div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">玩家账号:</label>
+
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" name="player_account"/>
+                </div>
+            </div>
+            <div class="col-sm-offset-2">
+                <button type="submit" class="btn btn-primary" >提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">加入资源岛池</div>
+    <div class="panel-body">
+        <form class="form-horizontal" method="post" action="?action=pvr" id="frm_add_pvr">
+            <div class="form-group">将玩家所拥有的所有资源岛加入资源岛池</div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">玩家账号:</label>
+
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" name="player_account"/>
+                </div>
+            </div>
+            <div class="col-sm-offset-2">
+                <button type="submit" class="btn btn-primary" >提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

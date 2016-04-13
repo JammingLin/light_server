@@ -1,0 +1,1 @@
+-define(HASH(Data), crypto:hash(sha, Data)).

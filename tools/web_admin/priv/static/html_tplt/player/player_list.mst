@@ -1,0 +1,40 @@
+<table class="table table-condensed table-hover">
+    <thead>
+        <tr>
+            <th>标识</th>
+            <th>昵称</th>
+            <th>等级</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#items}}
+        <tr class="player_item" data-key="{{ player_id }}">
+            <td>{{ player_id }}</td>
+            <td>{{ name }}</td>
+            <td>{{ level }}</td>
+        </tr>
+        {{/items}}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5">
+                <div class="dgry_pager">
+                    <span class="btn-group">
+                        <a class="btn btn-sm btn-default btn-first" href="javascript:;">首 页</a>
+                        <a class="btn btn-sm btn-default btn-prev" href="javascript:;">上一页</a>
+                        <a class="btn btn-sm btn-default btn-next" href="javascript:;">下一页</a>
+                        <a class="btn btn-sm btn-default btn-last" href="javascript:;">末 页</a>
+                    </span>
+
+                    <input type="hidden" name="page_no" value="1"/>
+                    <input type="hidden" name="page_size" value="1"/>
+                    跳转到
+                        <select class="page_slt" style="display:inline;">
+                            <option value="1">1</option>
+                        </select>
+                    {{pager.page_no}}/{{pager.page_count}} 共 {{pager.total}} 条记录
+                </div>
+            </td>
+        </tr>
+    </tfoot>
+</table>

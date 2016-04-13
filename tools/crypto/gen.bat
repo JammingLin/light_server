@@ -1,0 +1,1 @@
+bash gen.sh

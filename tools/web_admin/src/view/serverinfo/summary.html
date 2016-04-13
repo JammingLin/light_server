@@ -1,0 +1,161 @@
+{% extends "shared/base.html" %}
+
+{% block head %}
+<title>服务器概况</title>
+<style>
+    .memory-list li p {display:none; padding-left:2em;}
+</style>
+<script>
+    $(function(){
+        $('#btn_add_zombie').click(function(){
+            if(!confirm('确定补充僵尸号吗？')){
+                return false;
+            }
+            $.get('/serverinfo/add_zombie', function(rtn){
+                location.href = location.href;
+            });
+        });
+
+        $('.memory-total').click(function(){
+            $(this).parent('li').find('p').toggle();
+        });
+    });
+</script>
+{% endblock %}
+
+{% block content %}
+
+{% if code == 0 %}
+    <div> 服务器错误 </div>
+{% else %}
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">服务器内存状态({{ data.server_name }})</div>
+            <div class="panel-body">
+                <ul class="memory-list">
+                    <!--<li><label>DB:</label>-->
+                        <!--{% if data.dgry_memory.db_memory.status == "ok" %}-->
+                        <!--<a class="memory-total" href="javascript:;">{{ data.dgry_memory.db_memory.detail.total }}</a>(M)<br/>-->
+                            <!--{% if data.db_timer_status.interval == 0 %}-->
+                            <!--队列状态:实时写库-->
+                            <!--{% else %}-->
+                            <!--队列状态:buffer:{{ data.db_timer_status.size }}, time:{{ data.db_timer_status.time_left }}s<br/>-->
+                            <!--{% endif %}-->
+                        <!--<p>-->
+                            <!--<span>ets        {{ data.dgry_memory.db_memory.detail.ets }}</span><br/>-->
+                            <!--<span>atom       {{ data.dgry_memory.db_memory.detail.atom }}</span><br/>-->
+                            <!--<span>code       {{ data.dgry_memory.db_memory.detail.code }}</span><br/>-->
+                            <!--<span>binary     {{ data.dgry_memory.db_memory.detail.binary }}</span><br/>-->
+                            <!--<span>system     {{ data.dgry_memory.db_memory.detail.system }}</span><br/>-->
+                            <!--<span>atom_used  {{ data.dgry_memory.db_memory.detail.atom_used }}</span><br/>-->
+                            <!--<span>processes  {{ data.dgry_memory.db_memory.detail.processes }}</span><br/>-->
+                            <!--<span>processes_used  {{ data.dgry_memory.db_memory.detail.processes_used }}</span><br/>-->
+                        <!--</p>-->
+                        <!--{% else %}-->
+                            <!--<span class="label label-danger">{{ data.dgry_memory.db_memory.reason }}</span>-->
+                        <!--{% endif %}-->
+                    <!--</li>-->
+
+                    <!--<li><label>Gate:</label>-->
+                        <!--{% if data.dgry_memory.gate_memory.status == "ok" %}-->
+                        <!--<a class="memory-total" href="javascript:;">{{ data.dgry_memory.gate_memory.detail.total }}</a>(M)<br/>-->
+                        <!--<p>-->
+                            <!--<span>ets        {{ data.dgry_memory.gate_memory.detail.ets }}</span><br/>-->
+                            <!--<span>atom       {{ data.dgry_memory.gate_memory.detail.atom }}</span><br/>-->
+                            <!--<span>code       {{ data.dgry_memory.gate_memory.detail.code }}</span><br/>-->
+                            <!--<span>binary     {{ data.dgry_memory.gate_memory.detail.binary }}</span><br/>-->
+                            <!--<span>system     {{ data.dgry_memory.gate_memory.detail.system }}</span><br/>-->
+                            <!--<span>atom_used  {{ data.dgry_memory.gate_memory.detail.atom_used }}</span><br/>-->
+                            <!--<span>processes  {{ data.dgry_memory.gate_memory.detail.processes }}</span><br/>-->
+                            <!--<span>processes_used  {{ data.dgry_memory.gate_memory.detail.processes_used }}</span><br/>-->
+                        <!--</p>-->
+                        <!--{% else %}-->
+                            <!--<span class="label label-danger">{{ data.dgry_memory.gate_memory.reason }}</span>-->
+                        <!--{% endif %}-->
+                    <!--</li>-->
+
+                    <li><label>Game:</label>
+                        {% if data.dgry_memory.game_memory.status == "ok" %}
+                        <a class="memory-total" href="javascript:;">{{ data.dgry_memory.game_memory.detail.total }}</a>(M)<br/>
+                        <p>
+                            <span>ets        {{ data.dgry_memory.game_memory.detail.ets }}</span><br/>
+                            <span>atom       {{ data.dgry_memory.game_memory.detail.atom }}</span><br/>
+                            <span>code       {{ data.dgry_memory.game_memory.detail.code }}</span><br/>
+                            <span>binary     {{ data.dgry_memory.game_memory.detail.binary }}</span><br/>
+                            <span>system     {{ data.dgry_memory.game_memory.detail.system }}</span><br/>
+                            <span>atom_used  {{ data.dgry_memory.game_memory.detail.atom_used }}</span><br/>
+                            <span>processes  {{ data.dgry_memory.game_memory.detail.processes }}</span><br/>
+                            <span>processes_used  {{ data.dgry_memory.game_memory.detail.processes_used }}</span><br/>
+                        </p>
+                        {% else %}
+                            <span class="label label-danger">{{ data.dgry_memory.game_memory.reason }}</span>
+                        {% endif %}
+                    </li>
+
+                    <li><label>Web:</label>
+                        {% if data.dgry_memory.web_memory.status == "ok" %}
+                        <a class="memory-total" href="javascript:;">{{ data.dgry_memory.web_memory.detail.total }}</a>(M)<br/>
+                        <p>
+                            <span>ets        {{ data.dgry_memory.web_memory.detail.ets }}</span><br/>
+                            <span>atom       {{ data.dgry_memory.web_memory.detail.atom }}</span><br/>
+                            <span>code       {{ data.dgry_memory.web_memory.detail.code }}</span><br/>
+                            <span>binary     {{ data.dgry_memory.web_memory.detail.binary }}</span><br/>
+                            <span>system     {{ data.dgry_memory.web_memory.detail.system }}</span><br/>
+                            <span>atom_used  {{ data.dgry_memory.web_memory.detail.atom_used }}</span><br/>
+                            <span>processes  {{ data.dgry_memory.web_memory.detail.processes }}</span><br/>
+                            <span>processes_used  {{ data.dgry_memory.web_memory.detail.processes_used }}</span><br/>
+                        </p>
+                        {% else %}
+                            <span class="label label-danger">{{ data.dgry_memory.web_memory.reason }}</span>
+                        {% endif %}
+                    </li>
+
+                    <li><label>Redis:</label><span>{{ data.dgry_memory.redis_memory }}</span>(M)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">玩家在线情况</div>
+            <div class="panel-body">
+                <ul>
+                    <li><label>总账户数:</label><span>{{ data.passport_count }}</span></li>
+                    <li><label>总玩家数:</label><span>{{ data.player_count }}</span></li>
+                    <li><label>当前在线:</label><span>{{ data.online_count }} (<a href="/serverinfo/online_players">详情</a>)</span></li>
+                    {% for server_onlines in data.get_server_online_players %}
+                    {% if server_onlines.node %}
+                    <li><label>服务器节点:</label><span>{{ server_onlines.node }}</span><label>人数:{{server_onlines.onlines}}</label></label></li>
+                    {% endif%}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="col-md-4">-->
+
+        <!--<div class="panel panel-default">-->
+            <!--<div class="panel-heading">玩家/资源点池状态</div>-->
+            <!--<div class="panel-body">-->
+                <!--<ul>-->
+                    <!--<li><label>玩家池:</label><span>{{ data.pvp_pool_size }} (<a href="/serverinfo/pvp_players">详情</a> | <a id="btn_add_zombie" href="javascript:;">补充僵尸号</a>)</span></li>-->
+                    <!--<li><label>備用池:</label><span>{{ data.pvp_backup_size }} (<a href="/serverinfo/backup_players">详情</a>)</span></li>-->
+                    <!--<li><label>资源点:</label><span>{{ data.pvr_pool_size }}</span></li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="panel-body" style="color:red; text-align:right;">
+        游戏服务器UTC时间: {{ data.server_time|datetime }}
+    </div>
+</div>
+
+
+
+{% endif %}
+
+{% endblock %}

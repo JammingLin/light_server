@@ -1,0 +1,50 @@
+{% extends "statistics/index.html" %}
+{%block title%} 活跃用户防御建筑 {% endblock %}
+
+{% block inner %}
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>大本</th><th>建筑</th><th>lv1</th><th>lv2</th><th>lv3</th><th>lv4</th><th>lv5</th><th>lv6</th><th>lv7</th><th>lv8</th><th>lv9</th><th>lv10</th>
+        <th>lv11</th><th>lv12</th><th>lv13</th><th>lv14</th><th>lv15</th><th>lv16</th><th>lv17</th><th>lv18</th><th>lv19</th><th>lv20</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% if data %}
+    {% for building in data %}
+    <tr>
+        <td>{{ building.strong_level   |building_level    }}</td>
+        <td>{{ building.building_type  |building_name     }}</td>
+        <td>{{ building.building_sum1  |building_sum_trans}}</td>
+        <td>{{ building.building_sum2  |building_sum_trans}}</td>
+        <td>{{ building.building_sum3  |building_sum_trans}}</td>
+        <td>{{ building.building_sum4  |building_sum_trans}}</td>
+        <td>{{ building.building_sum5  |building_sum_trans}}</td>
+        <td>{{ building.building_sum6  |building_sum_trans}}</td>
+        <td>{{ building.building_sum7  |building_sum_trans}}</td>
+        <td>{{ building.building_sum8  |building_sum_trans}}</td>
+        <td>{{ building.building_sum9  |building_sum_trans}}</td>
+        <td>{{ building.building_sum10 |building_sum_trans}}</td>
+        <td>{{ building.building_sum11 |building_sum_trans}}</td>
+        <td>{{ building.building_sum12 |building_sum_trans}}</td>
+        <td>{{ building.building_sum13 |building_sum_trans}}</td>
+        <td>{{ building.building_sum14 |building_sum_trans}}</td>
+        <td>{{ building.building_sum15 |building_sum_trans}}</td>
+        <td>{{ building.building_sum16 |building_sum_trans}}</td>
+        <td>{{ building.building_sum17 |building_sum_trans}}</td>
+        <td>{{ building.building_sum18 |building_sum_trans}}</td>
+        <td>{{ building.building_sum19 |building_sum_trans}}</td>
+        <td>{{ building.building_sum20 |building_sum_trans}}</td>
+    </tr>
+    {% endfor %}
+    {% else %}
+    <tr>
+        <td colspan="3">
+            没有数据
+        </td>
+    </tr>
+    {% endif %}
+    </tbody>
+</table>
+{% endblock %}

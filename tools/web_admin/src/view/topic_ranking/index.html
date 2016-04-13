@@ -1,0 +1,93 @@
+{% extends "gamedata/index.html" %}
+
+{% block head %}
+<title>玩家排行 - DGRY GM Tool</title>
+<link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+<script src="/static/scripts/dgry_admin_feedback.js"></script>
+<style>
+    #pnlSearch{margin-bottom:10px;}
+    #pnl_player_data input.blank{
+    background:#ffffff;
+    border:none;
+    box-shadow:none;
+    }
+    #pnl_player_data input.editable{
+    font-weight:bold;
+    }
+    #pnl_player_data input.editable.on{
+    font-weight:bold;
+    border:1px dashed #999999;
+    }
+</style>
+{% endblock %}
+{%block sub_title %} 玩家排行 {% endblock %}
+
+{% block inner %}
+
+
+<div class="panel panel-default" id="pnl_feedback_data">
+    <div class="panel-heading">玩家排行
+    </div>
+    <div>
+        <a id="btn_export" href="export?topic_id=1" class="btn btn-small">每周排行榜</a>
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal" action="index" method="post" id="frm_feedback_data">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">专题ID:</label>
+                <div class="col-sm-3">
+                    <input type="text" name="topic_id" class="form-control" placeholder="请输入专题账号" id="txtSearchKey"/>
+                </div>
+                <div class="col-sm-1">
+                    <button type="submit" class="btn btn-primary" id="btnSearch">查询</button>
+                </div>
+            </div>
+        </form>
+        <table class="table table-hover table-responsive">
+            <thead>
+            <tr>
+                <th>名次</th>
+                <th>公司ID</th>
+                <th>专题ID</th>
+                <th>玩家账号</th>
+                <th>昵称</th>
+                <th>智慧豆</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% if data %}
+            {% for topic_ranking in data %}
+            <tr>
+                <td>{{ topic_ranking.rank }}</td>
+                <td>{{ topic_ranking.company_id }}</td>
+                <td>{{ topic_ranking.topic_id }}</td>
+                <td>{{ topic_ranking.user_name }}</td>
+                <td>{{ topic_ranking.name }}</td>
+                <td>{{ topic_ranking.beans }}</td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    $(function(){
+        $('.show_detail').click(function(){
+            var info = $(this).parent().next().html();
+            _modal('详情', info);
+        });
+
+    });
+
+   function _modal(title, body, options){
+        var m = $('#global_modal');
+        $('.modal-title', m).html(title);
+        $('.modal-body', m).html(body);
+        m.modal(options || {show:false});
+        m.modal('show');
+    };
+</script>
+
+{% endblock %}

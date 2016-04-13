@@ -1,0 +1,5 @@
+[
+  {"award_id":1, "bean":100,  "exp":4},
+  {"award_id":2, "bean":0,    "exp":2},
+  {"award_id":0, "bean":-100, "exp":1}
+]

@@ -1,0 +1,66 @@
+{% extends "shared/base.html" %}
+
+{% block head %}
+<title>服务器概况-在线玩家详情</title>
+<script>
+    var ip_table = {
+        "192.168.70.5": "万兴",
+        "192.168.70.6": "彬强",
+        "192.168.70.7": "林峰",
+        "192.168.70.16": "小燕",
+        "192.168.70.18": "东华",
+        "192.168.70.19": "邱晨",
+        "192.168.70.20": "王浩",
+        "192.168.70.27": "艺杰",
+        "192.168.70.29": "向源",
+        "192.168.70.30": "方俊",
+        "192.168.70.35": "青嵩",
+        "192.168.70.123": "志玮",
+        "-":"-"
+    };
+
+    $(function(){
+        var tds = $('td[data-field="ip"]');
+        $.each(tds, function(i,n){
+            var ip = $(n).text();
+            var name = ip_table[ip];
+            if(name){
+                $(n).text(ip + "  <" + name + ">");
+            }
+        });
+    });
+</script>
+{% endblock %}
+
+{% block content %}
+    {% if msg %}
+        {% if msg != "ok" %}
+            <stong>{{ msg }}</stong>
+        {% endif %}
+    {% endif %}
+
+    <div class="panel panel-default">
+        <div class="panel-heading">在线玩家详情</div>
+        <div class="panel-body">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>玩家ID</th><th>账号</th><th>昵称</th><th>IP</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% if data %}
+                {% for item in data %}
+                <tr>
+                    <td><a href="/player/index/{{item.player_id}}">{{ item.player_id}}</a></td>
+                    <td><a href="/player/index/{{item.player_id}}">{{ item.account}}</a></td>
+                    <td><a href="/player/index/{{item.player_id}}">{{ item.name}}</a></td>
+                    <td data-field="ip">{{ item.ip }}</td>
+                </tr>
+                {% endfor %}
+                {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

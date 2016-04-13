@@ -1,0 +1,68 @@
+{% extends "shared/base.html" %}
+
+{% block head %}
+<title>{%block title%} {% endblock %} - DGRY GM Tool</title>
+<link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+<style>
+    #pnlSearch{margin-bottom:10px;}
+    #pnl_player_data input.blank{
+    background:#ffffff;
+    border:none;
+    box-shadow:none;
+    }
+    #pnl_player_data input.editable{
+    font-weight:bold;
+    }
+    #pnl_player_data input.editable.on{
+    font-weight:bold;
+    border:1px dashed #999999;
+    }
+</style>
+{% endblock %}
+{% block content %}
+
+<div class="col-sm-2">
+    <ul class="nav nav-pills nav-stacked">
+        <!--<li role="presentation">-->
+            <!--<a href="/system_news/">公告管理</a>-->
+        <!--</li>-->
+        <!--<li role="presentation">-->
+            <!--<a href="/email/">邮件管理</a>-->
+        <!--</li>-->
+        <!--<li role="presentation">-->
+            <!--<a href="/world_chat/">聊天记录</a>-->
+        <!--</li>-->
+        <li role="presentation">
+            <a href="/feedback/list?feedback_type=1&page_no=1&page_size=20">玩家反馈</a>
+        </li>
+        <li role="presentation">
+            <a href="/feedback/list?feedback_type=2&page_no=1&page_size=20">异常反馈</a>
+        </li>
+        <li role="presentation">
+            <a href="/topic_ranking/">玩家排行</a>
+        </li>
+        <!--<li role="presentation">-->
+            <!--<a href="/pay/">充值记录(A)</a>-->
+        <!--</li>-->
+        <!--<li role="presentation">-->
+            <!--<a href="/pay/mobo_index">充值记录(M)</a>-->
+        <!--</li>-->
+        <!--<li role="presentation">-->
+            <!--<a href="/pay/google_index">充值记录(G)</a>-->
+        <!--</li>-->
+    </ul>
+</div>
+
+<div class="col-sm-10">
+
+    <ol class="breadcrumb">
+        <li><a href="/">首页</a></li>
+        <li><a href="/gamedata">游戏数据管理</a></li>
+        <li class="active">{%block sub_title %}{% endblock %}</li>
+    </ol>
+
+    {% block inner %}
+    请选择管理项
+    {% endblock %}
+</div>
+{% endblock %}

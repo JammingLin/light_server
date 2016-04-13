@@ -1,0 +1,13 @@
+{% extends "shared/base.html" %}
+
+{% block head %}
+<title>管理员登陆 - DGRY GM Tool</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="alert alert-dismissible alert-danger" role="alert" id="pnlInfo">
+    您没有权限访问次模块或进行此操作！ <br/>
+    Uri: <a href="{{ data.uri }}">{{ data.uri }}</a>
+</div>
+{% endblock %}

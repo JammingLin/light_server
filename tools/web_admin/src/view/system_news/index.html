@@ -1,0 +1,110 @@
+{% extends "gamedata/index.html" %}
+
+{% block head %}
+<title>公告管理 - DGRY GM Tool</title>
+<link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+<style>
+    #pnlSearch{margin-bottom:10px;}
+    #pnl_player_data input.blank{
+    background:#ffffff;
+    border:none;
+    box-shadow:none;
+    }
+    #pnl_player_data input.editable{
+    font-weight:bold;
+    }
+    #pnl_player_data input.editable.on{
+    font-weight:bold;
+    border:1px dashed #999999;
+    }
+</style>
+<script>
+    $(function(){
+        $('.show_detail').click(function(){
+            var info = $(this).parent().next().html();
+            _modal('标题', info);
+        });
+        $('.btn_del').click(function(){
+            var id = $(this).attr('data-news_id');
+            return confirm('是否要删除新闻ID：' + id + '的新闻?');
+        });
+        $(".parse_to_localtime").each(function(i,n){
+            console.log($(n).text());
+            var date = $.fn.datetimepicker.DPGlobal.parseDate($(n).text(), 'yyyy-mm-dd hh:ii:ss', 'zh-CN', 'standard');
+            $(n).text(DGRY.format_time(date));
+        });
+    });
+</script>
+{% endblock %}
+{%block sub_title %} 公告管理 {% endblock %}
+
+{% block inner %}
+
+<div class="panel panel-default" id="pnl_news_data">
+    <div class="panel-heading">通知公告
+        <a href="add" class="btn btn-small" >添加公告</a>
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal" action="index" method="post" id="frm_news_data">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">投放区域:</label>
+
+                <div class="col-sm-3">
+                    <select name="area_code" class="form-control" data-field="area_code">
+                        <option value="">----不限区域----</option>
+                        {% for area in data.areas %}
+                        <option value="{{ area.area }}" {{ data.viewbag.area_code | selected : area.area }}>{{ area.area }} - {{ area.text }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <label class="col-sm-2 control-label">公告标题:</label>
+                <div class="col-sm-3">
+                    <input name="title" type="text" class="form-control" value="{{data.viewbag.title}}"/>
+                </div>
+                <div class="col-sm-1">
+                    <button type="submit" class="btn btn-primary" id="btnSearch">查询</button>
+                </div>
+            </div>
+        </form>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>区域ID</th>
+                    <th>新闻ID</th>
+                    <th>类型</th>
+                    <th>标题</th>
+                    <th>投放时间</th>
+                    <th>截止时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% if data.news %}
+            {% for news in data.news %}
+                <tr>
+                    <td>{{ news.area  }}</td>
+                    <td>{{ news.system_news_id }}</td>
+                    <td>{{ news.type | news_type_name }}</td>
+                    <td>
+                        <div>
+                            {{ news.title|limit_len:12 }}
+                        </div>
+                        <div class="col-sm-6" style="word-break:break-all; display:none;">
+                            {{ news.title }}
+                        </div>
+                    </td>
+                    <td class="parse_to_localtime">{{ news.send_time |datetime }}</td>
+                    <td class="parse_to_localtime">{{ news.dead_line |datetime }}</td>
+                    <td>
+                        <a href="detail?area_id={{news.area}}&news_id={{news.system_news_id}}" >详情</a> |
+                        <a class="btn_del" data-news_id="{{ news.system_news_id }}"  href="delete?area_id={{news.area}}&news_id={{news.system_news_id}}" >删除</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

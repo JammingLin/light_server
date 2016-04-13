@@ -1,0 +1,41 @@
+{% extends "shared/base.html" %}
+
+{% block head %}
+<title>给玩家刷PVP - DGRY GM Tool</title>
+
+<link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+{% endblock %}
+
+{% block content %}
+
+{% if msg %}
+<div>{{ msg }}</div>
+{% endif %}
+
+<div class="panel panel-default">
+    <div class="panel-heading">互相随机匹配PVP</div>
+    <div class="panel-body">
+        <form class="form-horizontal" method="post" action="rand_pvp" id="frm_rand_pvp">
+            <div class="form-group">请确保攻击方的世界上有PVP格子</div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">攻击方:</label>
+
+                <div class="col-sm-6">
+                    <textarea class="form-control" name="attackers" placeholder="攻击方账号,以半角逗号(,)隔开"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">防守方:</label>
+
+                <div class="col-sm-6">
+                    <textarea class="form-control" name="defenders" placeholder="目标账号,以半角逗号(,)隔开"></textarea>
+                </div>
+            </div>
+            <div class="col-sm-offset-2">
+                <button type="submit" class="btn btn-primary" >提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

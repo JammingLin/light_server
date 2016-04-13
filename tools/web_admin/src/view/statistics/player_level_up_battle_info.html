@@ -1,0 +1,34 @@
+{% extends "statistics/index.html" %}
+{%block title%} 玩家升级分析 {% endblock %}
+{%block sub_title %} 玩家升级分析 {% endblock %}
+
+{% block inner %}
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>等级</th>
+        <th>PVP胜/败</th>
+        <th>被攻陷</th>
+        <th>PVE胜/败</th>
+        <th>自动完成战斗</th>
+        <th>正常完成战斗</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% if data %}
+    {% for item in data %}
+    <tr>
+        <td>{{ item.level }}</td>
+        <td>{{ item.pvp_win_times }} / {{ item.pvp_lose_times }}</td>
+        <td>{{ item.defend_fail_times }}</td>
+
+        <td>{{ item.pve_win_times }} / {{ item.pve_lose_times }}</td>
+        <td>{{ item.auto_battle_times }}</td>
+        <td>{{ item.manual_battle_times }}</td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+    </tbody>
+</table>
+
+{% endblock %}

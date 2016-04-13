@@ -1,0 +1,2 @@
+#!/bin/sh
+erl -name game@127.0.0.1 -setcookie game -config rel/files/sys.config  -pa out/production/game_server out/production/lager -s db_app -s game_app

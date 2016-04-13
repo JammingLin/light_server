@@ -1,0 +1,62 @@
+{% extends "shared/base.html" %}
+
+{% block head %}
+<title>{%block title%} {% endblock %} - DGRY GM Tool</title>
+<link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+<script src="/static/scripts/dgry_admin_logview.js"></script>
+<style>
+    #pnlSearch{margin-bottom:10px;}
+    #pnl_player_data input.blank{
+    background:#ffffff;
+    border:none;
+    box-shadow:none;
+    }
+    #pnl_player_data input.editable{
+    font-weight:bold;
+    }
+    #pnl_player_data input.editable.on{
+    font-weight:bold;
+    border:1px dashed #999999;
+    }
+
+    #log_content{
+        word-break:break-all;
+    }
+</style>
+{% endblock %}
+{% block content %}
+
+<ol class="breadcrumb">
+    <li><a href="/">首页</a></li>
+    <li class="active">日志管理</li>
+</ol>
+
+<div class="col-sm-2">
+    <div class="form-group">
+        <div class="">
+            <select id="sltApps" class="form-control">
+                <!--<option value="db">DB</option>-->
+                <!--<option value="gw">GW</option>-->
+                <option value="gs">GS</option>
+                <option value="gt">GT</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <ul id="lstLogFiles" class="nav nav-stacked">
+
+        </ul>
+    </div>
+</div>
+
+<div class="col-sm-10">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            日志内容(<span id="log_title"></span>)
+        </div>
+        <div id="log_content" class="panel-body">
+            请选择日志文件
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,567 @@
+=== Suite started at 2014-08-06 17:27:38
+=== Starting test, 17 test cases
+=cases         17
+=user          Administrator
+=host          ND-XM-LinYiJie
+=hosts         ND-XM-LinYiJie 
+=emulator_vsn  6.1
+=emulator      beam
+=otp_release   17
+=started       2014-08-06 17:27:38
+=case          environment_SUITE:init_per_suite
+=logfile       environment_suite.init_per_suite.html
+=started       2014-08-06 17:27:38
+=ended         2014-08-06 17:27:38
+=result        ok
+=elapsed       0.032
+=case          environment_SUITE:connecting_to_db_and_creating_a_pool_transition
+=logfile       environment_suite.connecting_to_db_and_creating_a_pool_transition.html
+=started       2014-08-06 17:27:38
+=ended         2014-08-06 17:27:38
+=result        failed: {undef,
+                           [{emysql,add_pool,
+                                [environment_test_pool,
+                                 [{user,"hello_username"},
+                                  {password,"hello_password"},
+                                  {database,"hello_database"},
+                                  {encoding,utf8}]],
+                                []},
+                            {environment_SUITE,
+                                connecting_to_db_and_creating_a_pool_transition,
+                                1,
+                                [{file,
+                                     "e:/lib/Emysql/test/environment_SUITE.erl"},
+                                 {line,136}]},
+                            {test_server,ts_tc,3,
+                                [{file,"test_server.erl"},{line,1415}]},
+                            {test_server,run_test_case_eval1,6,
+                                [{file,"test_server.erl"},{line,1028}]},
+                            {test_server,run_test_case_eval,9,
+                                [{file,"test_server.erl"},{line,976}]}]}, [{emysql,
+                                                                            add_pool},
+                                                                           {environment_SUITE,
+                                                                            connecting_to_db_and_creating_a_pool_transition,
+                                                                            136},
+                                                                           {test_server,
+                                                                            ts_tc,
+                                                                            1415},
+                                                                           {test_server,
+                                                                            run_test_case_eval1,
+                                                                            1028},
+                                                                           {test_server,
+                                                                            run_test_case_eval,
+                                                                            976}]
+=== *** FAILED test case 1 of 17 ***
+=case          environment_SUITE:add_pool_utf8
+=logfile       environment_suite.add_pool_utf8.html
+=started       2014-08-06 17:27:38
+=ended         2014-08-06 17:27:39
+=result        failed: {undef,
+                           [{emysql,add_pool,
+                                [environment_test_pool,
+                                 [{user,"hello_username"},
+                                  {password,"hello_password"},
+                                  {encoding,utf8}]],
+                                []},
+                            {environment_SUITE,add_pool_utf8,1,
+                                [{file,
+                                     "e:/lib/Emysql/test/environment_SUITE.erl"},
+                                 {line,147}]},
+                            {test_server,ts_tc,3,
+                                [{file,"test_server.erl"},{line,1415}]},
+                            {test_server,run_test_case_eval1,6,
+                                [{file,"test_server.erl"},{line,1028}]},
+                            {test_server,run_test_case_eval,9,
+                                [{file,"test_server.erl"},{line,976}]}]}, [{emysql,
+                                                                            add_pool},
+                                                                           {environment_SUITE,
+                                                                            add_pool_utf8,
+                                                                            147},
+                                                                           {test_server,
+                                                                            ts_tc,
+                                                                            1415},
+                                                                           {test_server,
+                                                                            run_test_case_eval1,
+                                                                            1028},
+                                                                           {test_server,
+                                                                            run_test_case_eval,
+                                                                            976}]
+=== *** FAILED test case 2 of 17 ***
+=case          environment_SUITE:add_pool_utf8_with_collate
+=logfile       environment_suite.add_pool_utf8_with_collate.html
+=started       2014-08-06 17:27:39
+=ended         2014-08-06 17:27:39
+=result        failed: {undef,
+                           [{emysql,add_pool,
+                                [environment_test_pool,
+                                 [{user,"hello_username"},
+                                  {password,"hello_password"},
+                                  {encoding,{utf8,utf8_unicode_ci}}]],
+                                []},
+                            {environment_SUITE,add_pool_utf8_with_collate,1,
+                                [{file,
+                                     "e:/lib/Emysql/test/environment_SUITE.erl"},
+                                 {line,154}]},
+                            {test_server,ts_tc,3,
+                                [{file,"test_server.erl"},{line,1415}]},
+                            {test_server,run_test_case_eval1,6,
+                                [{file,"test_server.erl"},{line,1028}]},
+                            {test_server,run_test_case_eval,9,
+                                [{file,"test_server.erl"},{line,976}]}]}, [{emysql,
+                                                                            add_pool},
+                                                                           {environment_SUITE,
+                                                                            add_pool_utf8_with_collate,
+                                                                            154},
+                                                                           {test_server,
+                                                                            ts_tc,
+                                                                            1415},
+                                                                           {test_server,
+                                                                            run_test_case_eval1,
+                                                                            1028},
+                                                                           {test_server,
+                                                                            run_test_case_eval,
+                                                                            976}]
+=== *** FAILED test case 3 of 17 ***
+=case          environment_SUITE:add_pool_utf8_deprecated
+=logfile       environment_suite.add_pool_utf8_deprecated.html
+=started       2014-08-06 17:27:39
+=ended         2014-08-06 17:27:39
+=result        failed: {undef,
+                           [{emysql,add_pool,
+                                [environment_test_pool,10,"hello_username",
+                                 "hello_password","localhost",3306,undefined,
+                                 utf8],
+                                []},
+                            {environment_SUITE,add_pool_utf8_deprecated,1,
+                                [{file,
+                                     "e:/lib/Emysql/test/environment_SUITE.erl"},
+                                 {line,162}]},
+                            {test_server,ts_tc,3,
+                                [{file,"test_server.erl"},{line,1415}]},
+                            {test_server,run_test_case_eval1,6,
+                                [{file,"test_server.erl"},{line,1028}]},
+                            {test_server,run_test_case_eval,9,
+                                [{file,"test_server.erl"},{line,976}]}]}, [{emysql,
+                                                                            add_pool},
+                                                                           {environment_SUITE,
+                                                                            add_pool_utf8_deprecated,
+                                                                            162},
+                                                                           {test_server,
+                                                                            ts_tc,
+                                                                            1415},
+                                                                           {test_server,
+                                                                            run_test_case_eval1,
+                                                                            1028},
+                                                                           {test_server,
+                                                                            run_test_case_eval,
+                                                                            976}]
+=== *** FAILED test case 4 of 17 ***
+=case          environment_SUITE:add_pool_latin1
+=logfile       environment_suite.add_pool_latin1.html
+=started       2014-08-06 17:27:39
+=ended         2014-08-06 17:27:39
+=result        failed: {undef,
+                           [{emysql,add_pool,
+                                [environment_test_pool,
+                                 [{user,"hello_username"},
+                                  {password,"hello_password"},
+                                  {encoding,latin1}]],
+                                []},
+                            {environment_SUITE,add_pool_latin1,1,
+                                [{file,
+                                     "e:/lib/Emysql/test/environment_SUITE.erl"},
+                                 {line,168}]},
+                            {test_server,ts_tc,3,
+                                [{file,"test_server.erl"},{line,1415}]},
+                            {test_server,run_test_case_eval1,6,
+                                [{file,"test_server.erl"},{line,1028}]},
+                            {test_server,run_test_case_eval,9,
+                                [{file,"test_server.erl"},{line,976}]}]}, [{emysql,
+                                                                            add_pool},
+                                                                           {environment_SUITE,
+                                                                            add_pool_latin1,
+                                                                            168},
+                                                                           {test_server,
+                                                                            ts_tc,
+                                                                            1415},
+                                                                           {test_server,
+                                                                            run_test_case_eval1,
+                                                                            1028},
+                                                                           {test_server,
+                                                                            run_test_case_eval,
+                                                                            976}]
+=== *** FAILED test case 5 of 17 ***
+=case          environment_SUITE:add_pool_latin1_deprecated
+=logfile       environment_suite.add_pool_latin1_deprecated.html
+=started       2014-08-06 17:27:39
+=ended         2014-08-06 17:27:39
+=result        failed: {undef,
+                           [{emysql,add_pool,
+                                [environment_test_pool,10,"hello_username",
+                                 "hello_password","localhost",3306,undefined,
+                                 latin1],
+                                []},
+                            {environment_SUITE,add_pool_latin1_deprecated,1,
+                                [{file,
+                                     "e:/lib/Emysql/test/environment_SUITE.erl"},
+                                 {line,175}]},
+                            {test_server,ts_tc,3,
+                                [{file,"test_server.erl"},{line,1415}]},
+                            {test_server,run_test_case_eval1,6,
+                                [{file,"test_server.erl"},{line,1028}]},
+                            {test_server,run_test_case_eval,9,
+                                [{file,"test_server.erl"},{line,976}]}]}, [{emysql,
+                                                                            add_pool},
+                                                                           {environment_SUITE,
+                                                                            add_pool_latin1_deprecated,
+                                                                            175},
+                                                                           {test_server,
+                                                                            ts_tc,
+                                                                            1415},
+                                                                           {test_server,
+                                                                            run_test_case_eval1,
+                                                                            1028},
+                                                                           {test_server,
+                                                                            run_test_case_eval,
+                                                                            976}]
+=== *** FAILED test case 6 of 17 ***
+=case          environment_SUITE:add_pool_latin1_compatible
+=logfile       environment_suite.add_pool_latin1_compatible.html
+=started       2014-08-06 17:27:39
+=ended         2014-08-06 17:27:39
+=result        failed: {undef,
+                           [{emysql,add_pool,
+                                [environment_test_pool,
+                                 [{user,"hello_username"},
+                                  {password,"hello_password"}]],
+                                []},
+                            {environment_SUITE,add_pool_latin1_compatible,1,
+                                [{file,
+                                     "e:/lib/Emysql/test/environment_SUITE.erl"},
+                                 {line,181}]},
+                            {test_server,ts_tc,3,
+                                [{file,"test_server.erl"},{line,1415}]},
+                            {test_server,run_test_case_eval1,6,
+                                [{file,"test_server.erl"},{line,1028}]},
+                            {test_server,run_test_case_eval,9,
+                                [{file,"test_server.erl"},{line,976}]}]}, [{emysql,
+                                                                            add_pool},
+                                                                           {environment_SUITE,
+                                                                            add_pool_latin1_compatible,
+                                                                            181},
+                                                                           {test_server,
+                                                                            ts_tc,
+                                                                            1415},
+                                                                           {test_server,
+                                                                            run_test_case_eval1,
+                                                                            1028},
+                                                                           {test_server,
+                                                                            run_test_case_eval,
+                                                                            976}]
+=== *** FAILED test case 7 of 17 ***
+=case          environment_SUITE:add_pool_latin1_compatible_deprecated
+=logfile       environment_suite.add_pool_latin1_compatible_deprecated.html
+=started       2014-08-06 17:27:39
+=ended         2014-08-06 17:27:39
+=result        failed: {undef,
+                           [{emysql,add_pool,
+                                [environment_test_pool,10,"hello_username",
+                                 "hello_password","localhost",3306,undefined,
+                                 undefined],
+                                []},
+                            {environment_SUITE,
+                                add_pool_latin1_compatible_deprecated,1,
+                                [{file,
+                                     "e:/lib/Emysql/test/environment_SUITE.erl"},
+                                 {line,187}]},
+                            {test_server,ts_tc,3,
+                                [{file,"test_server.erl"},{line,1415}]},
+                            {test_server,run_test_case_eval1,6,
+                                [{file,"test_server.erl"},{line,1028}]},
+                            {test_server,run_test_case_eval,9,
+                                [{file,"test_server.erl"},{line,976}]}]}, [{emysql,
+                                                                            add_pool},
+                                                                           {environment_SUITE,
+                                                                            add_pool_latin1_compatible_deprecated,
+                                                                            187},
+                                                                           {test_server,
+                                                                            ts_tc,
+                                                                            1415},
+                                                                           {test_server,
+                                                                            run_test_case_eval1,
+                                                                            1028},
+                                                                           {test_server,
+                                                                            run_test_case_eval,
+                                                                            976}]
+=== *** FAILED test case 8 of 17 ***
+=case          environment_SUITE:add_pool_time_zone
+=logfile       environment_suite.add_pool_time_zone.html
+=started       2014-08-06 17:27:39
+=ended         2014-08-06 17:27:39
+=result        failed: {undef,
+                           [{emysql,add_pool,
+                                [environment_test_pool,
+                                 [{user,"hello_username"},
+                                  {password,"hello_password"},
+                                  {start_cmds,
+                                      [<<"SET time_zone='+00:00'">>]}]],
+                                []},
+                            {environment_SUITE,add_pool_time_zone,1,
+                                [{file,
+                                     "e:/lib/Emysql/test/environment_SUITE.erl"},
+                                 {line,194}]},
+                            {test_server,ts_tc,3,
+                                [{file,"test_server.erl"},{line,1415}]},
+                            {test_server,run_test_case_eval1,6,
+                                [{file,"test_server.erl"},{line,1028}]},
+                            {test_server,run_test_case_eval,9,
+                                [{file,"test_server.erl"},{line,976}]}]}, [{emysql,
+                                                                            add_pool},
+                                                                           {environment_SUITE,
+                                                                            add_pool_time_zone,
+                                                                            194},
+                                                                           {test_server,
+                                                                            ts_tc,
+                                                                            1415},
+                                                                           {test_server,
+                                                                            run_test_case_eval1,
+                                                                            1028},
+                                                                           {test_server,
+                                                                            run_test_case_eval,
+                                                                            976}]
+=== *** FAILED test case 9 of 17 ***
+=case          environment_SUITE:add_pool_time_zone_deprecated
+=logfile       environment_suite.add_pool_time_zone_deprecated.html
+=started       2014-08-06 17:27:39
+=ended         2014-08-06 17:27:39
+=result        failed: {undef,
+                           [{emysql,add_pool,
+                                [environment_test_pool,10,"hello_username",
+                                 "hello_password","localhost",3306,undefined,
+                                 utf8,
+                                 [<<"SET time_zone='+00:00'">>]],
+                                []},
+                            {environment_SUITE,add_pool_time_zone_deprecated,
+                                1,
+                                [{file,
+                                     "e:/lib/Emysql/test/environment_SUITE.erl"},
+                                 {line,201}]},
+                            {test_server,ts_tc,3,
+                                [{file,"test_server.erl"},{line,1415}]},
+                            {test_server,run_test_case_eval1,6,
+                                [{file,"test_server.erl"},{line,1028}]},
+                            {test_server,run_test_case_eval,9,
+                                [{file,"test_server.erl"},{line,976}]}]}, [{emysql,
+                                                                            add_pool},
+                                                                           {environment_SUITE,
+                                                                            add_pool_time_zone_deprecated,
+                                                                            201},
+                                                                           {test_server,
+                                                                            ts_tc,
+                                                                            1415},
+                                                                           {test_server,
+                                                                            run_test_case_eval1,
+                                                                            1028},
+                                                                           {test_server,
+                                                                            run_test_case_eval,
+                                                                            976}]
+=== *** FAILED test case 10 of 17 ***
+=case          environment_SUITE:add_pool_wrong_db
+=logfile       environment_suite.add_pool_wrong_db.html
+=started       2014-08-06 17:27:39
+=ended         2014-08-06 17:27:39
+=result        failed: should_have_failed, [{environment_SUITE,
+                                             add_pool_wrong_db,236},
+                                            {test_server,ts_tc,1415},
+                                            {test_server,run_test_case_eval1,
+                                             1028},
+                                            {test_server,run_test_case_eval,
+                                             976}]
+=== *** FAILED test case 11 of 17 ***
+=case          environment_SUITE:add_pool_wrong_cmd
+=logfile       environment_suite.add_pool_wrong_cmd.html
+=started       2014-08-06 17:27:39
+=ended         2014-08-06 17:27:39
+=result        failed: should_have_failed, [{environment_SUITE,
+                                             add_pool_wrong_cmd,252},
+                                            {test_server,ts_tc,1415},
+                                            {test_server,run_test_case_eval1,
+                                             1028},
+                                            {test_server,run_test_case_eval,
+                                             976}]
+=== *** FAILED test case 12 of 17 ***
+=case          environment_SUITE:add_pool_port_should_be_a_number
+=logfile       environment_suite.add_pool_port_should_be_a_number.html
+=started       2014-08-06 17:27:39
+=ended         2014-08-06 17:27:39
+=result        failed: {undef,
+                           [{emysql_conn_mgr,pools,[],[]},
+                            {environment_SUITE,
+                                add_pool_port_should_be_a_number,1,
+                                [{file,
+                                     "e:/lib/Emysql/test/environment_SUITE.erl"},
+                                 {line,274}]},
+                            {test_server,ts_tc,3,
+                                [{file,"test_server.erl"},{line,1415}]},
+                            {test_server,run_test_case_eval1,6,
+                                [{file,"test_server.erl"},{line,1028}]},
+                            {test_server,run_test_case_eval,9,
+                                [{file,"test_server.erl"},{line,976}]}]}, [{emysql_conn_mgr,
+                                                                            pools},
+                                                                           {environment_SUITE,
+                                                                            add_pool_port_should_be_a_number,
+                                                                            274},
+                                                                           {test_server,
+                                                                            ts_tc,
+                                                                            1415},
+                                                                           {test_server,
+                                                                            run_test_case_eval1,
+                                                                            1028},
+                                                                           {test_server,
+                                                                            run_test_case_eval,
+                                                                            976}]
+=== *** FAILED test case 13 of 17 ***
+=case          environment_SUITE:add_pool_size_should_be_a_number
+=logfile       environment_suite.add_pool_size_should_be_a_number.html
+=started       2014-08-06 17:27:39
+=ended         2014-08-06 17:27:39
+=result        failed: {undef,
+                           [{emysql_conn_mgr,pools,[],[]},
+                            {environment_SUITE,
+                                add_pool_size_should_be_a_number,1,
+                                [{file,
+                                     "e:/lib/Emysql/test/environment_SUITE.erl"},
+                                 {line,294}]},
+                            {test_server,ts_tc,3,
+                                [{file,"test_server.erl"},{line,1415}]},
+                            {test_server,run_test_case_eval1,6,
+                                [{file,"test_server.erl"},{line,1028}]},
+                            {test_server,run_test_case_eval,9,
+                                [{file,"test_server.erl"},{line,976}]}]}, [{emysql_conn_mgr,
+                                                                            pools},
+                                                                           {environment_SUITE,
+                                                                            add_pool_size_should_be_a_number,
+                                                                            294},
+                                                                           {test_server,
+                                                                            ts_tc,
+                                                                            1415},
+                                                                           {test_server,
+                                                                            run_test_case_eval1,
+                                                                            1028},
+                                                                           {test_server,
+                                                                            run_test_case_eval,
+                                                                            976}]
+=== *** FAILED test case 14 of 17 ***
+=case          environment_SUITE:add_pool_timeout_should_be_a_number
+=logfile       environment_suite.add_pool_timeout_should_be_a_number.html
+=started       2014-08-06 17:27:39
+=ended         2014-08-06 17:27:39
+=result        failed: {undef,
+                           [{emysql_conn_mgr,pools,[],[]},
+                            {environment_SUITE,
+                                add_pool_timeout_should_be_a_number,1,
+                                [{file,
+                                     "e:/lib/Emysql/test/environment_SUITE.erl"},
+                                 {line,313}]},
+                            {test_server,ts_tc,3,
+                                [{file,"test_server.erl"},{line,1415}]},
+                            {test_server,run_test_case_eval1,6,
+                                [{file,"test_server.erl"},{line,1028}]},
+                            {test_server,run_test_case_eval,9,
+                                [{file,"test_server.erl"},{line,976}]}]}, [{emysql_conn_mgr,
+                                                                            pools},
+                                                                           {environment_SUITE,
+                                                                            add_pool_timeout_should_be_a_number,
+                                                                            313},
+                                                                           {test_server,
+                                                                            ts_tc,
+                                                                            1415},
+                                                                           {test_server,
+                                                                            run_test_case_eval1,
+                                                                            1028},
+                                                                           {test_server,
+                                                                            run_test_case_eval,
+                                                                            976}]
+=== *** FAILED test case 15 of 17 ***
+=case          environment_SUITE:add_pool_env_defaults
+=logfile       environment_suite.add_pool_env_defaults.html
+=started       2014-08-06 17:27:39
+=== ERROR! init_per_testcase crashed!
+	Location: [{environment_SUITE,init_per_testcase,<a href="environment_suite.src.html#90">90</a>},
+              {test_server,do_init_per_testcase,1219},
+              {test_server,run_test_case_eval1,1002},
+              {test_server,run_test_case_eval,976}]
+	Reason: {{badmatch,{error,{not_started,emysql}}},
+                 [{environment_SUITE,init_per_testcase,2,
+                      [{file,"e:/lib/Emysql/test/environment_SUITE.erl"},
+                       {line,90}]},
+                  {test_server,do_init_per_testcase,2,
+                      [{file,"test_server.erl"},{line,1219}]},
+                  {test_server,run_test_case_eval1,6,
+                      [{file,"test_server.erl"},{line,1002}]},
+                  {test_server,run_test_case_eval,9,
+                      [{file,"test_server.erl"},{line,976}]}]}
+
+=ended         2014-08-06 17:27:39
+=result        auto_skipped: {failed,
+                              {environment_SUITE,init_per_testcase,
+                               {{badmatch,{error,{not_started,emysql}}},
+                                [{environment_SUITE,init_per_testcase,2,
+                                  [{file,
+                                    "e:/lib/Emysql/test/environment_SUITE.erl"},
+                                   {line,90}]},
+                                 {test_server,do_init_per_testcase,2,
+                                  [{file,"test_server.erl"},{line,1219}]},
+                                 {test_server,run_test_case_eval1,6,
+                                  [{file,"test_server.erl"},{line,1002}]},
+                                 {test_server,run_test_case_eval,9,
+                                  [{file,"test_server.erl"},{line,976}]}]}}}
+=== *** SKIPPED test case 16 of 17 ***
+=case          environment_SUITE:add_pool_env_all
+=logfile       environment_suite.add_pool_env_all.html
+=started       2014-08-06 17:27:39
+=== ERROR! init_per_testcase crashed!
+	Location: [{environment_SUITE,init_per_testcase,<a href="environment_suite.src.html#102">102</a>},
+              {test_server,do_init_per_testcase,1219},
+              {test_server,run_test_case_eval1,1002},
+              {test_server,run_test_case_eval,976}]
+	Reason: {{badmatch,{error,{not_started,emysql}}},
+                 [{environment_SUITE,init_per_testcase,2,
+                      [{file,"e:/lib/Emysql/test/environment_SUITE.erl"},
+                       {line,102}]},
+                  {test_server,do_init_per_testcase,2,
+                      [{file,"test_server.erl"},{line,1219}]},
+                  {test_server,run_test_case_eval1,6,
+                      [{file,"test_server.erl"},{line,1002}]},
+                  {test_server,run_test_case_eval,9,
+                      [{file,"test_server.erl"},{line,976}]}]}
+
+=ended         2014-08-06 17:27:39
+=result        auto_skipped: {failed,
+                              {environment_SUITE,init_per_testcase,
+                               {{badmatch,{error,{not_started,emysql}}},
+                                [{environment_SUITE,init_per_testcase,2,
+                                  [{file,
+                                    "e:/lib/Emysql/test/environment_SUITE.erl"},
+                                   {line,102}]},
+                                 {test_server,do_init_per_testcase,2,
+                                  [{file,"test_server.erl"},{line,1219}]},
+                                 {test_server,run_test_case_eval1,6,
+                                  [{file,"test_server.erl"},{line,1002}]},
+                                 {test_server,run_test_case_eval,9,
+                                  [{file,"test_server.erl"},{line,976}]}]}}}
+=== *** SKIPPED test case 17 of 17 ***
+=case          environment_SUITE:end_per_suite
+=logfile       environment_suite.end_per_suite.html
+=started       2014-08-06 17:27:39
+=ended         2014-08-06 17:27:39
+=result        ok
+=elapsed       1.0e-6
+=group_time    0.873s
+=== TEST COMPLETE, 0 ok, 15 failed, 2 skipped of 17 test cases
+
+=finished      2014-08-06 17:27:39
+=failed        15
+=successful    0
+=user_skipped  0
+=auto_skipped  2

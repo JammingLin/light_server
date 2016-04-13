@@ -1,0 +1,18 @@
+{application, web_admin, [
+    {description, "Web GM Tool"},
+    {vsn, "0.0.2"},
+    {modules, []},
+    {registered, []},
+    {applications, [kernel, stdlib, crypto]},
+    {env, [
+        {gm_servers, [
+            [
+                {name, "127.0.0.1"},
+                {desc, "开发机"},
+                {nodes, [
+                    {game_node, 'game@127.0.0.1'}
+                ]}
+            ]
+        ]}
+    ]}
+]}.

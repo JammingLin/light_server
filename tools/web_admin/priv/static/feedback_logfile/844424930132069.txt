@@ -1,0 +1,113 @@
+﻿3/23/2016 3:30:12 PM Info:前期准备耗时 == 0.00855498
+3/23/2016 3:31:44 PM Info:disable heartbeat.
+3/23/2016 3:31:44 PM Info:connect to server host:, 192.168.70.123, port, 5819
+3/23/2016 3:31:44 PM Info:network timeout wait start
+3/23/2016 3:31:44 PM Info:network connect start
+3/23/2016 3:31:44 PM Info:network connect finish
+3/23/2016 3:31:44 PM Info:setup Secure Channel start
+3/23/2016 3:31:44 PM Info:setup Secure Channel finish
+3/23/2016 3:31:44 PM Info:network timeout wait finish
+3/23/2016 3:31:44 PM Info:enable heartbeat.
+3/23/2016 3:31:44 PM Info:******register:notify_match_ai
+3/23/2016 3:31:44 PM Info:******register:notify_start_pk
+3/23/2016 3:31:44 PM Info:******register:notify_question_list
+3/23/2016 3:31:44 PM Info:******register:notify_match_info
+3/23/2016 3:31:44 PM Info:******register:notify_start_round
+3/23/2016 3:31:44 PM Info:******register:notify_answer_question
+3/23/2016 3:31:44 PM Info:******register:notify_exit_pk
+3/23/2016 3:31:44 PM Info:******register:notify_game_end
+3/23/2016 3:31:44 PM Info:******register:notify_player_reconnect
+3/23/2016 3:31:44 PM Info:******register:another_device_logined
+3/23/2016 3:31:46 PM Info:@1 请求登陆
+3/23/2016 3:31:47 PM Info:@1 登陆成功， 耗时：0.9925613
+3/23/2016 3:31:47 PM Info:@1 登陆返回：{"ticket":"TGT-423-9szzQbtxAC53goFh6zgGzpb671c0HXk6KAjpOPWdJLVYA4dDCe-cas01.example.org","user_id":"30420"}
+3/23/2016 3:31:47 PM Info:@2 获取玩家数据
+3/23/2016 3:31:48 PM Info:@2 获取玩家数据回应状态：200
+3/23/2016 3:31:48 PM Info:@2 获取玩家数据成功， 耗时：0.7950134
+3/23/2016 3:31:49 PM Info:@3 退出多学回应状态：200
+3/23/2016 3:31:49 PM Info:******send:login_by_knowledge
+3/23/2016 3:31:49 PM Info:******add:login_by_knowledge1
+3/23/2016 3:31:49 PM Info:******get:login_by_knowledge1
+3/23/2016 3:31:49 PM Info:******recv:login_by_knowledge
+3/23/2016 3:31:49 PM Info:******get:login_by_knowledge1
+3/23/2016 3:31:49 PM Info:登陆成功------------>
+3/23/2016 3:31:49 PM Info:******send:get_player
+3/23/2016 3:31:49 PM Info:******add:get_player2
+3/23/2016 3:31:49 PM Info:******send:get_login_reward
+3/23/2016 3:31:49 PM Info:******add:get_login_reward3
+3/23/2016 3:31:49 PM Info:结束请求游戏数据(只请求一次)
+3/23/2016 3:31:49 PM Info:Wait Network GameData!
+3/23/2016 3:31:49 PM Info:******del:login_by_knowledge1
+3/23/2016 3:31:49 PM Info:******get:get_player2
+3/23/2016 3:31:49 PM Info:******recv:get_player
+3/23/2016 3:31:49 PM Info:******get:get_player2
+3/23/2016 3:31:49 PM Info:******del:get_player2
+3/23/2016 3:31:49 PM Info:******get:get_login_reward3
+3/23/2016 3:31:49 PM Info:******recv:get_login_reward
+3/23/2016 3:31:49 PM Info:******get:get_login_reward3
+3/23/2016 3:31:49 PM Info:******del:get_login_reward3
+3/23/2016 3:31:49 PM Info:GameData is ready!
+3/23/2016 3:31:49 PM Info:enter, player detail's room's id:0
+3/23/2016 3:31:49 PM Info:******send:get_challenge_top_list
+3/23/2016 3:31:49 PM Info:******add:get_challenge_top_list4
+3/23/2016 3:31:49 PM Info:******send:get_all_topic_info
+3/23/2016 3:31:49 PM Info:******add:get_all_topic_info5
+3/23/2016 3:31:49 PM Info:******get:get_challenge_top_list4
+3/23/2016 3:31:49 PM Info:******recv:get_challenge_top_list
+3/23/2016 3:31:49 PM Info:******get:get_challenge_top_list4
+3/23/2016 3:31:49 PM Info:******del:get_challenge_top_list4
+3/23/2016 3:31:49 PM Info:******get:get_all_topic_info5
+3/23/2016 3:31:49 PM Info:******recv:get_all_topic_info
+3/23/2016 3:31:49 PM Info:******get:get_all_topic_info5
+3/23/2016 3:31:49 PM Info:******del:get_all_topic_info5
+3/23/2016 3:31:51 PM Info:******send:get_player_list
+3/23/2016 3:31:51 PM Info:******add:get_player_list6
+3/23/2016 3:31:51 PM Info:******get:get_player_list6
+3/23/2016 3:31:51 PM Info:******recv:get_player_list
+3/23/2016 3:31:51 PM Info:******get:get_player_list6
+3/23/2016 3:31:51 PM Info:******del:get_player_list6
+3/23/2016 3:31:51 PM Info:******send:match_person
+3/23/2016 3:31:51 PM Info:******add:match_person7
+3/23/2016 3:31:51 PM Info:@1 请求匹配玩家
+3/23/2016 3:31:51 PM Info:******get:match_person7
+3/23/2016 3:31:51 PM Info:******recv:match_person
+3/23/2016 3:31:51 PM Info:******get:match_person7
+3/23/2016 3:31:51 PM Info:******del:match_person7
+3/23/2016 3:32:01 PM Info:******notify:notify_match_ai
+3/23/2016 3:32:02 PM Info:******send:agree_pk_with_ai
+3/23/2016 3:32:02 PM Info:******add:agree_pk_with_ai8
+3/23/2016 3:32:02 PM Info:******get:agree_pk_with_ai8
+3/23/2016 3:32:02 PM Info:******recv:agree_pk_with_ai
+3/23/2016 3:32:02 PM Info:******get:agree_pk_with_ai8
+3/23/2016 3:32:02 PM Info:******del:agree_pk_with_ai8
+3/23/2016 3:32:02 PM Info:******notify:notify_start_pk
+3/23/2016 3:32:02 PM Info:@2 等待开始PK 耗时 === 11.31512
+3/23/2016 3:32:04 PM Info:******send:start_pk
+3/23/2016 3:32:04 PM Info:******add:start_pk9
+3/23/2016 3:32:04 PM Info:******get:start_pk9
+3/23/2016 3:32:04 PM Info:******recv:start_pk
+3/23/2016 3:32:04 PM Info:******get:start_pk9
+3/23/2016 3:32:04 PM Info:******del:start_pk9
+3/23/2016 3:32:04 PM Info:******notify:notify_question_list
+3/23/2016 3:32:04 PM Info:@3 等待答题列表 耗时 === 2.239815
+3/23/2016 3:32:04 PM Info:@@ 总共耗时 === 13.56087
+3/23/2016 3:32:05 PM Info:******notify:notify_start_round
+3/23/2016 3:32:05 PM Info:-----round 0 start normal------
+3/23/2016 3:32:07 PM Info:******notify:notify_answer_question
+3/23/2016 3:32:07 PM Info:notify answer question, role's id:844424930132269, round'id:1, answer's id:4, answer's time:2382
+3/23/2016 3:32:07 PM Info:add mock item1: 0
+3/23/2016 3:32:09 PM Info:make answer, round'id:1, answer's id: 2, time:1942, socre:0, room'id: 1
+3/23/2016 3:32:09 PM Info:******send:answer_question
+3/23/2016 3:32:09 PM Info:******add:answer_question10
+3/23/2016 3:32:09 PM Info:******get:answer_question10
+3/23/2016 3:32:09 PM Info:******recv:answer_question
+3/23/2016 3:32:09 PM Info:******get:answer_question10
+3/23/2016 3:32:09 PM Info:******del:answer_question10
+3/23/2016 3:32:09 PM Info:******notify:notify_start_round
+3/23/2016 3:32:10 PM Info:net mocker dispatch time:2383, moci.notify.answertime: 2382
+3/23/2016 3:32:11 PM Info:******notify:notify_answer_question
+3/23/2016 3:32:11 PM Info:notify answer question, role's id:844424930132269, round'id:2, answer's id:2, answer's time:1794
+3/23/2016 3:32:11 PM Info:add mock item1: 1
+3/23/2016 3:32:12 PM Info:round 0 finished!!!
+3/23/2016 3:32:12 PM Info:question module on message finished notify!!!
+3/23/2016 3:32:12 PM Info:-----round 1 start normal------
