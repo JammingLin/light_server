@@ -1,0 +1,7 @@
+{application, orthogonal_list, [
+    {description, "orthogonal_list"},
+    {vsn, "0.0.0"},
+    {registered, []},
+    {applications, [kernel, stdlib]},
+    {env, []}
+]}.
