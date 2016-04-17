@@ -128,6 +128,15 @@ static ERL_NIF_TERM printf_list(ErlNifEnv* env, int argc, const ERL_NIF_TERM arg
 
 static ERL_NIF_TERM foreach(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[])
 {
+    if(argc != 2) return enif_make_badarg(env);
+
+    unsigned long objPtr;
+    if(!enif_get_ulong(env, argv[0], &objPtr))
+        return enif_make_badarg(env);
+
+    struct CrossList *cl = (struct CrossList*)objPtr;
+    if(NULL == cl) return enif_make_atom(env, "object_is_null");
+
     return enif_make_atom(env, "ok");
 }
 
