@@ -5,18 +5,6 @@
 #include "erl_nif.h"
 #include "orthogonal_list.h"
 
-ErlNifResourceType* RES_TYPE;
-ERL_NIF_TERM atom_ok;
-static ERL_NIF_TERM create(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[]);
-static ERL_NIF_TERM get_value(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[]);
-
-//nif define
-static ErlNifFunc nif_funcs[] =
-{
-    {"create", 2, create},
-    {"get_value", 3, get_value}
-};
-
 typedef struct OLNode {
      int  row, col;          //�к����к�
      ElemType value;        //ֵ
@@ -28,29 +16,23 @@ struct  CrossList{
     int rows, cols, count;       // ϡ�����������������ͷ���Ԫ����
 };
 
-void reversestr(char *source,char target[],unsigned int length)
-{
-    int i;
-    for(i=0;i<length;i++)
-    target[i]=source[length-1-i];
-    target[i]=0;
-}
+ErlNifResourceType* RES_TYPE;
+ERL_NIF_TERM atom_ok;
+static ERL_NIF_TERM create(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[]);
+static ERL_NIF_TERM get_value(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[]);
+static ERL_NIF_TERM update(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[]);
+static ERL_NIF_TERM printf_list(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[]);
+static ERL_NIF_TERM foreach(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[]);
 
-void tohex(unsigned long num,char *hexStr)
+//nif define
+static ErlNifFunc nif_funcs[] =
 {
-    unsigned long n = num;
-    char hextable[]="0123456789abcdef";
-    char temphex[12],hex[12];
-    int i=0;
-    while(n)
-    {
-        temphex[i++]=hextable[n%16];
-        n /= 16;
-    }
-    temphex[i]=0;
-    reversestr(temphex,hex,i);
-    strcpy(hexStr,hex);
-}
+    {"create", 2, create},
+    {"get_value", 3, get_value},
+    {"update", 4, update},
+    {"printf_list", 1, printf_list},
+    {"foreach", 2, foreach}
+};
 
 static ERL_NIF_TERM create(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[])
 {
@@ -90,7 +72,20 @@ static ERL_NIF_TERM get_value(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[
     return enif_make_resource(env, et);
 }
 
+static ERL_NIF_TERM update(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[])
+{
+    return enif_make_atom(env, "ok");
+}
 
+static ERL_NIF_TERM printf_list(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[])
+{
+    return enif_make_atom(env, "ok");
+}
+
+static ERL_NIF_TERM foreach(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[])
+{
+    return enif_make_atom(env, "ok");
+}
 
 struct CrossList * ol_create(int rows, int cols)
 {
