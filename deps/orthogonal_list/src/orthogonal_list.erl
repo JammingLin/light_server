@@ -2,7 +2,7 @@
 
 -on_load(init/0).
 
--export([create/2, get_value/3, update/4, printf_list/1, foreach/2]).
+-export([create/2, release/1, get_value/3, update/4, printf_list/1, foreach/2]).
 
 -define(nif_stub, nif_stub_error(?LINE)).
 nif_stub_error(Line) ->
@@ -25,16 +25,19 @@ init() ->
       erlang:load_nif("../priv/orthogonal_list", 0).
 
 create(_Rows, _Cols)->
-    ?nif_stub.
-
-get_value(_OrthogonalList, _Rows, _Cols)->
-    ?nif_stub.
-
-update(_OrthgonalList, _Rows, _Cols, _Value)->
   ?nif_stub.
 
-printf_list(_OrthogonalList)->
+release(_OrthogonalListPtr)->
   ?nif_stub.
 
-foreach(_OrthogonalList, _Callback)->
+get_value(_OrthogonalListPtr, _Rows, _Cols)->
+  ?nif_stub.
+
+update(_OrthogonalListPtr, _Rows, _Cols, _Value)->
+  ?nif_stub.
+
+printf_list(_OrthogonalListObj)->
+  ?nif_stub.
+
+foreach(_OrthogonalListObj, _Callback)->
   ?nif_stub.
