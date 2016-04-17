@@ -18,14 +18,14 @@ static ErlNifFunc nif_funcs[] =
 };
 
 typedef struct OLNode {
-     int  row, col;          //ÐÐºÅÓëÁÐºÅ
+     int  row, col;          //ï¿½Ðºï¿½ï¿½ï¿½ï¿½Ðºï¿½
      ElemType value;        //Öµ
-     struct OLNode *right, *down;  //Ö¸ÕëÓò
+     struct OLNode *right, *down;  //Ö¸ï¿½ï¿½ï¿½ï¿½
 }OLNode, *OLink;
 
 struct  CrossList{
     OLink   *Rhead, *Chead;
-    int rows, cols, count;       // Ï¡Êè¾ØÕóµÄÐÐÊý¡¢ÁÐÊýºÍ·ÇÁãÔª¸öÊý
+    int rows, cols, count;       // Ï¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½
 };
 
 void reversestr(char *source,char target[],unsigned int length)
@@ -71,33 +71,23 @@ static ERL_NIF_TERM get_value(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[
     if(argc != 3) return enif_make_badarg(env);
 
     unsigned long addr;
-    //struct CrossList *cl = (struct CrossList*)enif_alloc(sizeof(struct CrossList));
     if(!enif_get_ulong(env, argv[0], &addr))
         return enif_make_badarg(env);
-    printf("get addr %lu \n", addr);
-    char table[12] = {0};
-    tohex(addr, table);
-    printf("addr %s \n", table);
+
+    printf("get addr %lx \n", addr);
     struct CrossList *cl = NULL;
-    printf("cl addr %p\n", cl);
-    
-    return enif_make_ulong(env, 100);
+    cl = (struct CrossList*)addr;
+    printf("cl addr %p, rows %d, cols %d, count %d rhead %p chead %p\n",
+    cl, cl->rows, cl->cols, cl->count, cl->Rhead, cl->Chead);
 
+    int rows, cols;
+    if(!enif_get_int(env, argv[1], &rows)) return enif_make_badarg(env);
+    if(!enif_get_int(env, argv[2], &cols)) return enif_make_badarg(env);
 
-//    int rows, cols;
-//    if(!enif_get_int(env, argv[1], &rows)) return enif_make_badarg(env);
-//    if(!enif_get_int(env, argv[2], &cols)) return enif_make_badarg(env);
-//
-//    ElemType *et = (ElemType*)enif_alloc(sizeof(ElemType));
-//    *et = ol_get(cl, rows, cols);
-//
-//    enif_release_resource(et);
-//    enif_release_resource(cl);
+    ElemType *et = (ElemType*)enif_alloc(sizeof(ElemType));
+    *et = ol_get(cl, rows, cols);
 
-//    enif_free(cl);
-//    enif_free(et);
-
-//    return enif_make_resource(env, et);
+    return enif_make_resource(env, et);
 }
 
 
@@ -112,12 +102,12 @@ struct CrossList * ol_create(int rows, int cols)
      cl->cols = cols;
      cl->count = 0;
 
-     //´´½¨ÐÐÁ´±íÍ·Êý×é
+     //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½ï¿½
      cl->Rhead = (OLink *)calloc(rows, sizeof(OLink));
      if(!cl->Rhead)
         exit(-1);
 
-     //´´½¨ÁÐÁ´±íÍ·Êý×é
+     //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½ï¿½
      cl->Chead = (OLink *)calloc(cols,  sizeof(OLink));
      if(!(cl->Chead))
         exit(-1);
