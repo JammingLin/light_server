@@ -3,8 +3,21 @@
 
 //c
 
-struct CrossList; 
+struct CrossList;
 typedef  void* ElemType;
+
+typedef struct OLNode {
+     int  row, col;
+     ElemType value;
+     struct OLNode *right, *down;
+}OLNode, *OLink;
+
+struct  CrossList{
+    OLink   *Rhead, *Chead;
+    int rows, cols, count;
+};
+
+
 
 typedef void (foreach_callback)(int row, int col, ElemType value);
 
