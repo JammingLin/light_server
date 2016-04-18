@@ -1,0 +1,7 @@
+{application, orthogonal_list_nif, [
+    {description, "orthogonal_list_nif"},
+    {vsn, "0.0.0"},
+    {registered, []},
+    {applications, [kernel, stdlib]},
+    {env, []}
+]}.
